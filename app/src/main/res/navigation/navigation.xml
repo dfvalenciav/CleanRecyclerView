@@ -13,7 +13,7 @@
             app:destination="@id/detailOrgFragment" />
         <argument
             android:name="organizationName"
-            app:argType="OrgPresentation"
+            app:argType="String"
             android:defaultValue="Organización name" />
     </fragment>
     <fragment
