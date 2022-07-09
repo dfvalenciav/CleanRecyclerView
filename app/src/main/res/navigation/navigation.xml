@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/organizationFragment2">
+    <fragment
+        android:id="@+id/organizationFragment2"
+        android:name="com.example.daval.cleanrecyclerview.presentation.organizationList.OrganizationFragment2"
+        android:label="OrganizationFragment" >
+        <action
+            android:id="@+id/action_organizationFragment2_to_detailOrgFragment"
+            app:destination="@id/detailOrgFragment" />
+        <argument
+            android:name="organizationName"
+            app:argType="OrgPresentation"
+            android:defaultValue="Organización name" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailOrgFragment"
+        android:name="com.example.daval.cleanrecyclerview.viDetailOrgMVVM.detailOrgFragment"
+        android:label="fragment_detail_org"
+        tools:layout="@layout/fragment_detail_org" >
+        <action
+            android:id="@+id/action_detailOrgFragment_to_organizationFragment2"
+            app:destination="@id/organizationFragment2" />
+
+    </fragment>
+</navigation>
