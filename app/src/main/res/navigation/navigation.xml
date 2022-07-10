@@ -11,10 +11,10 @@
         <action
             android:id="@+id/action_organizationFragment2_to_detailOrgFragment"
             app:destination="@id/detailOrgFragment" />
-        <argument
+<!--        <argument
             android:name="organizationName"
             app:argType="String"
-            android:defaultValue="Organización name" />
+            android:defaultValue="Organización name" />-->
     </fragment>
     <fragment
         android:id="@+id/detailOrgFragment"

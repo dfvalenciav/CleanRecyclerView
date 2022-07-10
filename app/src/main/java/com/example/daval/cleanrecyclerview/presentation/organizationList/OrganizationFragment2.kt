@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
@@ -51,15 +52,7 @@ class OrganizationFragment2 : BaseFragment<FragmentOrganizationBinding, organiza
     }
 
     override fun onClickOrg() {
-        TODO("Not yet implemented")
+        Toast.makeText(requireContext(),"${items.size} to string", Toast.LENGTH_LONG).show()
     }
-
-
-    /* override fun observe() {
-         viewModel.organiztionMutableLiveData.observe(viewLifecycleOwner, Observer {
-             var recyclerViewAdapter = recyclerAdapter(requireContext(), it)
-             binding.recyclerView.adapter = recyclerViewAdapter
-         })
-     }*/
 
 }
