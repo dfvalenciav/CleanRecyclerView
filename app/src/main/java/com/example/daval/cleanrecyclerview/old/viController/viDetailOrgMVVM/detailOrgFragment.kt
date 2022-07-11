@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.viDetailOrgMVVM
+package com.example.daval.cleanrecyclerview.old.viController.viDetailOrgMVVM
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

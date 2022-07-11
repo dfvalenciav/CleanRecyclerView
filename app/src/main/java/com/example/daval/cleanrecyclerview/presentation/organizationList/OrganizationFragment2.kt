@@ -2,14 +2,13 @@ package com.example.daval.cleanrecyclerview.presentation.organizationList
 
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.RecyclerView
-import com.example.daval.cleanrecyclerview.viController.recyclerAdapter
+import androidx.navigation.findNavController
 import com.example.daval.cleanrecyclerview.databinding.FragmentOrganizationBinding
 import com.example.daval.cleanrecyclerview.base.BaseFragment
 import com.example.daval.cleanrecyclerview.presentation.models.OrgPresentation
@@ -18,9 +17,9 @@ import com.example.daval.cleanrecyclerview.presentation.organizationList.adapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class OrganizationFragment2 : BaseFragment<FragmentOrganizationBinding, organizationViewModel2> () , IOrgListener {
+class OrganizationFragment2 : BaseFragment<FragmentOrganizationBinding, OrganizationViewModel2> () , IOrgListener {
 
-    override val viewModel by viewModels<organizationViewModel2> ()
+    override val viewModel by viewModels<OrganizationViewModel2> ()
     private lateinit var items: List<OrgPresentation>
 
     override fun inflateView(
@@ -51,8 +50,12 @@ class OrganizationFragment2 : BaseFragment<FragmentOrganizationBinding, organiza
         }
     }
 
-    override fun onClickOrg() {
-        Toast.makeText(requireContext(),"${items.size} to string", Toast.LENGTH_LONG).show()
+    override fun onClickOrg(dataPassed: OrgPresentation) {
+
+        val action = OrganizationFragment2Directions.actionOrganizationFragment2ToDetailOrgFragment(dataPassed)
+        binding.recyclerView.findNavController().navigate(action)
+        Toast.makeText(requireContext(), dataPassed.organizationName, Toast.LENGTH_LONG).show()
+        Log.d("test", dataPassed.organizationCode.toString())
     }
 
 }

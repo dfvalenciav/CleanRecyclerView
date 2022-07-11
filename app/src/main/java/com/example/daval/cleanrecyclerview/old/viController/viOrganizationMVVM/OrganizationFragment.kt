@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.viOrganizationMVVM
+package com.example.daval.cleanrecyclerview.old.viController.viOrganizationMVVM
 
 
 import android.os.Bundle
@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
-import com.example.daval.cleanrecyclerview.viController.recyclerAdapter
+import com.example.daval.cleanrecyclerview.old.viController.recyclerAdapter
 import com.example.daval.cleanrecyclerview.databinding.FragmentOrganizationBinding
 import com.example.daval.cleanrecyclerview.R
 

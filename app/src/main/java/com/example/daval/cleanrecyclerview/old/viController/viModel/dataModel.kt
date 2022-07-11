@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.data.models
+package com.example.daval.cleanrecyclerview.old.viController.viModel
 
 data class dataModel(var organizationName: String?, var organizationCode : String?)
 

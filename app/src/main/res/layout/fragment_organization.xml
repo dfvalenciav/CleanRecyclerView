@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/secundario_06_bg_gray"
-        tools:context=".viOrganizationMVVM.OrganizationFragment">
+        tools:context=".old.viController.viOrganizationMVVM.OrganizationFragment">
 <!---guidelins-->
 
         <androidx.constraintlayout.widget.Guideline
@@ -15,14 +15,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_begin="@dimen/base_margin" />
+            app:layout_constraintGuide_percent="0.05" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_end="@dimen/base_margin" />
+            app:layout_constraintGuide_percent="0.95" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"

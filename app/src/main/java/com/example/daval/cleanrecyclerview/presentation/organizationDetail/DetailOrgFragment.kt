@@ -1,29 +1,34 @@
 package com.example.daval.cleanrecyclerview.presentation.organizationDetail
 
-import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.example.daval.cleanrecyclerview.R
+import androidx.navigation.fragment.navArgs
 import com.example.daval.cleanrecyclerview.base.BaseFragment
 import com.example.daval.cleanrecyclerview.databinding.FragmentDetailOrgBinding
+import com.example.daval.cleanrecyclerview.old.viController.viDetailOrgMVVM.detailOrgFragmentArgs
 
-class detailOrgFragment() : BaseFragment<FragmentDetailOrgBinding, detailOrgViewModel> () {
+class DetailOrgFragment() : BaseFragment<FragmentDetailOrgBinding, DetailOrgViewModel> () {
 
-    override val viewModel by viewModels<detailOrgViewModel> ()
+    override val viewModel by viewModels<DetailOrgViewModel> ()
+
+    val safeArgs : detailOrgFragmentArgs by navArgs()
+    val dataReceived = safeArgs.orgItem.organizationName
+
 
     override fun inflateView(
         inflater: LayoutInflater,
         container: ViewGroup?
     ) = FragmentDetailOrgBinding.inflate(inflater, container, false)
 
+
     override fun observe() {
        viewModel.text.observe(viewLifecycleOwner, Observer {
            with(binding){
-               detailOrgaFragment.text = it
+               detailOrgaFragment.text = dataReceived.toString()
+               Log.d("test", dataReceived.toString())
            }
        })
     }

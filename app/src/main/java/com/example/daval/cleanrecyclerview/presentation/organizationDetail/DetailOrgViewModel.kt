@@ -7,7 +7,7 @@ import com.example.daval.cleanrecyclerview.base.BaseViewModel
 import com.example.daval.cleanrecyclerview.databinding.FragmentDetailOrgBinding
 import com.example.daval.cleanrecyclerview.presentation.organizationList.OrgEvent
 
-class detailOrgViewModel : BaseViewModel<OrgEvent>() {
+class DetailOrgViewModel : BaseViewModel<OrgEvent>() {
     private val _text = MutableLiveData<String>().apply {
         value = "hello redsys"
     }

@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.viController
+package com.example.daval.cleanrecyclerview.old.viController
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.daval.cleanrecyclerview.R
-import com.example.daval.cleanrecyclerview.viModel.dataModel
+import com.example.daval.cleanrecyclerview.old.viController.viModel.dataModel
 
 class recyclerAdapter (private val context: Context, private var arrayOrgAdapter : ArrayList<dataModel>) : RecyclerView.Adapter<recyclerAdapter.MyViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {

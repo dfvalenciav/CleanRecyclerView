@@ -1,8 +1,8 @@
-package com.example.daval.cleanrecyclerview.viOrganizationMVVM
+package com.example.daval.cleanrecyclerview.old.viController.viOrganizationMVVM
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.daval.cleanrecyclerview.viModel.dataModel
+import com.example.daval.cleanrecyclerview.old.viController.viModel.dataModel
 
 class organizationViewModel : ViewModel() {
     var organizationArray : ArrayList<dataModel>  = ArrayList()

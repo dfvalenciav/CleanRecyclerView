@@ -3,22 +3,19 @@ package com.example.daval.cleanrecyclerview.presentation.organizationList.adapte
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import com.example.daval.cleanrecyclerview.base.BaseAdapter
 import com.example.daval.cleanrecyclerview.base.BaseViewHolder
 import com.example.daval.cleanrecyclerview.databinding.OrgListItemBinding
-import com.example.daval.cleanrecyclerview.domain.models.Org
 import com.example.daval.cleanrecyclerview.presentation.models.OrgPresentation
 import com.example.daval.cleanrecyclerview.presentation.models.equals
+import com.example.daval.cleanrecyclerview.presentation.organizationList.OrganizationFragment2Directions
 
 
 class OrgAdapter (private val listener : IOrgListener)
     : BaseAdapter<OrgPresentation, OrgAdapter.OrgViewHolder> (diffCallback) {
 
-    override fun onBindViewHolder(holder: OrgAdapter.OrgViewHolder, position: Int) {
-        super.onBindViewHolder(holder, position)
-        holder.onClick()
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = OrgViewHolder(
         OrgListItemBinding.inflate(
@@ -38,10 +35,10 @@ class OrgAdapter (private val listener : IOrgListener)
             binding.apply {
                 organizationName.text = data.organizationName
                 organizationCode.text = data.organizationCode
+                root.setOnClickListener {
+                    listener.onClickOrg(data)
+                }
             }
-        }
-        fun onClick(){
-            binding.root.setOnClickListener { listener.onClickOrg() }
         }
     }
 

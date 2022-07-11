@@ -11,19 +11,15 @@
         <action
             android:id="@+id/action_organizationFragment2_to_detailOrgFragment"
             app:destination="@id/detailOrgFragment" />
-<!--        <argument
-            android:name="organizationName"
-            app:argType="String"
-            android:defaultValue="Organización name" />-->
+
     </fragment>
     <fragment
         android:id="@+id/detailOrgFragment"
-        android:name="com.example.daval.cleanrecyclerview.viDetailOrgMVVM.detailOrgFragment"
+        android:name="com.example.daval.cleanrecyclerview.old.viController.viDetailOrgMVVM.detailOrgFragment"
         android:label="fragment_detail_org"
         tools:layout="@layout/fragment_detail_org" >
-        <action
-            android:id="@+id/action_detailOrgFragment_to_organizationFragment2"
-            app:destination="@id/organizationFragment2" />
-
+      <argument
+            android:name="orgItem"
+            app:argType="com.example.daval.cleanrecyclerview.presentation.models.OrgPresentation" />
     </fragment>
 </navigation>
