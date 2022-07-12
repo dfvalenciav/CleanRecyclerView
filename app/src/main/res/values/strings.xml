@@ -1,9 +1,23 @@
 <resources>
     <string name="app_name">CleanRecyclerView</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!--Organization List-->
     <string name="organizationName">Nombre organización</string>
     <string name="organizationCode">000000</string>
     <string name="Title">Organizaciones</string>
     <string name="search_hint">Escribe el nombre o el código</string>
+
+
+    <!--Card list available-->
+    <string name="cardListAvail_Title1">Pago móvil</string>
+    <string name="cardListAvail_Title2">Elige las tarjetas que quieres activar</string>
+    <string name="cardListAvail_Title3">Selecciona las tarjetas que quieres utilizar para realizar tus compras pagando con tu móvil</string>
+    <string name="cardListAvail_button">Continuar</string>
+    <string name="cardListAvail_ItemName">Tarjeta de débito</string>
+    <string name="cardListAvail_itemNumber">123456 ****** 8754</string>
+
+    <!--Card list available-->
+    <string name="cardListSelec_Title1">Pago móvil</string>
+    <string name="cardListSelec_Title2">¿Cuál es tu tarjeta de uso habitual</string>
+    <string name="cardListSelec_Title3">Selecciona la tarjeta que más uses para pagar con ella más rápidamente utilizando el pago móvil</string>
 </resources>

@@ -12,17 +12,13 @@
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.05" />
+            app:layout_constraintGuide_percent="0.05"
+            style="@style/guideLineVerticalStart" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.95" />
+            app:layout_constraintGuide_percent="0.95"
+            style="@style/guideLineVerticalEnd" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"

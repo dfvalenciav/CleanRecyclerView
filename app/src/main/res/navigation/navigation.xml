@@ -6,7 +6,7 @@
     app:startDestination="@id/organizationFragment2">
     <fragment
         android:id="@+id/organizationFragment2"
-        android:name="com.example.daval.cleanrecyclerview.presentation.organizationList.OrganizationFragment2"
+        android:name="com.example.daval.cleanrecyclerview.organizationList.presentation.organizationList.OrganizationFragment2"
         android:label="OrganizationFragment" >
         <action
             android:id="@+id/action_organizationFragment2_to_detailOrgFragment"
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailOrgFragment"
-        android:name="com.example.daval.cleanrecyclerview.old.viController.viDetailOrgMVVM.detailOrgFragment"
+        android:name="com.example.daval.cleanrecyclerview.organizationList.presentation.organizationDetail.DetailOrgFragment"
         android:label="fragment_detail_org"
         tools:layout="@layout/fragment_detail_org" >
       <argument
