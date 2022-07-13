@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cardSetup.presentation.cardListFinishRegister.CardListFinishRegisterFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        app:layout_constraintGuide_percent="0.05"
+        style="@style/guideLineVerticalStart" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        app:layout_constraintGuide_percent="0.95"
+        style="@style/guideLineVerticalEnd" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_favicon_copy_4" />
+
+    <TextView
+        android:id="@+id/textView14"
+        style="@style/cardListTitle6"
+        android:layout_marginStart="8dp"
+        android:text="@string/cardListFinishReg_Title1"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView15"
+        style="@style/cardListTitle2"
+        android:layout_marginTop="60dp"
+        android:text="@string/cardListFinishReg_Title2"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <TextView
+        android:id="@+id/textView16"
+        style="@style/cardListTitle2"
+        android:layout_width="0dp"
+        android:text="@string/cardListFinishReg_Title3"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:text="@string/cardListFinishReg_Title4"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        style="@style/cardListTitle3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonCardListFinishRegister"
+        style="@style/cardListButtonStyle"
+        android:text="Ir a Inicio"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextStyle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

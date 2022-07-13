@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_card_setup"
+    app:startDestination="@id/cardListAvailableFragment">
+
+    <fragment
+        android:id="@+id/cardListAvailableFragment"
+        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.CardListAvailableFragment"
+        android:label="CardListAvailableFragment"
+        tools:layout="@layout/fragment_card_list_available">
+        <action
+            android:id="@+id/action_cardListAvailableFragment_to_cardListSelectedFragment"
+            app:destination="@id/cardListSelectedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardListSelectedFragment"
+        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelected.CardListSelectedFragment"
+        android:label="fragment_card_list_selected"
+        tools:layout="@layout/fragment_card_list_selected" >
+        <action
+            android:id="@+id/action_cardListSelectedFragment_to_cardListTrustDeviceFragment"
+            app:destination="@id/cardListTrustDeviceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardListTrustDeviceFragment"
+        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListTrustDevice.CardListTrustDeviceFragment"
+        android:label="fragment_card_list_trust_device"
+        tools:layout="@layout/fragment_card_list_trust_device" >
+        <action
+            android:id="@+id/action_cardListTrustDeviceFragment_to_cardListFinishRegisterFragment"
+            app:destination="@id/cardListFinishRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardListFinishRegisterFragment"
+        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListFinishRegister.CardListFinishRegisterFragment"
+        android:label="CardListFinishRegisterFragment"
+        tools:layout="@layout/fragment_card_list_finish_register"/>
+</navigation>

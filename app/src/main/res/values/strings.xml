@@ -7,7 +7,6 @@
     <string name="Title">Organizaciones</string>
     <string name="search_hint">Escribe el nombre o el código</string>
 
-
     <!--Card list available-->
     <string name="cardListAvail_Title1">Pago móvil</string>
     <string name="cardListAvail_Title2">Elige las tarjetas que quieres activar</string>
@@ -16,8 +15,23 @@
     <string name="cardListAvail_ItemName">Tarjeta de débito</string>
     <string name="cardListAvail_itemNumber">123456 ****** 8754</string>
 
-    <!--Card list available-->
+    <!--Card list select-->
     <string name="cardListSelec_Title1">Pago móvil</string>
     <string name="cardListSelec_Title2">¿Cuál es tu tarjeta de uso habitual</string>
     <string name="cardListSelec_Title3">Selecciona la tarjeta que más uses para pagar con ella más rápidamente utilizando el pago móvil</string>
+
+    <!--Card list trust device-->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cardListTrustDevice_Title1">Dispositivo de confianza</string>
+    <string name="cardListTrustDevice_Title2">¿Es este tu dispositivo de confianza?</string>
+    <string name="cardListTrustDevice_Title3">En el dispositivo de confianza podrás autenticar todas tus operaciones de forma más rápida y segura</string>
+    <string name="cardListTrustDevice_Title4">Ten en cuenta que solo podrás tener registrado un dispositivo de confianza</string>
+    <string name="cardListTrustDevice_Title5">No obstante podrás cambiarlo todas las veces que lo necesites.</string>
+    <string name="cardListTrustDevice_button">No, Continuar</string>
+
+    <!--Card list finish register-->
+    <string name="cardListFinishReg_Title1">SMM</string>
+    <string name="cardListFinishReg_Title2">¡Perfecto!</string>
+    <string name="cardListFinishReg_Title3">Ya tienes lista tu nueva App del banco SMM</string>
+    <string name="cardListFinishReg_Title4">Para más ajustes podrás acceder al menú de configuración que se encuentra en la esquina superior derecha de la pantalla de inicio</string>
 </resources>

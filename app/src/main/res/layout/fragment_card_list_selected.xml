@@ -54,7 +54,6 @@
         android:text="@string/cardListAvail_button"
         android:textAlignment="center"
         android:textAppearance="@style/TextStyle"
-        app:cornerRadius="18dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart" />

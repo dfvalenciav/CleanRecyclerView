@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/imageView"
@@ -13,22 +12,23 @@
         style="@style/cardListItemImage" />
 
     <TextView
-        android:id="@+id/cardAvailableName"
+        android:id="@+id/cardSelectName"
         android:text="@string/cardListAvail_ItemName"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/cardListItemCardName" />
 
     <TextView
-        android:id="@+id/cardAvailableNumber"
+        android:id="@+id/cardSelectNumber"
         android:text="@string/cardListAvail_itemNumber"
-        app:layout_constraintStart_toStartOf="@+id/cardAvailableName"
-        app:layout_constraintTop_toBottomOf="@+id/cardAvailableName"
+        app:layout_constraintStart_toStartOf="@+id/cardSelectName"
+        app:layout_constraintTop_toBottomOf="@+id/cardSelectName"
         style="@style/cardListItemCardNumber" />
 
-    <androidx.appcompat.widget.SwitchCompat
+    <com.google.android.material.radiobutton.MaterialRadioButton
         android:id="@+id/switch1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardAvailableName"
+        app:layout_constraintTop_toTopOf="@+id/cardSelectName"
         style="@style/cardListItemSwtchButton" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

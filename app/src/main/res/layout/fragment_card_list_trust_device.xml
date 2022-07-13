@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".cardSetup.presentation.cardListTrustDevice.CardListTrustDeviceFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        app:layout_constraintGuide_percent="0.05"
+        style="@style/guideLineVerticalStart" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        app:layout_constraintGuide_percent="0.95"
+        style="@style/guideLineVerticalEnd" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStartHalf"
+        style="@style/guideLineVerticalStart"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEndHalf"
+        app:layout_constraintGuide_percent="0.97"
+        style="@style/guideLineVerticalEnd" />
+    <TextView
+        android:id="@+id/textView8"
+        android:text="@string/cardListTrustDevice_Title1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/cardListTitle1" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:text="@string/cardListTrustDevice_Title2"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        style="@style/cardListTitle2" />
+
+    <TextView
+        android:id="@+id/textView10"
+        style="@style/cardListTitle3"
+        android:text="@string/cardListTrustDevice_Title3"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout_Trut_device"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/Primari_06_light_purple"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEndHalf"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStartHalf"
+        app:layout_constraintTop_toBottomOf="@+id/textView10">
+
+
+        <TextView
+            android:id="@+id/textView11"
+            style="@style/cardListTitle4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cardListTrustDevice_Title4" />
+
+        <TextView
+            android:id="@+id/textView12"
+            style="@style/cardListTitle5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cardListTrustDevice_Title5" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView13"
+        style="@style/cardListTitle3"
+        android:textSize="14sp"
+        android:text="@string/cardListTrustDevice_Title3"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_Trut_device" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonCardListTrustDevice"
+        style="@style/cardListButtonStyle"
+        android:backgroundTint="#ffffff"
+        android:text="@string/cardListTrustDevice_button"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextStyle"
+        android:textColor="@color/Primario_01_SMM_Purple"
+        app:strokeColor="@color/Primario_01_SMM_Purple"
+        app:strokeWidth="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/materialButtonCardListTrustDeviceWC"
+        style="@style/cardListButtonStyle"
+        android:layout_marginBottom="16dp"
+        android:text="@string/cardListAvail_button"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextStyle"
+        app:layout_constraintBottom_toTopOf="@+id/materialButtonCardListTrustDevice"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
