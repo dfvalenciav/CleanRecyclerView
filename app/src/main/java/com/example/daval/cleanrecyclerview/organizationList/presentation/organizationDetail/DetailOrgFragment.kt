@@ -8,14 +8,14 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.example.daval.cleanrecyclerview.base.BaseFragment
 import com.example.daval.cleanrecyclerview.databinding.FragmentDetailOrgBinding
-import com.example.daval.cleanrecyclerview.organizationList.presentation.organizationDetail.DetailOrgFragmentArgs
+//import com.example.daval.cleanrecyclerview.organizationList.presentation.organizationDetail.DetailOrgFragmentArgs
 
 class DetailOrgFragment() : BaseFragment<FragmentDetailOrgBinding, DetailOrgViewModel>() {
 
     override val viewModel by viewModels<DetailOrgViewModel> ()
 
-    val safeArgs : DetailOrgFragmentArgs by navArgs()
-    val dataReceived = safeArgs.orgItem.organizationName
+    //val safeArgs : DetailOrgFragmentArgs by navArgs()
+   // val dataReceived = safeArgs.orgItem.organizationName
 
 
     override fun inflateView(
@@ -28,7 +28,7 @@ class DetailOrgFragment() : BaseFragment<FragmentDetailOrgBinding, DetailOrgView
        viewModel.text.observe(viewLifecycleOwner, Observer {
            with(binding){
                detailOrgaFragment.text = it.toString()
-               Log.d("test", dataReceived.toString())
+               Log.d("test", "nothing" )
            }
        })
     }

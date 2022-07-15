@@ -12,5 +12,4 @@ class GetOrgUseCase (
     override suspend fun execute(): List<Org> {
         return repository.getOrgList()
     }
-
 }

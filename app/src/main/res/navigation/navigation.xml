@@ -18,8 +18,8 @@
         android:name="com.example.daval.cleanrecyclerview.organizationList.presentation.organizationDetail.DetailOrgFragment"
         android:label="fragment_detail_org"
         tools:layout="@layout/fragment_detail_org" >
-      <argument
+      <!--<argument
             android:name="orgItem"
-            app:argType="com.example.daval.cleanrecyclerview.presentation.models.OrgPresentation" />
+            app:argType="com.example.daval.cleanrecyclerview.presentation.models.OrgPresentation" />-->
     </fragment>
 </navigation>

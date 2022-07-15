@@ -1,10 +1,13 @@
 package com.example.daval.cleanrecyclerview.cardSetup.data.local.entity
 
+import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
 
+
+@Dao
 interface ICardSetupDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -55,7 +55,9 @@ class OrganizationFragment2 : BaseFragment<FragmentOrganizationBinding, Organiza
      * Navigation passing arguments : OrgPresentation
      * */
     override fun onClickOrg(dataPassed: OrgPresentation) {
-        val action = OrganizationFragment2Directions.actionOrganizationFragment2ToDetailOrgFragment(dataPassed)
+        val action = OrganizationFragment2Directions.actionOrganizationFragment2ToDetailOrgFragment(
+        //dataPassed
+            )
         binding.root.findNavController().navigate(action)
     }
 

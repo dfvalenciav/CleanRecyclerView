@@ -9,15 +9,16 @@ import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
 class CardSetupRepository (private val cardSetupDao: ICardSetupDao) : ICardListSetupRepository  {
 
     override suspend fun getCardList(): List<CardSetup> {
-        cardSetupDao.delete()
+       cardSetupDao.delete()
         insertCardSetup(cardlistSetup())
         return cardSetupDao.getCardSetupList().map { it.toCardSetup() }
 
     }
 
     override suspend fun insertCardSetup(cardSetup: List<CardSetup>) {
-        cardSetupDao.insertCardSetup(cardSetup.map { it.toCardSetupEntity() })
+        cardSetupDao.insertCardSetup((cardSetup.map { it.toCardSetupEntity() }))
     }
+
 
     override fun updateCard(card: CardSetup): Boolean {
         TODO("Not yet implemented")
@@ -25,8 +26,8 @@ class CardSetupRepository (private val cardSetupDao: ICardSetupDao) : ICardListS
 
     private fun cardlistSetup (): List<CardSetup> = listOf(
         CardSetup("Tarjeta de crèdito", "1234567890",false,10000,"Pedro Pèrez", 321567765),
-        CardSetup("Tarjeta de dèbito", "3855695039",true,20000,"Pedro Pèrez", 321567765),
-        CardSetup("Tarjeta de dèbito", "1293695030",true,15000,"Pedro Pèrez", 321567765),
+        CardSetup("Tarjeta de dèbito", "3855695039",false,20000,"Pedro Pèrez", 321567765),
+        CardSetup("Tarjeta de dèbito", "1293695030",false,15000,"Pedro Pèrez", 321567765),
         CardSetup("Tarjeta de crèdito", "9885448790",false,2000,"Pedro Pèrez", 321567765)
     )
 
