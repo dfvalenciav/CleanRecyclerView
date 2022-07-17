@@ -2,6 +2,6 @@ package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvail
 
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
 
-sealed class CardAvailableEvent {
-    class  ListCardSetup (val ls : List<CardSetupPresentation>) : CardAvailableEvent()
+sealed class CardListAvailableEvent {
+    class  ListCardSetup (val ls : List<CardSetupPresentation>) : CardListAvailableEvent()
 }

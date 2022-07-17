@@ -9,25 +9,25 @@ import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSet
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.equals
 import com.example.daval.cleanrecyclerview.databinding.CardListAvailableItemBinding
 
-class CardSetupAdapter (private val listener: ICardSetupListener)
-    : BaseAdapter<CardSetupPresentation, CardSetupAdapter.CardSetupHolder> (diffCallback) {
+class CardAvailableAdapter (private val listener: ICardAvailableListener)
+    : BaseAdapter<CardSetupPresentation, CardAvailableAdapter.CardAvailableHolder> (diffCallback) {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = CardSetupHolder (
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = CardAvailableHolder (
         CardListAvailableItemBinding.inflate(
             LayoutInflater.from(parent.context),
             parent, false
         )
     )
 
-   inner class CardSetupHolder(private val binding: CardListAvailableItemBinding) : BaseViewHolder<CardSetupPresentation> (binding) {
+   inner class CardAvailableHolder(private val binding: CardListAvailableItemBinding) : BaseViewHolder<CardSetupPresentation> (binding) {
        override fun bind(data: CardSetupPresentation) {
            binding.apply {
                cardAvailableType.text = data.cardListType
                cardAvailableNumber.text= data.cardListNumber
-               root.setOnClickListener {
-                   listener.onClickCardSetup(data)
-               }
+/*               root.setOnClickListener {
+                   listener.onClickCardAvailable(data)
+               }*/
 
            }
        }

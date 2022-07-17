@@ -5,18 +5,17 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.daval.cleanrecyclerview.base.BaseFragment
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter.CardSetupAdapter
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter.ICardSetupListener
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter.CardAvailableAdapter
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter.ICardAvailableListener
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
 import com.example.daval.cleanrecyclerview.databinding.FragmentCardListAvailableBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding, CardListAvailableViewModel> (), ICardSetupListener {
+class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding, CardListAvailableViewModel> (), ICardAvailableListener {
 
     override val viewModel by viewModels<CardListAvailableViewModel> ()
     private lateinit var items : List<CardSetupPresentation>
@@ -30,21 +29,22 @@ class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding,
         super.onViewCreated(view, savedInstanceState)
         viewModel.getCardSetupList()
         binding.materialButtonCardListAvail.setOnClickListener {
-            Toast.makeText(requireContext(), "click", Toast.LENGTH_LONG).show()
+            val action = CardListAvailableFragmentDirections.actionCardListAvailableFragmentToCardListSelectedFragment()
+            binding.materialButtonCardListAvail.findNavController().navigate(action)
         }
     }
 
     fun setAdapter (items: List<CardSetupPresentation>){
         with(binding.recyclerViewCardListAvial) {
-            adapter = CardSetupAdapter(this@CardListAvailableFragment)
-            (adapter as? CardSetupAdapter)?.submitList(items)
+            adapter = CardAvailableAdapter(this@CardListAvailableFragment)
+            (adapter as? CardAvailableAdapter)?.submitList(items)
         }
     }
 
     override fun observe() {
         viewModel.event.observe(viewLifecycleOwner){ event ->
             when (event) {
-                is CardAvailableEvent.ListCardSetup -> {
+                is CardListAvailableEvent.ListCardSetup -> {
                     items = event.ls
                     setAdapter(items)
                 }
@@ -53,7 +53,7 @@ class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding,
         }
     }
 
-    override fun onClickCardSetup(datapassed: CardSetupPresentation) {
+    override fun onClickCardAvailable(datapassed: CardSetupPresentation) {
         // TODO: navigation
         val action = CardListAvailableFragmentDirections.actionCardListAvailableFragmentToCardListSelectedFragment()
         binding.materialButtonCardListAvail.setOnClickListener {

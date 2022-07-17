@@ -3,6 +3,6 @@ package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvail
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
 
-interface ICardSetupListener {
-    fun onClickCardSetup (datapassed : CardSetupPresentation)
+interface ICardAvailableListener {
+    fun onClickCardAvailable (datapassed : CardSetupPresentation)
 }

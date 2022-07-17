@@ -13,7 +13,7 @@
         style="@style/cardListItemImage" />
 
     <TextView
-        android:id="@+id/cardSelectName"
+        android:id="@+id/cardSelectType"
         android:text="@string/cardListAvail_ItemName"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,14 +22,14 @@
     <TextView
         android:id="@+id/cardSelectNumber"
         android:text="@string/cardListAvail_itemNumber"
-        app:layout_constraintStart_toStartOf="@+id/cardSelectName"
-        app:layout_constraintTop_toBottomOf="@+id/cardSelectName"
+        app:layout_constraintStart_toStartOf="@+id/cardSelectType"
+        app:layout_constraintTop_toBottomOf="@+id/cardSelectType"
         style="@style/cardListItemCardNumber" />
 
     <com.google.android.material.radiobutton.MaterialRadioButton
         android:id="@+id/switch1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardSelectName"
+        app:layout_constraintTop_toTopOf="@+id/cardSelectType"
         style="@style/cardListItemSwtchButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
