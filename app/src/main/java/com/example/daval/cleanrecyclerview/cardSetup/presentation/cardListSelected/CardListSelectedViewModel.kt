@@ -3,8 +3,11 @@ package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelec
 import com.example.daval.cleanrecyclerview.base.BaseViewModel
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetCardSetupUseCase
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.mappers.toListCardSetupPresentation
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class CardListSelectedViewModel constructor(
+@HiltViewModel
+class CardListSelectedViewModel @Inject constructor(
     private  val getCardSetupUseCase: GetCardSetupUseCase)
     : BaseViewModel<CardListSelectedEvent> (){
     fun getCardSetupList () {

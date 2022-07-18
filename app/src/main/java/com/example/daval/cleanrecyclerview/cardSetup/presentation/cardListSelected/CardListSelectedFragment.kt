@@ -5,25 +5,59 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import com.example.daval.cleanrecyclerview.R
+import com.example.daval.cleanrecyclerview.base.BaseFragment
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.CardListAvailableEvent
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.CardListAvailableFragmentDirections
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.CardListAvailableViewModel
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter.CardAvailableAdapter
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelected.Adapter.CardSelectAdapter
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelected.Adapter.ICardSelectListener
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
+import com.example.daval.cleanrecyclerview.databinding.FragmentCardListAvailableBinding
+import com.example.daval.cleanrecyclerview.databinding.FragmentCardListSelectedBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class CardListSelectedFragment : BaseFragment<FragmentCardListSelectedBinding, CardListSelectedViewModel>(), ICardSelectListener {
 
 
-class CardListSelectedFragment : Fragment() {
+    override val viewModel by viewModels<CardListSelectedViewModel> ()
+    private lateinit var items : List<CardSetupPresentation>
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-/*        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }*/
+    override fun inflateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    )= FragmentCardListSelectedBinding.inflate(inflater, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.getCardSetupList()
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_card_list_selected, container, false)
+    fun setAdapter (items: List<CardSetupPresentation>){
+        with(binding.recyclerViewCardListSelec) {
+            adapter = CardSelectAdapter(this@CardListSelectedFragment)
+            (adapter as? CardSelectAdapter)?.submitList(items)
+        }
+    }
+
+    override fun observe() {
+        viewModel.event.observe(viewLifecycleOwner){ event ->
+            when (event) {
+                is CardListSelectedEvent.ListCardSetup -> {
+                    items = event.ls
+                    setAdapter(items)
+                }
+            }
+
+        }
+    }
+
+    override fun onClickCardSelect(datapassed: CardSetupPresentation) {
+        TODO("Not yet implemented")
     }
 }
