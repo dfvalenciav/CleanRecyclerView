@@ -5,6 +5,7 @@ import androidx.room.Room
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.entity.CardSetupDataBase
 import com.example.daval.cleanrecyclerview.cardSetup.data.repository.CardSetupRepository
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetCardSetupUseCase
+import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.SetCardSetupUseCase
 import com.example.daval.cleanrecyclerview.organizationList.data.local.entity.OrgDataBase
 import com.example.daval.cleanrecyclerview.organizationList.data.repository.OrgRepository
 import com.example.daval.cleanrecyclerview.organizationList.domain.useCase.GetOrgUseCase
@@ -29,6 +30,12 @@ object UserModule {
     @Singleton
     fun provideGetCardSetupUseCase(repository: CardSetupRepository): GetCardSetupUseCase {
         return GetCardSetupUseCase(repository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideSetCardSetupUseCase(): SetCardSetupUseCase {
+        return SetCardSetupUseCase()
     }
 
     @Provides

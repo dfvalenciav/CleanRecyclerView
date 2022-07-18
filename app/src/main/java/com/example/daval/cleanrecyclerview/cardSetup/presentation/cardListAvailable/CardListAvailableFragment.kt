@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.daval.cleanrecyclerview.base.BaseFragment
+import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter.CardAvailableAdapter
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter.ICardAvailableListener
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
@@ -29,7 +30,12 @@ class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding,
         super.onViewCreated(view, savedInstanceState)
         viewModel.getCardSetupList()
         binding.materialButtonCardListAvail.setOnClickListener {
-            val action = CardListAvailableFragmentDirections.actionCardListAvailableFragmentToCardListSelectedFragment()
+            val selectedCard : Array<CardSetup> = arrayOf(
+            CardSetup("Tarjeta de crèdito", "1234567890",false,10000,"Pedro Pèrez", 321567765),
+            CardSetup("Tarjeta de dèbito", "3855695039",false,20000,"Pedro Pèrez", 321567765))
+            val action = CardListAvailableFragmentDirections.actionCardListAvailableFragmentToCardListSelectedFragment(
+                selectedCard
+            )
             binding.materialButtonCardListAvail.findNavController().navigate(action)
         }
     }
@@ -55,14 +61,5 @@ class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding,
 
     override fun onClickCardAvailable(datapassed: CardSetupPresentation) {
         // TODO: navigation
-        val action = CardListAvailableFragmentDirections.actionCardListAvailableFragmentToCardListSelectedFragment()
-        binding.materialButtonCardListAvail.setOnClickListener {
-
-            with(binding.materialButtonCardListAvail){
-                findNavController().navigate(action)
-                Log.d("test", "click made")
-
-            }
-        }
     }
 }

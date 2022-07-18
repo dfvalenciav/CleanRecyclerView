@@ -1,5 +1,9 @@
 package com.example.daval.cleanrecyclerview.cardSetup.domain.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class CardSetup (
     val type: String,
     val number: String,
@@ -7,4 +11,4 @@ data class CardSetup (
     val amount:Int,
     val clientName: String,
     val clientId: Int,
-        )
+        ) : Parcelable

@@ -25,7 +25,6 @@ class CardSelectAdapter (private val listener : ICardSelectListener)
                 cardSelectNumber.text = data.cardListNumber
             }
         }
-
     }
 
     companion object {

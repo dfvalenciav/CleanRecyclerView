@@ -85,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout_Trut_device" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButtonCardListTrustDevice"
+        android:id="@+id/materialButtonCardListTrustDeviceNC"
         style="@style/cardListButtonStyle"
         android:backgroundTint="#ffffff"
         android:text="@string/cardListTrustDevice_button"
@@ -99,13 +99,13 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButtonCardListTrustDeviceWC"
+        android:id="@+id/materialButtonCardListTrustDevice"
         style="@style/cardListButtonStyle"
         android:layout_marginBottom="16dp"
         android:text="@string/cardListAvail_button"
         android:textAlignment="center"
         android:textAppearance="@style/TextStyle"
-        app:layout_constraintBottom_toTopOf="@+id/materialButtonCardListTrustDevice"
+        app:layout_constraintBottom_toTopOf="@+id/materialButtonCardListTrustDeviceNC"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
