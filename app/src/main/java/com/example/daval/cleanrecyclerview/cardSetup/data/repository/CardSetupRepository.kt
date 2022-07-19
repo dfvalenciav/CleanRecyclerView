@@ -25,10 +25,10 @@ class CardSetupRepository (private val cardSetupDao: ICardSetupDao) : ICardListS
     }
 
     private fun cardlistSetup (): List<CardSetup> = listOf(
-        CardSetup("Tarjeta de crèdito", "1234567890",false,10000,"Pedro Pèrez", 321567765),
-        CardSetup("Tarjeta de dèbito", "3855695039",false,20000,"Pedro Pèrez", 321567765),
-        CardSetup("Tarjeta de dèbito", "1293695030",false,15000,"Pedro Pèrez", 321567765),
-        CardSetup("Tarjeta de crèdito", "9885448790",false,2000,"Pedro Pèrez", 321567765)
+        CardSetup("Tarjeta de crèdito", "123456789087656787",false,10000,"Pedro Pèrez", 321567765),
+        CardSetup("Tarjeta de dèbito", "385569503998764530",false,20000,"Pedro Pèrez", 321567765),
+        CardSetup("Tarjeta de dèbito", "129369503098574038",false,15000,"Pedro Pèrez", 321567765),
+        CardSetup("Tarjeta de crèdito", "988544879087495038",false,2000,"Pedro Pèrez", 321567765)
     )
 
 

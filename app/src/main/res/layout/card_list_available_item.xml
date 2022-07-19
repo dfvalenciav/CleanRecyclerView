@@ -27,7 +27,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardAvailableType"
         style="@style/cardListItemCardNumber" />
 
-    <androidx.appcompat.widget.SwitchCompat
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/switch1"
         style="@style/cardListItemSwtchButton"
         app:thumbTint="@color/Primario_01_SMM_Purple"

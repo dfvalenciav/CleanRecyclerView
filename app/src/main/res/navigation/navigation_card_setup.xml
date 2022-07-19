@@ -21,7 +21,7 @@
         tools:layout="@layout/fragment_card_list_selected" >
       <argument
             android:name="cardSetupPresentation"
-            app:argType="com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup[]"
+            app:argType="com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation[]"
             />
         <action
             android:id="@+id/action_cardListSelectedFragment_to_cardListTrustDeviceFragment"
@@ -40,5 +40,14 @@
         android:id="@+id/cardListFinishRegisterFragment"
         android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListFinishRegister.CardListFinishRegisterFragment"
         android:label="CardListFinishRegisterFragment"
-        tools:layout="@layout/fragment_card_list_finish_register"/>
+        tools:layout="@layout/fragment_card_list_finish_register">
+        <action
+            android:id="@+id/action_cardListFinishRegisterFragment_to_cardListHomeFragment"
+            app:destination="@id/cardListHomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cardListHomeFragment"
+        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.CardListHome.CardListHomeFragment"
+        android:label="fragment_card_list_home"
+        tools:layout="@layout/fragment_card_list_home" />
 </navigation>

@@ -30,8 +30,8 @@ class CardListSelectedFragment : BaseFragment<FragmentCardListSelectedBinding, C
     override val viewModel by viewModels<CardListSelectedViewModel> ()
     private lateinit var items : List<CardSetupPresentation>
 
-  // val args : CardListSelectedFragmentArgs by navArgs()
-    //var itemslist = args.cardSetupPresentation
+    val args : CardListSelectedFragmentArgs by navArgs()
+    private lateinit  var itemslist : List<CardSetupPresentation>
 
     override fun inflateView(
         inflater: LayoutInflater,
@@ -40,6 +40,7 @@ class CardListSelectedFragment : BaseFragment<FragmentCardListSelectedBinding, C
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        itemslist = args.cardSetupPresentation.toMutableList()
         viewModel.getCardSetupList()
         binding.materialButtonCardListSelec.setOnClickListener {
             val action = CardListSelectedFragmentDirections.actionCardListSelectedFragmentToCardListTrustDeviceFragment()
@@ -47,17 +48,10 @@ class CardListSelectedFragment : BaseFragment<FragmentCardListSelectedBinding, C
         }
     }
 
-/*    fun setAdapter (items: List<CardSetupPresentation>){
-        with(binding.recyclerViewCardListSelec) {
-            adapter = CardSelectAdapter(this@CardListSelectedFragment)
-            (adapter as? CardSelectAdapter)?.submitList(items)
-        }
-    }*/
-
     fun setAdapter (items: List<CardSetupPresentation>){
         with(binding.recyclerViewCardListSelec) {
             adapter = CardSelectAdapter(this@CardListSelectedFragment)
-            (adapter as? CardSelectAdapter)?.submitList(items)
+            (adapter as? CardSelectAdapter)?.submitList(itemslist)
         }
     }
 

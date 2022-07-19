@@ -4,6 +4,8 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
+import com.bumptech.glide.util.Util
+import com.example.daval.cleanrecyclerview.Utils.Utils
 import com.example.daval.cleanrecyclerview.base.BaseAdapter
 import com.example.daval.cleanrecyclerview.base.BaseViewHolder
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
@@ -20,9 +22,10 @@ class CardSelectAdapter (private val listener : ICardSelectListener)
     inner class CardSelectHolder (private val binding: CardListSelectedItemBinding) :
         BaseViewHolder<CardSetupPresentation>(binding) {
         override fun bind(data: CardSetupPresentation) {
+            val util = Utils()
             with(binding){
                 cardSelectType.text = data.cardListType
-                cardSelectNumber.text = data.cardListNumber
+                cardSelectNumber.text = util.hideCardNumber(data.cardListNumber?:"")
             }
         }
     }

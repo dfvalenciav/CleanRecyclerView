@@ -17,7 +17,7 @@
 
     <!--Card list select-->
     <string name="cardListSelec_Title1">Pago móvil</string>
-    <string name="cardListSelec_Title2">¿Cuál es tu tarjeta de uso habitual</string>
+    <string name="cardListSelec_Title2">¿Cuál es tu tarjeta de uso habitual?</string>
     <string name="cardListSelec_Title3">Selecciona la tarjeta que más uses para pagar con ella más rápidamente utilizando el pago móvil</string>
 
     <!--Card list trust device-->
@@ -34,4 +34,7 @@
     <string name="cardListFinishReg_Title2">¡Perfecto!</string>
     <string name="cardListFinishReg_Title3">Ya tienes lista tu nueva App del banco SMM</string>
     <string name="cardListFinishReg_Title4">Para más ajustes podrás acceder al menú de configuración que se encuentra en la esquina superior derecha de la pantalla de inicio</string>
+
+    <!--Error messages-->
+    <string name="noCardListSetupSelected">Debes seleccionar al menos una tarjeta</string>
 </resources>

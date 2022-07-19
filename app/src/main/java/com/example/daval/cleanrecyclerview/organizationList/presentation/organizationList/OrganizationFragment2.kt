@@ -60,5 +60,4 @@ class OrganizationFragment2 : BaseFragment<FragmentOrganizationBinding, Organiza
             )
         binding.root.findNavController().navigate(action)
     }
-
 }
