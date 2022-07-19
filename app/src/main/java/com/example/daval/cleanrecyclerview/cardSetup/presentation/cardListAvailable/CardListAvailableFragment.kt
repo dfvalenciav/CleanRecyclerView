@@ -48,7 +48,7 @@ class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding,
     override fun setListeners() {
         binding.materialButtonCardListAvail.setOnClickListener {
             if (listCardsSelected.isEmpty()){
-                util.showToast(requireContext(), R.string.noCardListSetupSelected.toString())
+                view?.let { it -> util.showSnack(it, requireContext(), getString(R.string.noCardListSetupSelected), getString(R.string.utilsHideSnackbar)) }
             } else {
                 val action =
                     CardListAvailableFragmentDirections.actionCardListAvailableFragmentToCardListSelectedFragment(

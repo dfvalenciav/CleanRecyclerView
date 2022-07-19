@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">CleanRecyclerView</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <!--Utils-->
+    <string name="utilsHideSnackbar">OCULTAR</string>
+
     <!--Organization List-->
     <string name="organizationName">Nombre organización</string>
     <string name="organizationCode">000000</string>
