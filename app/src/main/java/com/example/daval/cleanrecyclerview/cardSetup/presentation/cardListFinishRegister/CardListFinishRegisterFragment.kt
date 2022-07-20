@@ -25,6 +25,14 @@ class CardListFinishRegisterFragment : BaseFragment<FragmentCardListFinishRegist
         inflater: LayoutInflater,
         container: ViewGroup?
     ) = FragmentCardListFinishRegisterBinding.inflate(inflater, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.materialButtonCardListFinishRegister.setOnClickListener {
+            val action = CardListFinishRegisterFragmentDirections.actionCardListFinishRegisterFragmentToCardListHomeFragment()
+            binding.materialButtonCardListFinishRegister.findNavController().navigate(action)
+        }
+    }
     override fun observe() {
         Log.d("hello", "hello")
     }

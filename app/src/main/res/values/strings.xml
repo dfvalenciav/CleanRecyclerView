@@ -40,4 +40,9 @@
 
     <!--Error messages-->
     <string name="noCardListSetupSelected">Debes seleccionar al menos una tarjeta</string>
+
+    <!--Card list home-->
+    <string name="cardListHome_Title3">Pago móvil</string>
+    <string name="cardListHome_Title1">Hola,</string>
+    <string name="cardListHome_Title2">Silvia</string>
 </resources>

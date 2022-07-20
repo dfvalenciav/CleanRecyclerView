@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:motion="http://schemas.android.com/tools">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/card1" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/card1" />
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start" >
+        <OnSwipe app:touchAnchorId="@+id/card1" />
+        <OnSwipe
+             />
+    </Transition>
+
+    <Transition
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@+id/next"
+        motion:duration="1000"
+        android:id="@+id/forward">
+        <OnSwipe
+            motion:dragDirection="dragLeft"
+            motion:touchAnchorSide="left" />
+    </Transition>
+
+    <Transition
+        app:constraintSetStart="@+id/start"
+        app:constraintSetEnd="@+id/end" />
+</MotionScene>
