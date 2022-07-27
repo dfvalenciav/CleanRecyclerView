@@ -28,7 +28,7 @@
         style="@style/cardListItemCardNumber" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/switch1"
+        android:id="@+id/switchMobilePayment"
         style="@style/cardListItemSwtchButton"
         app:thumbTint="@color/Primario_01_SMM_Purple"
         app:layout_constraintEnd_toEndOf="parent"

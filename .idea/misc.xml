@@ -11,6 +11,17 @@
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_baseline_credit_card_24.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_contactless.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_contactless_white.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_favicon_copy_4.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_favicon_copy_4_white.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_icon_tarjeta_actividad.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_icon_tarjeta_cvv_dinamico.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_icon_tarjeta_pago_seguro.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_icon_tarjeta_roaming.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_icono_arrow_right.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_mastercard_vector.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_sim_card_icon.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_visa_vector.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/layout_rounded_card_shape.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/layout_rounded_shape.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/layout_rounded_top_shape.xml" value="0.251" />
@@ -18,10 +29,12 @@
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/activity_card_setup.xml" value="0.18802083333333333" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/activity_main.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/card_list_available_item.xml" value="0.365625" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/card_list_home_item.xml" value="0.4" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/card_list_prototype_item.xml" value="0.264" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/card_list_selected_item.xml" value="0.2" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_available.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_finish_register.xml" value="0.1" />
-        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_home.xml" value="0.264" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_home.xml" value="0.1" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_selected.xml" value="0.1" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_trust_device.xml" value="0.264" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_detail_org.xml" value="0.17255434782608695" />

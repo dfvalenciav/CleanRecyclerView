@@ -128,5 +128,32 @@
         <item name="android:minHeight">48dp</item>
     </style>
 
+    <style name="cardListItemHomeTaskName">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="cardListItemHomeTaskDescription">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="cardListItemHomeButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="backgroundTint">#ffffff</item>
+        <item name="android:minHeight">48dp</item>
+    </style>
+
+
 
 </resources>

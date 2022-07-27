@@ -27,7 +27,7 @@
         style="@style/cardListItemCardNumber" />
 
     <com.google.android.material.radiobutton.MaterialRadioButton
-        android:id="@+id/switch1"
+        android:id="@+id/switchMobilePayment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardSelectType"
         style="@style/cardListItemSwtchButton" />

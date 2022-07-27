@@ -45,4 +45,8 @@
     <string name="cardListHome_Title3">Pago móvil</string>
     <string name="cardListHome_Title1">Hola,</string>
     <string name="cardListHome_Title2">Silvia</string>
+    <string name="cardListHome_itemName">Actividad</string>
+    <string name="cardListHome_itemDescription">Movimientos de la tarjeta</string>
+    <string name="cardListHome_itemPrototypeNumber">123456 ***** 8767</string>
+    <string name="cardListHome_itemPrototypeExpiration">Válido hasta 09/22</string>
 </resources>

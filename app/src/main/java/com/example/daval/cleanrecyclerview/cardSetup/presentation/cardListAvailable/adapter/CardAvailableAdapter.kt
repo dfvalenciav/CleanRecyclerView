@@ -31,8 +31,8 @@ class CardAvailableAdapter (private val listener: ICardListPreferred)
            binding.apply {
                cardAvailableType.text = data.cardListType
                cardAvailableNumber.text= util.hideCardNumber(data.cardListNumber?:"")
-               switch1.setOnClickListener {
-                   if (switch1.isChecked){
+               switchMobilePayment.setOnClickListener {
+                   if (switchMobilePayment.isChecked){
                        listener.addPreferredCard(data)
                    }
                }

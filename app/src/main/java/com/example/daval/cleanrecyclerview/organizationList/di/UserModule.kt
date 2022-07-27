@@ -2,8 +2,9 @@ package com.example.daval.cleanrecyclerview.organizationList.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.entity.CardSetupDataBase
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.CardSetupDataBase
 import com.example.daval.cleanrecyclerview.cardSetup.data.repository.CardSetupRepository
+import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetCardHomeTaksUseCase
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetCardSetupUseCase
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.SetCardSetupUseCase
 import com.example.daval.cleanrecyclerview.organizationList.data.local.entity.OrgDataBase
@@ -36,6 +37,12 @@ object UserModule {
     @Singleton
     fun provideSetCardSetupUseCase(): SetCardSetupUseCase {
         return SetCardSetupUseCase()
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetCardHomeTaskUseCase(repository: CardSetupRepository): GetCardHomeTaksUseCase {
+        return GetCardHomeTaksUseCase(repository)
     }
 
     @Provides
