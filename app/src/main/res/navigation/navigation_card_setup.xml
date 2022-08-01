@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/cardListHomeFragment"
-        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.CardListHome.CardListHomeFragment"
+        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.CardListHomeFragment"
         android:label="fragment_card_list_home"
         tools:layout="@layout/fragment_card_list_home" >
         <action

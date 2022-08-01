@@ -1,11 +1,8 @@
-package com.example.daval.cleanrecyclerview.cardSetup.presentation.CardListHome.Adapter
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.Adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import com.example.daval.cleanrecyclerview.R
-import com.example.daval.cleanrecyclerview.Utils.Utils
 import com.example.daval.cleanrecyclerview.base.BaseAdapter
 import com.example.daval.cleanrecyclerview.base.BaseViewHolder
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardHomeOptionsPresentation

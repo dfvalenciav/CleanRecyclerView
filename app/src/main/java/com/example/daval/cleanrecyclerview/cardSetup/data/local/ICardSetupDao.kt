@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.entityCardCarrousel.CardCarrouselEntity
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.entityCardHome.CardHomeTaskEntity
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.entityCardSetup.CardSetupEntity
 
@@ -31,5 +32,12 @@ interface ICardSetupDao {
 
     @Query ("DELETE FROM CardHomeTaskEntity")
     suspend fun deletecardHomeTaskEntity()
+
+    @Query ("SELECT * FROM CardCarrouselEntity")
+    suspend fun getCardCarrouselList() : List<CardCarrouselEntity>
+
+    @Query("DELETE  FROM CardCarrouselEntity")
+    suspend fun deleteCardCarrouselEntity()
+
 
 }

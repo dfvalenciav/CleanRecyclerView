@@ -6,10 +6,11 @@ import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toCardHomeTaks
 import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toCardHomeTaskEntity
 import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toCardSetup
 import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toCardSetupEntity
+import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardCarrousel
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardHomeTask
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
 
-class CardSetupRepository (private val cardSetupDao: ICardSetupDao) : ICardListSetupRepository  {
+class CardRepository (private val cardSetupDao: ICardSetupDao) : ICardListSetupRepository  {
 
     override suspend fun getCardList(): List<CardSetup> {
        cardSetupDao.delete()
@@ -37,6 +38,14 @@ class CardSetupRepository (private val cardSetupDao: ICardSetupDao) : ICardListS
         cardSetupDao.insertCardHomeTask((cardHomeTask.map { it.toCardHomeTaskEntity() }))
     }
 
+    override suspend fun getCardListCarrousel(): List<CardCarrousel> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun insertCardCarrousel(cardCarrousel: CardCarrousel) {
+        TODO("Not yet implemented")
+    }
+
 
     private fun cardlistSetup (): List<CardSetup> = listOf(
         CardSetup("Tarjeta de crèdito", "123456789087656787",false,10000,"Pedro Pèrez", 321567765),
@@ -51,4 +60,11 @@ class CardSetupRepository (private val cardSetupDao: ICardSetupDao) : ICardListS
         CardHomeTask("Roaming", "Uso fuera de Europa desactivado", "ic_icon_tarjeta_roaming"),
         CardHomeTask("CVV Dinámico", "Pago seguro", "ic_icon_tarjeta_cvv_dinamico")
     )
+
+    private fun cardListCarrousel () : List<CardCarrousel> = listOf (
+        CardCarrousel("ic_favicon_copy_4_white","Santander", "123456789087656787", "Valido hasta 09/25", "ic_visa_vector"),
+        CardCarrousel("ic_favicon_copy_4_white","BBVA", "385569503998764530", "Valido hasta 01/26", "ic_mastercard_vector"),
+        CardCarrousel("ic_favicon_copy_4_white","CAIXA", "988544879087495038", "Valido hasta 04/24", "ic_visa_vector"),
+        )
+
 }

@@ -3,7 +3,7 @@ package com.example.daval.cleanrecyclerview.organizationList.di
 import android.app.Application
 import androidx.room.Room
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.CardSetupDataBase
-import com.example.daval.cleanrecyclerview.cardSetup.data.repository.CardSetupRepository
+import com.example.daval.cleanrecyclerview.cardSetup.data.repository.CardRepository
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetCardHomeTaksUseCase
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetCardSetupUseCase
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.SetCardSetupUseCase
@@ -29,7 +29,7 @@ object UserModule {
 
     @Provides
     @Singleton
-    fun provideGetCardSetupUseCase(repository: CardSetupRepository): GetCardSetupUseCase {
+    fun provideGetCardSetupUseCase(repository: CardRepository): GetCardSetupUseCase {
         return GetCardSetupUseCase(repository)
     }
 
@@ -41,7 +41,7 @@ object UserModule {
 
     @Provides
     @Singleton
-    fun provideGetCardHomeTaskUseCase(repository: CardSetupRepository): GetCardHomeTaksUseCase {
+    fun provideGetCardHomeTaskUseCase(repository: CardRepository): GetCardHomeTaksUseCase {
         return GetCardHomeTaksUseCase(repository)
     }
 
@@ -57,8 +57,8 @@ object UserModule {
     @Singleton
     fun provideCardSetupRepository (
         db : CardSetupDataBase
-    ) : CardSetupRepository {
-        return  CardSetupRepository(db.dao)
+    ) : CardRepository {
+        return  CardRepository(db.dao)
     }
 
     @Provides

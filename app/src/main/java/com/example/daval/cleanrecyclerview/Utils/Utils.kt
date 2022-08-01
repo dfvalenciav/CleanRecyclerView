@@ -7,6 +7,8 @@ import com.google.android.material.snackbar.Snackbar
 
 class Utils {
 
+
+    // TODO: utils seprados por data, domain, presentation 
     fun showSnack (view: View, context: Context, text: String, textAction: String?) {
         Snackbar.make(view, text, Snackbar.LENGTH_LONG)
             .setAction(textAction, View.OnClickListener {

@@ -8,12 +8,14 @@
         <entry key="..\:/PERSONAL/EDUCACION/ANDROID/2022/CleanRecyclerView/app/src/main/res/layout/fragment_detail_org.xml" value="0.3546875" />
         <entry key="..\:/PERSONAL/EDUCACION/ANDROID/2022/CleanRecyclerView/app/src/main/res/layout/fragment_organization.xml" value="0.35625" />
         <entry key="..\:/PERSONAL/EDUCACION/ANDROID/2022/CleanRecyclerView/app/src/main/res/layout/org_list_item.xml" value="0.3546875" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.225" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_baseline_credit_card_24.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_contactless.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_contactless_white.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_favicon_copy_4.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_favicon_copy_4_white.xml" value="0.251" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_group.xml" value="0.225" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_icon_tarjeta_actividad.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_icon_tarjeta_cvv_dinamico.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/ic_icon_tarjeta_pago_seguro.xml" value="0.251" />
@@ -34,12 +36,13 @@
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/card_list_selected_item.xml" value="0.2" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_available.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_finish_register.xml" value="0.1" />
-        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_home.xml" value="0.1" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_home.xml" value="0.264" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_selected.xml" value="0.1" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_trust_device.xml" value="0.264" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_detail_org.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_organization.xml" value="0.264" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/org_list_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/test.xml" value="0.253125" />
       </map>
     </option>
   </component>

@@ -6,4 +6,7 @@
     <dimen name="base_padding">8dp</dimen>
     <dimen name="edit_height">48dp</dimen>
     <dimen name="edit_height_2">60dp</dimen>
+    <dimen name="carrousel_width_card">300dp</dimen>
+    <dimen name="carrousel_height_Card">181dp</dimen>
+    <dimen name="carrousel_margin_top">5dp</dimen>
 </resources>

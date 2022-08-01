@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.cardSetup.presentation.CardListHome
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome
 
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardHomeOptionsPresentation
 
