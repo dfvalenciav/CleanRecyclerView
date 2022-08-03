@@ -1,7 +1,9 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.mappers
 
+import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardCarrousel
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardHomeTask
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardCarrouselPresentation
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardHomeOptionsPresentation
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
 import kotlin.reflect.typeOf
@@ -14,4 +16,9 @@ fun List<CardSetup>.toListCardSetupPresentation() = map{
 fun CardHomeTask.toCardHomeOptionsPresentation() = CardHomeOptionsPresentation(Taks, Description, Icon)
 fun List<CardHomeTask>.toListCardHomeOptionsPresentation() = map {
     domain -> domain.toCardHomeOptionsPresentation()
+}
+
+fun CardCarrousel.toCardCarrouselPresentation() = CardCarrouselPresentation(BankLogo, BankName, CardNumber, CardExpiration, CardFranchise)
+fun List<CardCarrousel>.toListCardCarrouselPresentation() = map {
+    domain -> domain.toCardCarrouselPresentation()
 }

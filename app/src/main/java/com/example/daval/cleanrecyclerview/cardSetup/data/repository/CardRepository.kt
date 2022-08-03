@@ -2,10 +2,7 @@ package com.example.daval.cleanrecyclerview.cardSetup.data.repository
 
 import com.example.daval.cleanrecyclerview.cardSetup.data.interfaces.ICardListSetupRepository
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.ICardSetupDao
-import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toCardHomeTaks
-import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toCardHomeTaskEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toCardSetup
-import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toCardSetupEntity
+import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.*
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardCarrousel
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardHomeTask
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
@@ -39,11 +36,13 @@ class CardRepository (private val cardSetupDao: ICardSetupDao) : ICardListSetupR
     }
 
     override suspend fun getCardListCarrousel(): List<CardCarrousel> {
-        TODO("Not yet implemented")
+        cardSetupDao.deleteCardCarrouselEntity()
+        insertCardCarrousel(cardListCarrousel())
+        return cardSetupDao.getCardCarrouselList().map { it.toCardCarrousel() }
     }
 
-    override suspend fun insertCardCarrousel(cardCarrousel: CardCarrousel) {
-        TODO("Not yet implemented")
+    override suspend fun insertCardCarrousel(cardCarrousel: List<CardCarrousel>) {
+            cardSetupDao.insertCardCarrousel((cardCarrousel.map { it.toCardCarrouselEntity() }))
     }
 
 

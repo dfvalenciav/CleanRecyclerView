@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.constraintlayout.helper.widget.Carousel
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.daval.cleanrecyclerview.base.BaseFragment
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.Adapter.CardHomeAdapter
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.Adapter.ICardHomeListener
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardCarrouselPresentation
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardHomeOptionsPresentation
 import com.example.daval.cleanrecyclerview.databinding.FragmentCardListHomeBinding
 import com.google.android.material.card.MaterialCardView
@@ -35,6 +37,7 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
 
     override val viewModel by viewModels<CardListHomeViewModel> ()
     private lateinit var items : List<CardHomeOptionsPresentation>
+    private lateinit var itemsCarrousel : List<CardCarrouselPresentation>
 
 
     override fun inflateView(
@@ -45,7 +48,7 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getCardHomeList()
-        setupCarousel()
+        viewModel.getCardCarrouselList()
     }
 
     fun setAdapter (items: List<CardHomeOptionsPresentation>){
@@ -66,14 +69,21 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
     }
 
     override fun observe() {
-        viewModel.event.observe(viewLifecycleOwner){ event ->
+        viewModel.event2.observe(viewLifecycleOwner){ event ->
             when (event) {
                 is CardListHomeEvent.ListCardHomeTask -> {
                     items = event.ls
                     setAdapter(items)
                 }
             }
-
+        }
+        viewModel.event.observe(viewLifecycleOwner){event ->
+            when(event){
+             is CardListHomeEvent.ListCardCarrousel -> {
+                 itemsCarrousel = event.ls_carrousel
+                 setupCarousel()
+             }
+            }
         }
     }
 
@@ -83,24 +93,19 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
 
     private fun setupCarousel() {
         val carousel = binding.carouselSnake ?: return
-        //val numImages = colors.size
-        val numImages = 0
-
+        val numCards = itemsCarrousel.size
+        Toast.makeText(requireContext(),numCards, Toast.LENGTH_LONG).show()
         carousel.setAdapter(object : Carousel.Adapter {
             override fun count(): Int {
-                return numImages
+                return numCards
             }
-
             override fun populate(view: View, index: Int) {
                 if (view is MaterialCardView) {
                     view.setBackgroundColor(colors[index])
                 }
             }
-
             override fun onNewItem(index: Int) {
             }
         })
     }
-
-
 }

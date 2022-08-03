@@ -18,6 +18,9 @@ interface ICardSetupDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCardHomeTask(cardListHomeTask: List<CardHomeTaskEntity>)
 
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertCardCarrousel(cardListCarrousel: List<CardCarrouselEntity>)
+
     @Query("DELETE FROM CardSetupEntity")
     suspend fun delete()
 

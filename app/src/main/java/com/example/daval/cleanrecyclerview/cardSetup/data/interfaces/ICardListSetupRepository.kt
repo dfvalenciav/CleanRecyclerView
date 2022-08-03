@@ -18,5 +18,5 @@ interface ICardListSetupRepository {
 
     suspend fun getCardListCarrousel () : List<CardCarrousel>
 
-    suspend fun insertCardCarrousel (cardCarrousel: CardCarrousel)
+    suspend fun insertCardCarrousel(cardCarrousel: List<CardCarrousel>)
 }
