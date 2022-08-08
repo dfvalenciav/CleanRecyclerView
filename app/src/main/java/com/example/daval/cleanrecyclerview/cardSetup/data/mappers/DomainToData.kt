@@ -18,7 +18,7 @@ fun List<CardHomeTask>.toListCardHomeTaskEntity() = map {domain ->
     domain.toCardHomeTaskEntity()
 }
 
-fun CardCarrousel.toCardCarrouselEntity() = CardCarrouselEntity(BankLogo,BankName,CardNumber,CardExpiration,CardFranchise)
+fun CardCarrousel.toCardCarrouselEntity() = CardCarrouselEntity(BankLogo,BankName,CardNumber,CardExpiration,CardFranchise, CardBackground)
 fun List<CardCarrousel>.toListCardCarrouselEntity()= map {domain ->
     domain.toCardCarrouselEntity()
 }

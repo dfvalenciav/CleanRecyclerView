@@ -11,6 +11,7 @@ data class CardCarrouselPresentation(
     var CardNumber: String,
     var CardExpiration: String,
     var CardFranchise: String,
+    var CardBackground: String,
 ): Parcelable
 
 fun equals (oldItem : CardCarrouselPresentation, newItem: CardCarrouselPresentation) : Boolean =

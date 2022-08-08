@@ -16,6 +16,7 @@ import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardCar
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardHomeOptionsPresentation
 import com.example.daval.cleanrecyclerview.databinding.FragmentCardListHomeBinding
 import com.google.android.material.card.MaterialCardView
+import com.jakewharton.rxbinding2.view.visibility
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.card_list_home_item.*
 import kotlinx.android.synthetic.main.fragment_card_list_home.*
@@ -25,13 +26,13 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
     ICardHomeListener {
 
     var colors = intArrayOf(
-        Color.parseColor("#81d4fa"),
-        Color.parseColor("#4fc3f7"),
-        Color.parseColor("#29b6f6"),
-        Color.parseColor("#03a9f4"),
-        Color.parseColor("#039be5"),
-        Color.parseColor("#0288d1"),
-        Color.parseColor("#0277bd"),
+        Color.parseColor("#FFBB86FC"),
+        Color.parseColor("#FF3700B3"),
+        Color.parseColor("#000000"),
+        Color.parseColor("#FF018786"),
+        Color.parseColor("#e8c227"),
+        Color.parseColor("#000C66"),
+        Color.parseColor("#EADDCA"),
         Color.parseColor("#01579b")
     )
 
@@ -48,7 +49,8 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getCardHomeList()
-        viewModel.getCardCarrouselList()
+        //setupCarousel()
+
     }
 
     fun setAdapter (items: List<CardHomeOptionsPresentation>){
@@ -69,20 +71,17 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
     }
 
     override fun observe() {
-        viewModel.event2.observe(viewLifecycleOwner){ event ->
+        viewModel.event.observe(viewLifecycleOwner){ event ->
             when (event) {
                 is CardListHomeEvent.ListCardHomeTask -> {
                     items = event.ls
                     setAdapter(items)
+                    viewModel.getCardCarrouselList()
                 }
-            }
-        }
-        viewModel.event.observe(viewLifecycleOwner){event ->
-            when(event){
-             is CardListHomeEvent.ListCardCarrousel -> {
-                 itemsCarrousel = event.ls_carrousel
-                 setupCarousel()
-             }
+                is CardListHomeEvent.ListCardCarrousel -> {
+                    itemsCarrousel = event.ls_carrousel
+                    setupCarousel()
+                }
             }
         }
     }
@@ -92,20 +91,45 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
     }
 
     private fun setupCarousel() {
-        val carousel = binding.carouselSnake ?: return
-        val numCards = itemsCarrousel.size
-        Toast.makeText(requireContext(),numCards, Toast.LENGTH_LONG).show()
+        val carousel = binding.carouselCards
+        binding.motionLayout.visibility = View.VISIBLE
+        binding.progressBarCarrouselCards.visibility = View.INVISIBLE
+        val numCards = itemsCarrousel.size//colors.size
+//        Toast.makeText(requireContext(),numCards, Toast.LENGTH_LONG).show()
         carousel.setAdapter(object : Carousel.Adapter {
             override fun count(): Int {
                 return numCards
             }
             override fun populate(view: View, index: Int) {
+                binding.progressBarCarrouselCards.visibility= View.INVISIBLE
+                binding.motionLayout.visibility = View.VISIBLE
                 if (view is MaterialCardView) {
+                    /*for (item in itemsCarrousel){
+                        view.setBackgroundColor(Color.parseColor(item.CardBackground))
+                        textViewBankNameTwo.text = item.BankName
+                        textViewCardNumberTwo.text = item.CardNumber
+                        textViewCardExpirationTwo.text = item.CardExpiration
+                        imageViewFranchise2.setImageResource(resources.getIdentifier(item.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                    }*/
                     view.setBackgroundColor(colors[index])
+
+                        textViewCardNumberOne.text = itemsCarrousel.get(0).CardNumber
+                        textViewCardNumberTwo.text = itemsCarrousel.get(1).CardNumber
+                        textViewCardNumberThree.text = itemsCarrousel.get(2).CardNumber
+                        textViewBankNameOne.text = itemsCarrousel.get(0).BankName
+                        textViewBankNameTwo.text = itemsCarrousel.get(1).BankName
+                        textViewBankNameThree.text = itemsCarrousel.get(2).BankName
+                        textViewCardExpirationOne.text = itemsCarrousel.get(0).CardExpiration
+                        textViewCardExpirationTwo.text = itemsCarrousel.get(1).CardExpiration
+                        textViewCardExpirationThree.text = itemsCarrousel.get(2).CardExpiration
+                        imageViewFranchise1.setImageResource(resources.getIdentifier(itemsCarrousel.get(0).CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                        imageViewFranchise2.setImageResource(resources.getIdentifier(itemsCarrousel.get(0).CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                        imageViewFranchise3.setImageResource(resources.getIdentifier(itemsCarrousel.get(0).CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
                 }
             }
             override fun onNewItem(index: Int) {
             }
         })
+        carousel.refresh()
     }
 }

@@ -10,6 +10,7 @@ data class CardCarrouselEntity (
     val CardNumber: String,
     val CardExpiration: String,
     val CardFranchise: String,
+    val CardBackgroud: String,
     @PrimaryKey
     val id: Int? = null,
         )

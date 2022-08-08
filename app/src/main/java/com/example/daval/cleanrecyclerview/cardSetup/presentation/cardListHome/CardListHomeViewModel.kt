@@ -25,7 +25,7 @@ class CardListHomeViewModel @Inject constructor(
                 getCardHomeTaksUseCase.toListCardHomeOptionsPresentation()
                     .also {
                         presentationCardListHomeTaks ->
-                        _event2.value= CardListHomeEvent.ListCardHomeTask(presentationCardListHomeTaks)
+                        _event.value= CardListHomeEvent.ListCardHomeTask(presentationCardListHomeTaks)
                     }
             }
         )

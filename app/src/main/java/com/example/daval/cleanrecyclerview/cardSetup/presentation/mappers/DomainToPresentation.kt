@@ -18,7 +18,7 @@ fun List<CardHomeTask>.toListCardHomeOptionsPresentation() = map {
     domain -> domain.toCardHomeOptionsPresentation()
 }
 
-fun CardCarrousel.toCardCarrouselPresentation() = CardCarrouselPresentation(BankLogo, BankName, CardNumber, CardExpiration, CardFranchise)
+fun CardCarrousel.toCardCarrouselPresentation() = CardCarrouselPresentation(BankLogo, BankName, CardNumber, CardExpiration, CardFranchise, CardBackground)
 fun List<CardCarrousel>.toListCardCarrouselPresentation() = map {
     domain -> domain.toCardCarrouselPresentation()
 }

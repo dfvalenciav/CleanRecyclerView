@@ -10,4 +10,5 @@ data class CardCarrousel(
     val CardNumber: String,
     val CardExpiration: String,
     val CardFranchise: String,
+    val CardBackground: String,
 ) : Parcelable

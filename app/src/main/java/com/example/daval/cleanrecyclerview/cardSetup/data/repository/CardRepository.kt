@@ -1,5 +1,6 @@
 package com.example.daval.cleanrecyclerview.cardSetup.data.repository
 
+import android.graphics.Color
 import com.example.daval.cleanrecyclerview.cardSetup.data.interfaces.ICardListSetupRepository
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.ICardSetupDao
 import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.*
@@ -61,9 +62,13 @@ class CardRepository (private val cardSetupDao: ICardSetupDao) : ICardListSetupR
     )
 
     private fun cardListCarrousel () : List<CardCarrousel> = listOf (
-        CardCarrousel("ic_favicon_copy_4_white","Santander", "123456789087656787", "Valido hasta 09/25", "ic_visa_vector"),
-        CardCarrousel("ic_favicon_copy_4_white","BBVA", "385569503998764530", "Valido hasta 01/26", "ic_mastercard_vector"),
-        CardCarrousel("ic_favicon_copy_4_white","CAIXA", "988544879087495038", "Valido hasta 04/24", "ic_visa_vector"),
+        CardCarrousel("ic_favicon_copy_4_white","BBVA", "123456789087656787", "Valido hasta 09/25", "ic_visa_vector", "#FFBB86FC"),
+        CardCarrousel("ic_favicon_copy_4_white","SANTANDER", "385569503998764530", "Valido hasta 01/26", "ic_mastercard_vector", "#FF3700B3"),
+        CardCarrousel("ic_favicon_copy_4_white","CAIXA", "988544879087495038", "Valido hasta 04/24", "ic_visa_vector", "#000000"),
+        CardCarrousel("ic_favicon_copy_4_white","SABADELL", "123456789087656787", "Valido hasta 09/25", "ic_visa_vector", "#FF018786"),
+        CardCarrousel("ic_favicon_copy_4_white","BANKIA", "385569503998764530", "Valido hasta 01/26", "ic_mastercard_vector", "#e8c227"),
+        CardCarrousel("ic_favicon_copy_4_white","BAKINTER", "988544879087495038", "Valido hasta 04/24", "ic_visa_vector", "#000C66"),
+        CardCarrousel("ic_favicon_copy_4_white","DEUTSCHE BANK", "548753215488785654", "Valido hasta 04/24", "ic_visa_vector", "#EADDCA"),
+        CardCarrousel("ic_favicon_copy_4_white","CAJAMAR", "988544879087495038", "Valido hasta 04/24", "ic_visa_vector", "#01579b"),
         )
-
 }

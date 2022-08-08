@@ -56,21 +56,39 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="27dp"
         android:layout_marginEnd="8dp"
+        app:motionDebug="SHOW_PATH"
+        android:visibility="visible"
         app:layoutDescription="@xml/fragment_card_list_home_scene"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialCardView">
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/itemInvisible"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:layout_marginBottom="56dp"
-            android:alpha="0"
+            android:id="@+id/itemZero"
+            android:layout_width="@dimen/cardCarrouselWidth"
+            android:layout_height="@dimen/cardCarrouselHeight"
+            android:layout_marginEnd="16dp"
             app:cardBackgroundColor="@color/cardview_shadow_start_color"
             app:cardCornerRadius="8dp"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="parent" >
+            app:layout_constraintEnd_toStartOf="@+id/itemOne"
+            app:layout_constraintTop_toTopOf="parent" >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -144,31 +162,28 @@
                     app:layout_constraintBottom_toBottomOf="@+id/imageView7Invisible"
                     app:layout_constraintStart_toEndOf="@+id/imageView7Invisible"
                     app:layout_constraintTop_toTopOf="@+id/imageView7Invisible" />
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </com.google.android.material.card.MaterialCardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/itemOne"
-            android:layout_width="150dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginBottom="56dp"
-            app:cardBackgroundColor="@color/cardview_dark_background"
+            android:layout_width="@dimen/cardCarrouselWidth"
+            android:layout_height="@dimen/cardCarrouselHeight"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/design_default_color_primary_dark"
             app:cardCornerRadius="8dp"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="parent" >
+            app:layout_constraintEnd_toStartOf="@+id/itemTwo"
+            app:layout_constraintTop_toTopOf="parent" >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/design_default_color_primary_dark"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/cardHomePrototypeNumberOne"
+                    android:id="@+id/textViewCardNumberOne"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -182,16 +197,16 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/cardHomePrototypeExpirationOne"
+                    android:id="@+id/textViewCardExpirationOne"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cardListHome_itemPrototypeExpiration"
                     android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="@+id/cardHomePrototypeNumberOne"
-                    app:layout_constraintTop_toBottomOf="@+id/cardHomePrototypeNumberOne" />
+                    app:layout_constraintStart_toStartOf="@+id/textViewCardNumberOne"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewCardNumberOne" />
 
                 <ImageView
-                    android:id="@+id/imageView5One"
+                    android:id="@+id/imageViewFranchise1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="30dp"
@@ -210,8 +225,8 @@
                     android:layout_marginBottom="50dp"
                     android:scaleX="1.5"
                     android:scaleY="1.5"
-                    app:layout_constraintBottom_toTopOf="@+id/imageView5One"
-                    app:layout_constraintStart_toStartOf="@+id/imageView5One"
+                    app:layout_constraintBottom_toTopOf="@+id/imageViewFranchise1"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewFranchise1"
                     app:srcCompat="@drawable/ic_contactless_white" />
 
                 <ImageView
@@ -220,12 +235,12 @@
                     android:layout_height="58dp"
                     android:scaleX="0.8"
                     android:scaleY="0.8"
-                    app:layout_constraintStart_toStartOf="@+id/cardHomePrototypeNumberOne"
+                    app:layout_constraintStart_toStartOf="@+id/textViewCardNumberOne"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_favicon_copy_4_white" />
 
                 <TextView
-                    android:id="@+id/textView20One"
+                    android:id="@+id/textViewBankNameOne"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SMM"
@@ -239,21 +254,23 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/itemTwo"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="16dp"
-            app:cardBackgroundColor="@color/design_default_color_background"
+            android:layout_width="@dimen/cardCarrouselWidth"
+            android:layout_height="@dimen/cardCarrouselHeight"
+            app:cardBackgroundColor="@color/design_default_color_error"
             app:cardCornerRadius="8dp"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/itemOne" >
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/design_default_color_error"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/cardHomePrototypeNumberTwo"
+                    android:id="@+id/textViewCardNumberTwo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -267,16 +284,16 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/cardHomePrototypeExpirationTwo"
+                    android:id="@+id/textViewCardExpirationTwo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cardListHome_itemPrototypeExpiration"
                     android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="@+id/cardHomePrototypeNumberTwo"
-                    app:layout_constraintTop_toBottomOf="@+id/cardHomePrototypeNumberTwo" />
+                    app:layout_constraintStart_toStartOf="@+id/textViewCardNumberTwo"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewCardNumberTwo" />
 
                 <ImageView
-                    android:id="@+id/imageView5Two"
+                    android:id="@+id/imageViewFranchise2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="30dp"
@@ -295,8 +312,8 @@
                     android:layout_marginBottom="50dp"
                     android:scaleX="1.5"
                     android:scaleY="1.5"
-                    app:layout_constraintBottom_toTopOf="@+id/imageView5Two"
-                    app:layout_constraintStart_toStartOf="@+id/imageView5Two"
+                    app:layout_constraintBottom_toTopOf="@+id/imageViewFranchise2"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewFranchise2"
                     app:srcCompat="@drawable/ic_contactless_white" />
 
                 <ImageView
@@ -305,12 +322,12 @@
                     android:layout_height="58dp"
                     android:scaleX="0.8"
                     android:scaleY="0.8"
-                    app:layout_constraintStart_toStartOf="@+id/cardHomePrototypeNumberTwo"
+                    app:layout_constraintStart_toStartOf="@+id/textViewCardNumberTwo"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_favicon_copy_4_white" />
 
                 <TextView
-                    android:id="@+id/textView20Two"
+                    android:id="@+id/textViewBankNameTwo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SMM"
@@ -318,29 +335,28 @@
                     app:layout_constraintBottom_toBottomOf="@+id/imageView7Two"
                     app:layout_constraintStart_toEndOf="@+id/imageView7Two"
                     app:layout_constraintTop_toTopOf="@+id/imageView7Two" />
-
-
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/itemThree"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="@dimen/cardCarrouselWidth"
+            android:layout_height="@dimen/cardCarrouselHeight"
+            android:layout_marginStart="16dp"
             app:cardBackgroundColor="@color/design_default_color_secondary"
             app:cardCornerRadius="8dp"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/itemTwo"  >
+            app:layout_constraintStart_toEndOf="@+id/itemTwo"
+            app:layout_constraintTop_toTopOf="parent"  >
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/design_default_color_secondary"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/cardHomePrototypeNumberThree"
+                    android:id="@+id/textViewCardNumberThree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -354,16 +370,16 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/cardHomePrototypeExpirationThree"
+                    android:id="@+id/textViewCardExpirationThree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/cardListHome_itemPrototypeExpiration"
                     android:textColor="@color/white"
-                    app:layout_constraintStart_toStartOf="@+id/cardHomePrototypeNumberThree"
-                    app:layout_constraintTop_toBottomOf="@+id/cardHomePrototypeNumberThree" />
+                    app:layout_constraintStart_toStartOf="@+id/textViewCardNumberThree"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewCardNumberThree" />
 
                 <ImageView
-                    android:id="@+id/imageView5Three"
+                    android:id="@+id/imageViewFranchise3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="30dp"
@@ -382,8 +398,8 @@
                     android:layout_marginBottom="50dp"
                     android:scaleX="1.5"
                     android:scaleY="1.5"
-                    app:layout_constraintBottom_toTopOf="@+id/imageView5Three"
-                    app:layout_constraintStart_toStartOf="@+id/imageView5Three"
+                    app:layout_constraintBottom_toTopOf="@+id/imageViewFranchise3"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewFranchise3"
                     app:srcCompat="@drawable/ic_contactless_white" />
 
                 <ImageView
@@ -392,12 +408,12 @@
                     android:layout_height="58dp"
                     android:scaleX="0.8"
                     android:scaleY="0.8"
-                    app:layout_constraintStart_toStartOf="@+id/cardHomePrototypeNumberThree"
+                    app:layout_constraintStart_toStartOf="@+id/textViewCardNumberThree"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_favicon_copy_4_white" />
 
                 <TextView
-                    android:id="@+id/textView20Three"
+                    android:id="@+id/textViewBankNameThree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SMM"
@@ -411,15 +427,17 @@
         </com.google.android.material.card.MaterialCardView>
 
 
-        <com.google.android.material.card.MaterialCardView
+       <com.google.android.material.card.MaterialCardView
             android:id="@+id/itemFour"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="@dimen/cardCarrouselWidth"
+            android:layout_height="@dimen/cardCarrouselHeight"
+            android:layout_marginStart="16dp"
             app:cardBackgroundColor="@color/design_default_color_on_primary"
             app:cardCornerRadius="34dp"
+            android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/itemThree"  >
+            app:layout_constraintStart_toEndOf="@+id/itemThree"
+            app:layout_constraintTop_toTopOf="parent" >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -499,35 +517,24 @@
 
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/itemFive"
-            android:layout_width="200dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="16dp"
-            app:cardBackgroundColor="@color/design_default_color_secondary"
-            app:cardCornerRadius="34dp"
-            app:layout_constraintBottom_toBottomOf="@id/itemFour"
-            app:layout_constraintStart_toEndOf="@id/itemFour" >
-
-        </com.google.android.material.card.MaterialCardView>
 
         <androidx.constraintlayout.helper.widget.Carousel
-            android:id="@+id/carouselSnake"
+            android:id="@+id/carouselCards"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:carousel_backwardTransition="@+id/backwardCardList"
-            app:carousel_firstView="@id/itemOne"
             app:carousel_forwardTransition="@+id/forwardCardList"
-            app:carousel_infinite="true"
             app:carousel_nextState="@+id/nextCard"
             app:carousel_previousState="@+id/previousCard"
-            app:constraint_referenced_ids="itemInvisible, itemOne, itemTwo, itemThree, itemFour, itemFive"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:carousel_infinite="true"
+            app:carousel_firstView="@id/itemTwo"
+            app:constraint_referenced_ids="itemZero, itemOne, itemTwo, itemThree, itemFour" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
 
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/linearLayoutCompat"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="32dp"
@@ -607,5 +614,17 @@
         app:layout_constraintBottom_toBottomOf="@+id/materialCardView"
         app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toTopOf="@+id/materialCardView" />
+
+    <ProgressBar
+        android:id="@+id/progressBarCarrouselCards"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="180dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -17,7 +17,7 @@ fun List<CardHomeTaskEntity>.toListCardHomeTask() =  map {data ->
     data.toCardHomeTaks()
 }
 
-fun CardCarrouselEntity.toCardCarrousel() = CardCarrousel(BankLogo,BankName, CardNumber, CardExpiration, CardFranchise)
+fun CardCarrouselEntity.toCardCarrousel() = CardCarrousel(BankLogo,BankName, CardNumber, CardExpiration, CardFranchise, CardBackgroud)
 fun List<CardCarrouselEntity>.toListCardCarrouselTask() = map { data ->
     data.toCardCarrousel()
 }
