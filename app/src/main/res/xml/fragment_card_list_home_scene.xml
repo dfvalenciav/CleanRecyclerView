@@ -1,141 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MotionScene
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:motion="http://schemas.android.com/apk/res-auto">
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        motion:constraintSetStart="@id/start"
-        motion:constraintSetEnd="@+id/nextCard"
-        motion:duration="1000"
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@+id/nextCard"
+        app:duration="1000"
         android:id="@+id/forwardCardList">
         <KeyFrameSet>
         </KeyFrameSet>
         <OnSwipe
-            motion:dragDirection="dragLeft"
-            motion:touchAnchorSide="left" />
+            app:dragDirection="dragLeft"
+            app:touchAnchorSide="left" />
     </Transition>
 
     <Transition
-        motion:constraintSetStart="@+id/start"
-        motion:constraintSetEnd="@+id/previousCard"
+        app:constraintSetStart="@id/start"
+        app:constraintSetEnd="@+id/previousCard"
         android:id="@+id/backwardCardList">
 
         <OnSwipe
-            motion:dragDirection="dragRight"
-            motion:touchAnchorSide="right" />
+            app:dragDirection="dragRight"
+            app:touchAnchorSide="right" />
 
     </Transition>
 
 
     <ConstraintSet android:id="@+id/previousCard">
-        <Constraint
-            android:id="@+id/itemTwo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintStart_toStartOf="@id/guideline2"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+        <Constraint android:id="@+id/itemTwo">
+            <Layout android:layout_width="@dimen/carrousel_width_card"
+            android:layout_height="@dimen/carrousel_height_Card"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline2" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="18dp" />
+            <CustomAttribute
+                app:attributeName="cardCornerRadius"
+                app:customDimension="@dimen/cardCornerRadius" />
+            <PropertySet android:alpha="1" />
+        </Constraint>
+        <Constraint android:id="@+id/itemThree">
+            <Layout
+            app:layout_constraintStart_toEndOf="@+id/itemTwo"
+            android:layout_width="@dimen/carrousel_width_card"
+            android:layout_height="@dimen/carrousel_height_Card"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             android:layout_marginStart="16dp" />
-        <Constraint
-            android:id="@+id/itemThree"
-            motion:layout_constraintStart_toEndOf="@+id/imageView2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintTop_toTopOf="parent"
-            android:layout_marginStart="16dp" />
-        <Constraint
-            android:id="@+id/itemOne"
-            motion:layout_constraintEnd_toStartOf="@id/guideline2"
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="18dp" />
+            <CustomAttribute
+                app:attributeName="cardCornerRadius"
+                app:customDimension="@dimen/cardCornerRadius" />
+            <PropertySet android:alpha="1" />
+        </Constraint>
+        <Constraint android:id="@+id/itemOne">
+            <Layout app:layout_constraintEnd_toStartOf="@id/guideline2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="16dp"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintStart_toEndOf="@id/guideline"
-            motion:layout_constraintDimensionRatio="1:1"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/guideline"
             android:layout_marginStart="16dp" />
-        <Constraint
-            android:id="@+id/itemZero"
-            motion:layout_constraintEnd_toStartOf="@id/guideline"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="18dp" />
+            <CustomAttribute
+                app:attributeName="cardCornerRadius"
+                app:customDimension="@dimen/cardCornerRadius" />
+            <PropertySet android:alpha="1" />
+        </Constraint>
+        <Constraint android:id="@+id/itemZero">
+           <Layout app:layout_constraintEnd_toStartOf="@id/guideline"
+            android:layout_width="@dimen/carrousel_width_card"
+            android:layout_height="@dimen/carrousel_height_Card"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="16dp"
-            motion:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="18dp" />
+            <CustomAttribute
+                app:attributeName="cardCornerRadius"
+                app:customDimension="@dimen/cardCornerRadius" />
+            <PropertySet android:alpha="1" />
+        </Constraint>
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/start">
-        <Constraint
-            android:id="@+id/itemTwo"
-            motion:layout_constraintEnd_toEndOf="@id/guideline2"
+        <Constraint android:id="@+id/itemTwo">
+            <Layout
+            app:layout_constraintEnd_toEndOf="@id/guideline2"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintHorizontal_bias="0.5"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintStart_toStartOf="@id/guideline"
-            motion:layout_constraintDimensionRatio="w,1:1"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginStart="16dp" />
-        <Constraint
-            android:id="@+id/itemThree"
-            motion:layout_constraintStart_toEndOf="@id/guideline2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="18dp" />
+            <CustomAttribute
+                app:attributeName="cardCornerRadius"
+                app:customDimension="@dimen/cardCornerRadius" />
+        </Constraint>
+        <Constraint android:id="@+id/itemThree">
+            <Layout app:layout_constraintStart_toEndOf="@id/guideline2"
+            android:layout_width="@dimen/carrousel_width_card"
+            android:layout_height="@dimen/carrousel_height_Card"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="16dp"
-            motion:layout_constraintTop_toTopOf="parent" />
-        <Constraint
-            android:id="@+id/itemOne"
-            motion:layout_constraintEnd_toStartOf="@id/guideline"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="18dp" />
+            <CustomAttribute
+                app:attributeName="cardCornerRadius"
+                app:customDimension="@dimen/cardCornerRadius" />
+            <PropertySet android:alpha="0.3" />
+        </Constraint>
+        <Constraint  android:id="@+id/itemOne">
+            <Layout
+            app:layout_constraintEnd_toStartOf="@id/guideline"
+            android:layout_width="@dimen/carrousel_width_card"
+            android:layout_height="@dimen/carrousel_height_Card"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginEnd="16dp"
-            motion:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="18dp" />
+            <CustomAttribute
+                app:attributeName="cardCornerRadius"
+                app:customDimension="@dimen/cardCornerRadius" />
+            <PropertySet android:alpha="0.3" />
+        </Constraint>
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/nextCard">
-        <Constraint
-            android:id="@+id/itemTwo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintEnd_toStartOf="@id/guideline"
+        <Constraint android:id="@+id/itemTwo">
+            <Layout 
+                android:layout_width="@dimen/carrousel_width_card"
+            android:layout_height="@dimen/carrousel_height_Card"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline"
             android:layout_marginRight="16dp"
             android:layout_marginEnd="16dp" />
-        <Constraint
-            android:id="@+id/itemThree"
-            motion:layout_constraintStart_toEndOf="@id/guideline"
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="8dp" />
+            <CustomAttribute
+                app:attributeName="cardCornerRadius"
+                app:customDimension="@dimen/cardCornerRadius" />
+        </Constraint>
+        <Constraint android:id="@+id/itemThree">
+            <Layout
+            app:layout_constraintStart_toEndOf="@id/guideline"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="16dp"
-            motion:layout_constraintTop_toTopOf="parent"
-            motion:layout_constraintEnd_toStartOf="@id/guideline2"
-            android:layout_marginEnd="16dp"
-            motion:layout_constraintDimensionRatio="1:1"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp" />
-        <Constraint
-            android:id="@+id/itemFour"
-            motion:layout_constraintStart_toEndOf="@id/guideline2"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideline2"
+            android:layout_marginEnd="16dp" />
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="8dp" />
+            <CustomAttribute
+                app:attributeName="cardCornerRadius"
+                app:customDimension="@dimen/cardCornerRadius" />
+            <PropertySet android:alpha="1" />
+        </Constraint>
+
+        <Constraint android:id="@+id/itemFour">
+           <Layout
+            app:layout_constraintStart_toEndOf="@id/guideline2"
+            android:layout_width="@dimen/carrousel_width_card"
+            android:layout_height="@dimen/carrousel_height_Card"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginStart="16dp"
-            motion:layout_constraintTop_toTopOf="parent"
-            android:layout_marginLeft="16dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="16dp"/>
+            <CustomAttribute
+                app:attributeName="radius"
+                app:customDimension="8dp" />
+            <CustomAttribute
+                app:attributeName="cardCornerRadius"
+                app:customDimension="@dimen/cardCornerRadius" />
+            <PropertySet android:alpha="1" />
+        </Constraint>
     </ConstraintSet>
 
 </MotionScene>

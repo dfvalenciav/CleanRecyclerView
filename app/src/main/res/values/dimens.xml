@@ -10,5 +10,6 @@
     <dimen name="carrousel_height_Card">181dp</dimen>
     <dimen name="carrousel_margin_top">5dp</dimen>
     <dimen name="cardCarrouselWidth">200dp</dimen>
-    <dimen name="cardCarrouselHeight">100dp</dimen>
+    <dimen name="cardCarrouselHeight">200dp</dimen>
+    <dimen name="cardCornerRadius">44dp</dimen>
 </resources>
