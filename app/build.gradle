@@ -5,6 +5,7 @@ apply plugin: "kotlin-android-extensions"
 apply plugin: "kotlin-kapt"
 apply plugin: "dagger.hilt.android.plugin"
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: "realm-android"
 
 android {
     compileSdk 32
@@ -40,6 +41,9 @@ android {
     }
     buildFeatures{
         dataBinding true
+    }
+    realm {
+        syncEnabled = true
     }
 }
 

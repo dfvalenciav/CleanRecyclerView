@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.cardSetup.data.local.entityCardSetup
+package com.example.daval.cleanrecyclerview.cardSetup.data.local.Room.entityCardSetup
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.constraintlayout.helper.widget.Carousel
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import com.example.daval.cleanrecyclerview.Utils.Utils
 import com.example.daval.cleanrecyclerview.base.BaseFragment
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.Adapter.CardHomeAdapter
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.Adapter.ICardHomeListener
@@ -103,31 +104,41 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
             override fun populate(view: View, index: Int) {
                 binding.progressBarCarrouselCards.visibility= View.INVISIBLE
                 binding.motionLayout.visibility = View.VISIBLE
+                val indexCard = itemsCarrousel[index]
+                val util = Utils()
                 if (view is MaterialCardView) {
-                    /*for (item in itemsCarrousel){
-                        view.setBackgroundColor(Color.parseColor(item.CardBackground))
-                        textViewBankNameTwo.text = item.BankName
-                        textViewCardNumberTwo.text = item.CardNumber
-                        textViewCardExpirationTwo.text = item.CardExpiration
-                        imageViewFranchise2.setImageResource(resources.getIdentifier(item.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
-                    }*/
                     view.setBackgroundColor(colors[index])
-
-                        textViewCardNumberOne.text = itemsCarrousel.get(0).CardNumber
-                        textViewCardNumberTwo.text = itemsCarrousel.get(1).CardNumber
-                        textViewCardNumberThree.text = itemsCarrousel.get(2).CardNumber
-                        textViewBankNameOne.text = itemsCarrousel.get(0).BankName
-                        textViewBankNameTwo.text = itemsCarrousel.get(1).BankName
-                        textViewBankNameThree.text = itemsCarrousel.get(2).BankName
-                        textViewCardExpirationOne.text = itemsCarrousel.get(0).CardExpiration
-                        textViewCardExpirationTwo.text = itemsCarrousel.get(1).CardExpiration
-                        textViewCardExpirationThree.text = itemsCarrousel.get(2).CardExpiration
-                        imageViewFranchise1.setImageResource(resources.getIdentifier(itemsCarrousel.get(0).CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
-                        imageViewFranchise2.setImageResource(resources.getIdentifier(itemsCarrousel.get(0).CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
-                        imageViewFranchise3.setImageResource(resources.getIdentifier(itemsCarrousel.get(0).CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                        textViewCardNumberOne.text = util.hideCardNumber(indexCard.CardNumber)
+                        textViewCardNumberTwo.text = util.hideCardNumber(indexCard.CardNumber)
+                        textViewCardNumberThree.text = util.hideCardNumber(indexCard.CardNumber)
+                        textViewBankNameTwo.text = indexCard.BankName
+                        textViewBankNameOne.text = indexCard.BankName
+                        textViewBankNameThree.text = indexCard.BankName
+                        textViewCardExpirationOne.text = indexCard.CardExpiration
+                        textViewCardExpirationTwo.text = indexCard.CardExpiration
+                        textViewCardExpirationThree.text = indexCard.CardExpiration
+                        imageViewFranchise1.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                        imageViewFranchise2.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                        imageViewFranchise3.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
                 }
             }
+
             override fun onNewItem(index: Int) {
+                val indexCard = itemsCarrousel[index]
+                val util = Utils()
+                if (view is MaterialCardView) {
+                    (view as MaterialCardView).setBackgroundColor(colors[index])
+                    textViewCardNumberOne.text = util.hideCardNumber(indexCard.CardNumber)
+                    textViewCardNumberTwo.text = util.hideCardNumber(indexCard.CardNumber)
+                    textViewCardNumberThree.text = util.hideCardNumber(indexCard.CardNumber)
+                    textViewBankNameTwo.text = indexCard.BankName
+                    textViewCardExpirationOne.text = indexCard.CardExpiration
+                    textViewCardExpirationTwo.text = indexCard.CardExpiration
+                    textViewCardExpirationThree.text = indexCard.CardExpiration
+                    imageViewFranchise1.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                    imageViewFranchise2.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                    imageViewFranchise3.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                }
             }
         })
         carousel.refresh()

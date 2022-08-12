@@ -57,7 +57,7 @@
         android:layout_marginTop="27dp"
         android:layout_marginEnd="8dp"
         app:motionDebug="SHOW_PATH"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layoutDescription="@xml/fragment_card_list_home_scene"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -528,6 +528,8 @@
             app:carousel_previousState="@+id/previousCard"
             app:carousel_infinite="true"
             app:carousel_firstView="@id/itemTwo"
+            app:carousel_touchUpMode="carryVelocity"
+            app:carousel_touchUp_dampeningFactor="0.8"
             app:constraint_referenced_ids="itemZero, itemOne, itemTwo, itemThree, itemFour" />
 
     </androidx.constraintlayout.motion.widget.MotionLayout>
@@ -621,7 +623,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="180dp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutCompat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
