@@ -3,6 +3,9 @@ package com.example.daval.cleanrecyclerview.cardSetup.data.repository
 import android.content.Context
 import com.example.daval.cleanrecyclerview.cardSetup.data.interfaces.IRealmDatabase
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.BizumDataBaseRealm
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.entityRealmCardSetup.RCardSetupEntity
+import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toCardSetup
+import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toRCardCarrouselEntity
 import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toRCardHomeTaskEntity
 import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toRCardSetupEntity
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardCarrousel
@@ -12,19 +15,44 @@ import io.realm.Realm
 import io.realm.RealmModel
 import io.realm.RealmObject
 import io.realm.RealmResults
+import io.realm.kotlin.where
 
 
-class CardRealmRepository(context: Context) {
-    var realm: Realm? = Realm.getDefaultInstance()
+class CardRealmRepository(context: Context)  {
+
 
     var realm2: BizumDataBaseRealm = BizumDataBaseRealm(context)
 
 
 
-    suspend fun insertObjects() {
+     fun insertCardSetupListObjects() {
         realm2.addObjectFromRealm { cardlistSetup().map { it.toRCardSetupEntity() } }
+
+
+    }
+    fun insertCardListHomeObjects (){
         realm2.addObjectFromRealm{ cardlisthome().map { it.toRCardHomeTaskEntity() } }
     }
+
+    fun insertCardListCarrousel (){
+        realm2.addObjectFromRealm{ cardListCarrousel().map { it.toRCardCarrouselEntity() } }
+    }
+
+    fun getCardSetupObjects() : List<CardSetup> {
+        //realm2.deleteObjectFromRealm()
+        insertCardSetupListObjects()
+        return realm2.getObjectsFromRealm { where<RCardSetupEntity>().findAll() }.map { it.toCardSetup() }
+    }
+
+    //where<FavContactDAO>().findAll()
+    //[13:07] Belen Garcia-Muñoz Ibañez
+    //realmDataBase.deleteObjectFromRealm(
+    //    {
+    //        frequentOperation.toFrequentOperationDao()
+    //    }, frequentOperation.id
+    //)
+
+
 
 
     private fun cardlistSetup (): List<CardSetup> = listOf(

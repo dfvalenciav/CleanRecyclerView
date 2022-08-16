@@ -4,9 +4,9 @@ package com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.entityRea
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
-open class RCardHomeTaskEntity(Taks: String, Description: String, Icon: String) : RealmObject() {
+open class RCardHomeTaskEntity() : RealmObject() {
     @PrimaryKey
-    var id: Int? = null
+    var id: Long = 0
     var Task : String = ""
     var Description: String = ""
     var Icon: String = ""

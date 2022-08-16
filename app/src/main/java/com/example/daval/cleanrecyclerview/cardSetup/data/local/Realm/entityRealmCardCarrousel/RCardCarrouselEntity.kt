@@ -4,21 +4,14 @@ package com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.entityRea
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
-open class RCardCarrouselEntity(
-    BankLogo: String,
-    BankName: String,
-    CardNumber: String,
-    CardExpiration: String,
-    CardFranchise: String,
-    CardBackground: String
-) : RealmObject() {
+open class RCardCarrouselEntity() : RealmObject() {
     @PrimaryKey
-    val id: Int? = null
-    val BankLogo : String = ""
-    val BankName: String = ""
-    val CardNumber: String = ""
-    val CardExpiration: String = ""
-    val CardFranchise: String = ""
-    val CardBackgroud: String = ""
+    var id: Long = 0
+    var BankLogo : String = ""
+    var BankName: String = ""
+    var CardNumber: String = ""
+    var CardExpiration: String = ""
+    var CardFranchise: String = ""
+    var CardBackgroud: String = ""
 
 }
