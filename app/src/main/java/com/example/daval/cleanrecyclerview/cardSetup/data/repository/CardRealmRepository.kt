@@ -3,22 +3,23 @@ package com.example.daval.cleanrecyclerview.cardSetup.data.repository
 import android.content.Context
 import com.example.daval.cleanrecyclerview.cardSetup.data.interfaces.IRealmDatabase
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.BizumDataBaseRealm
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.entityRealmCardCarrousel.RCardCarrouselEntity
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.entityRealmCardHome.RCardHomeTaskEntity
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.entityRealmCardSetup.RCardSetupEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toCardSetup
-import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toRCardCarrouselEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toRCardHomeTaskEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toRCardSetupEntity
+import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.*
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardCarrousel
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardHomeTask
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
+import dagger.hilt.android.qualifiers.ApplicationContext
 import io.realm.Realm
 import io.realm.RealmModel
 import io.realm.RealmObject
 import io.realm.RealmResults
 import io.realm.kotlin.where
+import javax.inject.Inject
 
 
-class CardRealmRepository(context: Context)  {
+class CardRealmRepository @Inject constructor(@ApplicationContext val context: Context) : IRealmDatabase {
 
 
     var realm2: BizumDataBaseRealm = BizumDataBaseRealm(context)
@@ -38,22 +39,21 @@ class CardRealmRepository(context: Context)  {
         realm2.addObjectFromRealm{ cardListCarrousel().map { it.toRCardCarrouselEntity() } }
     }
 
-    fun getCardSetupObjects() : List<CardSetup> {
-        //realm2.deleteObjectFromRealm()
+    fun getCardListSetupObjects() : List<CardSetup> {
         insertCardSetupListObjects()
         return realm2.getObjectsFromRealm { where<RCardSetupEntity>().findAll() }.map { it.toCardSetup() }
     }
 
-    //where<FavContactDAO>().findAll()
-    //[13:07] Belen Garcia-Muñoz Ibañez
-    //realmDataBase.deleteObjectFromRealm(
-    //    {
-    //        frequentOperation.toFrequentOperationDao()
-    //    }, frequentOperation.id
-    //)
+    fun getCardListHomeObjects() : List<CardHomeTask> {
+        realm2.deleteAllData()
+        insertCardListHomeObjects()
+        return realm2.getObjectsFromRealm { where<RCardHomeTaskEntity>().findAll() }.map { it.toCardHomeTask() }
+    }
 
-
-
+    fun getCardListCarrouselObjects() : List<CardCarrousel> {
+        insertCardListCarrousel()
+        return realm2.getObjectsFromRealm { where<RCardCarrouselEntity>().findAll() }.map { it.toCardCarrousel() }
+    }
 
     private fun cardlistSetup (): List<CardSetup> = listOf(
         CardSetup("Tarjeta de crèdito", "123456789087656787",false,10000,"Pedro Pèrez", 321567765),
@@ -79,4 +79,16 @@ class CardRealmRepository(context: Context)  {
         CardCarrousel("ic_favicon_copy_4_white","DEUTSCHE BANK", "548753215488785654", "Valido hasta 04/24", "ic_visa_vector", "#EADDCA"),
         CardCarrousel("ic_favicon_copy_4_white","CAJAMAR", "988544879087495038", "Valido hasta 04/24", "ic_visa_vector", "#01579b"),
     )
+
+    override fun <O : RealmResults<I>, I : RealmModel> getObjectsFromRealm(action: Realm.() -> O): List<I> {
+        TODO("Not yet implemented")
+    }
+
+    override fun <T : RealmModel> addObjectFromRealm(action: () -> List<T>) {
+        insertCardListHomeObjects()
+    }
+
+    override fun <T : RealmObject> deleteObjectFromRealm(action: Realm.() -> T, id: Long) {
+        TODO("Not yet implemented")
+    }
 }

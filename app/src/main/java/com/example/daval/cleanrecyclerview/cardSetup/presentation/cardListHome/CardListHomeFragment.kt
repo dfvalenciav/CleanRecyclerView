@@ -81,7 +81,7 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
                 }
                 is CardListHomeEvent.ListCardCarrousel -> {
                     itemsCarrousel = event.ls_carrousel
-                    setupCarousel()
+                   setupCarousel()
                 }
             }
         }

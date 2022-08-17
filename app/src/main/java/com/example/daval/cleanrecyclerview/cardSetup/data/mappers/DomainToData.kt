@@ -33,7 +33,7 @@ fun List<CardSetup>.toRListCardSetupEntity() = map { domain ->
     domain.toRCardSetupEntity()
 }
 
-fun CardHomeTask.toRCardHomeTaskEntity() = RCardHomeTaskEntity ()
+fun CardHomeTask.toRCardHomeTaskEntity() = RCardHomeTaskEntity (Taks, Description, Icon)
 fun List<CardHomeTask>.toRListCardHomeTaskEntity() = map {domain ->
     domain.toRCardHomeTaskEntity()
 }

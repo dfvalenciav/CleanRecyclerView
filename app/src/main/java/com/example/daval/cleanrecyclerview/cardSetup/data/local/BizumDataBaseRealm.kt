@@ -7,7 +7,7 @@ import io.realm.*
 import io.realm.kotlin.deleteFromRealm
 import javax.inject.Inject
 
-open class BizumDataBaseRealm @Inject constructor(@ApplicationContext private val context: Context) :
+class BizumDataBaseRealm @Inject constructor(@ApplicationContext private val context: Context) :
     IRealmDatabase {
 
     private val realmConfiguration by lazy { realmConfiguration(context) }
@@ -19,7 +19,7 @@ open class BizumDataBaseRealm @Inject constructor(@ApplicationContext private va
             Realm.getInstance(realmConfiguration)
         }
     }
-    private fun deleteAllData() {
+     fun deleteAllData() {
         val realm = getRealm()
         realm.beginTransaction()
         realm.deleteAll()
