@@ -4,13 +4,12 @@ import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
 
-open class RCardSetupEntity(    @PrimaryKey
-                                var id: Int = 0,
-                                var type: String = "",
-                                var number: String = "",
-                                var preferred: Boolean = false,
-                                var amount:Int = 0,
-                                var clientName: String = "",
-                                var clientId: Int = 0) : RealmObject() {
-
-}
+open class RCardSetupEntity(
+    var type: String = "",
+    var number: String = "",
+    var preferred: Boolean = false,
+    var amount:Int = 0,
+    var clientName: String = "",
+    var clientId: Int = 0,
+    @PrimaryKey
+    var id: Int = 0,) : RealmObject()

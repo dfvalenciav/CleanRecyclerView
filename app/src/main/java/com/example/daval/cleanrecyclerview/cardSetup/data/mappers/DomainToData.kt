@@ -28,7 +28,7 @@ fun List<CardCarrousel>.toListCardCarrouselEntity()= map {domain ->
 }
 
 /**REALM*/
-fun CardSetup.toRCardSetupEntity() = RCardSetupEntity ()
+fun CardSetup.toRCardSetupEntity() = RCardSetupEntity (type, number, preferred, amount, clientName, clientId)
 fun List<CardSetup>.toRListCardSetupEntity() = map { domain ->
     domain.toRCardSetupEntity()
 }
