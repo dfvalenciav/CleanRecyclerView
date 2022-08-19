@@ -26,13 +26,13 @@ class CardSetupActivity : BaseActivity<ActivityCardSetupBinding> (){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Realm.init(this)
+/*        Realm.init(this)
         val config = RealmConfiguration.Builder()
             .name("SMM3.db")
             .allowQueriesOnUiThread(false)
             .schemaVersion(1)
             .deleteRealmIfMigrationNeeded()
             .build()
-        Realm.setDefaultConfiguration(config)
+        Realm.setDefaultConfiguration(config)*/
     }
 }

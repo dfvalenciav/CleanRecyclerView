@@ -12,4 +12,4 @@ open class RCardSetupEntity(
     var clientName: String = "",
     var clientId: Int = 0,
     @PrimaryKey
-    var id: Int = 0,) : RealmObject()
+    var id: Long = 0,) : RealmObject()

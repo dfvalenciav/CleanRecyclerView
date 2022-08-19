@@ -28,10 +28,10 @@ fun RCardSetupEntity.toCardSetup() = CardSetup(type, number, preferred, amount, 
 fun List<RCardSetupEntity>.toRListCardSetup() = map { data ->
     data.toCardSetup()}
 
-fun RCardHomeTaskEntity.toCardHomeTask() = CardHomeTask(Task, Description, Icon)
+fun RCardHomeTaskEntity.toCardHomeTask() = CardHomeTask(task, description, icon)
 fun List<RCardHomeTaskEntity>.toRListCardHomeTask() =  map {data ->
     data.toCardHomeTask() }
 
-fun RCardCarrouselEntity.toCardCarrousel() = CardCarrousel(BankLogo,BankName, CardNumber, CardExpiration, CardFranchise, CardBackgroud)
+fun RCardCarrouselEntity.toCardCarrousel() = CardCarrousel(bankLogo,bankName, cardNumber, cardExpiration, cardFranchise, cardBackgroud)
 fun List<RCardCarrouselEntity>.toRListCardCarrouselTask() = map { data ->
     data.toCardCarrousel() }
