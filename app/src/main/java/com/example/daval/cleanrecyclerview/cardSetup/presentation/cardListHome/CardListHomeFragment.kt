@@ -96,7 +96,6 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
         binding.motionLayout.visibility = View.VISIBLE
         binding.progressBarCarrouselCards.visibility = View.INVISIBLE
         val numCards = itemsCarrousel.size//colors.size
-//        Toast.makeText(requireContext(),numCards, Toast.LENGTH_LONG).show()
         carousel.setAdapter(object : Carousel.Adapter {
             override fun count(): Int {
                 return numCards

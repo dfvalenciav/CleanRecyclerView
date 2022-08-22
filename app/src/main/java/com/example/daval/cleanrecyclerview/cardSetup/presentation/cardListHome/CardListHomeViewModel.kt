@@ -1,7 +1,6 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome
 
 import com.example.daval.cleanrecyclerview.base.BaseViewModel
-import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.toListCardCarrouselEntity
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetCardCarrouselUseCase
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetCardHomeTaksUseCase
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.mappers.toListCardCarrouselPresentation

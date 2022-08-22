@@ -1,4 +1,4 @@
-package co.cristian.bizumdialog.data.local.entity
+package com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey

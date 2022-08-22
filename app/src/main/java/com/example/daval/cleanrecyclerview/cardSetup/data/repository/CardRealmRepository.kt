@@ -1,13 +1,13 @@
 package com.example.daval.cleanrecyclerview.cardSetup.data.repository
 
 import android.content.Context
-import co.cristian.bizumdialog.data.local.entity.UserDetailRealm
-import co.cristian.bizumdialog.data.local.entity.UserRealm
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.UserDetailRealm
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.UserRealm
 import com.example.daval.cleanrecyclerview.cardSetup.data.interfaces.IRealmDatabase
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.BizumDataBaseRealm
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.entityRealmCardCarrousel.RCardCarrouselEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.entityRealmCardHome.RCardHomeTaskEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.entityRealmCardSetup.RCardSetupEntity
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardCarrouselEntity
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardHomeTaskEntity
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardSetupEntity
 import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.*
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.*
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.StateEnum
@@ -37,7 +37,7 @@ class CardRealmRepository @Inject constructor(@ApplicationContext val context: C
     }
 
     fun insertCardListCarrousel (){
-        realm2.addObjectFromRealm{ cardListCarrousel().map { it.toRCardCarrouselEntity() } }
+        realm2.addObjectFromRealm{ cardListCarrousel().sortedBy { it.BankName }.map { it.toRCardCarrouselEntity() } }
     }
 
     fun getCardListSetupObjects() : List<CardSetup> {

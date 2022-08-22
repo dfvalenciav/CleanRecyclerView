@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.entityRealmCardHome
+package com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm
 
 
 import io.realm.RealmObject
