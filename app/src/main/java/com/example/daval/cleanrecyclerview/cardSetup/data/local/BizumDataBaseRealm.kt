@@ -61,6 +61,20 @@ class BizumDataBaseRealm @Inject constructor(@ApplicationContext private val con
             realm.cancelTransaction()
         }
     }
+
+    override fun <T : RealmModel> deleteAllObjectFromRealm(action: () -> T) {
+        val realm = getRealm()
+        val realmModel = action()
+        realm.beginTransaction()
+        try {
+            realm.where(realmModel.javaClass).findAll()
+            realm.deleteAll()
+            realm.commitTransaction()
+            realm.close()
+        }catch (e: Exception){
+            realm.cancelTransaction()
+        }
+    }
 }
 
 

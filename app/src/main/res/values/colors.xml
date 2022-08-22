@@ -12,4 +12,15 @@
     <color name="Primari_06_light_purple">#f0eff7</color>
     <color name="Primario_07_very_light_purple">#f4f3f7</color>
     <color name="Primatio_01_card_design">#bbb5c9</color>
+
+    <!--- Colors dialogs-->
+
+    <color name="colorPrimary">#706196</color>
+    <color name="dark_grey">#4a4a4a</color>
+    <color name="light_orange">#fff5e9</color>
+    <color name="orange">#ffa02b</color>
+    <color name="light_green">#D9F2E4</color>
+    <color name="green">#00A749</color>
+    <color name="light_purple">#f0eff7</color>
+    <color name="purple">#9488b5</color>
 </resources>

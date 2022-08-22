@@ -45,6 +45,11 @@ android {
     realm {
         syncEnabled = true
     }
+
+    buildFeatures{
+        viewBinding true
+    }
+
 }
 
 dependencies {

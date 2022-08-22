@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.daval.cleanrecyclerview" >
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name=".CleanRecyclerView"
         android:allowBackup="true"

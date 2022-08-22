@@ -1,8 +1,6 @@
 package com.example.daval.cleanrecyclerview.cardSetup.data.interfaces
 
-import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardCarrousel
-import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardHomeTask
-import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
+import com.example.daval.cleanrecyclerview.cardSetup.domain.models.*
 
 interface ICardListSetupRepository {
 
@@ -19,4 +17,22 @@ interface ICardListSetupRepository {
     suspend fun getCardListCarrousel () : List<CardCarrousel>
 
     suspend fun insertCardCarrousel(cardCarrousel: List<CardCarrousel>)
+
+
+    ///DIALOG INTERFACE
+
+    //User
+    suspend fun getListUser(): List<User>
+
+    suspend fun insertUsers(users: List<User>)
+
+    suspend fun updateUser(user: User)
+
+
+    //UserDetail
+    suspend fun getListUserDetail(): List<UserDetail>
+
+    suspend fun insertUserDetail(userDetail: List<UserDetail>)
+
+    suspend fun updateUserDetail(userDetail: UserDetail)
 }

@@ -4,9 +4,7 @@ import android.graphics.Color
 import com.example.daval.cleanrecyclerview.cardSetup.data.interfaces.ICardListSetupRepository
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.ICardSetupDao
 import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.*
-import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardCarrousel
-import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardHomeTask
-import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
+import com.example.daval.cleanrecyclerview.cardSetup.domain.models.*
 
 class CardRepository (private val cardSetupDao: ICardSetupDao) : ICardListSetupRepository  {
 
@@ -44,6 +42,30 @@ class CardRepository (private val cardSetupDao: ICardSetupDao) : ICardListSetupR
 
     override suspend fun insertCardCarrousel(cardCarrousel: List<CardCarrousel>) {
             cardSetupDao.insertCardCarrousel((cardCarrousel.map { it.toCardCarrouselEntity() }))
+    }
+
+    override suspend fun getListUser(): List<User> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun insertUsers(users: List<User>) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun updateUser(user: User) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun getListUserDetail(): List<UserDetail> {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun insertUserDetail(userDetail: List<UserDetail>) {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun updateUserDetail(userDetail: UserDetail) {
+        TODO("Not yet implemented")
     }
 
 

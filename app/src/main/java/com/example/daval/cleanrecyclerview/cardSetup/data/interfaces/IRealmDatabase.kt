@@ -9,4 +9,5 @@ interface IRealmDatabase {
     fun <O : RealmResults<I>, I : RealmModel> getObjectsFromRealm(action: Realm.() -> O): List<I>
     fun <T : RealmModel> addObjectFromRealm(action: () -> List<T>)
     fun <T : RealmObject> deleteObjectFromRealm(action: Realm.() -> T, id: Long)
+    fun <T : RealmModel> deleteAllObjectFromRealm(action: () -> T)
 }
