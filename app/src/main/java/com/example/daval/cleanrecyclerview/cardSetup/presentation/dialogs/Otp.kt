@@ -32,9 +32,12 @@ class Otp : BaseDialog() {
             btnCancelOtp.text = modelDialog.btnCancel
 
             btnAcceptOtp.setOnClickListener {
-                val action = MainFragmentDirections.actionMainFragmentToCardListAvailableFragment()
-                findNavController().navigate(action)
-                dismiss()
+                if(tieOtp.text?.length!! in 1..4) {
+                    val action =
+                        MainFragmentDirections.actionMainFragmentToCardListAvailableFragment()
+                    findNavController().navigate(action)
+                    dismiss()
+                }
             }
 
             btnCancelOtp.setOnClickListener {
