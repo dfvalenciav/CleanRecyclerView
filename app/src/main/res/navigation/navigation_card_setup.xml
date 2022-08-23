@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_cardListFinishRegisterFragment_to_cardListHomeFragment"
             app:destination="@id/cardListHomeFragment" />
+        <action
+            android:id="@+id/action_cardListFinishRegisterFragment_to_cardListAvailableFragment"
+            app:destination="@id/cardListAvailableFragment" />
     </fragment>
     <fragment
         android:id="@+id/cardListHomeFragment"
