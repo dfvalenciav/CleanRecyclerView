@@ -64,9 +64,9 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
     override fun setListeners() {
         binding.switchMobile.setOnClickListener {
             if (switchMobile.isChecked) {
-                val action =
+                /*val action =
                     CardListHomeFragmentDirections.actionCardListHomeFragmentToCardListAvailableFragment()
-                binding.switchMobile.findNavController().navigate(action)
+                binding.switchMobile.findNavController().navigate(action)*/
             }
         }
     }

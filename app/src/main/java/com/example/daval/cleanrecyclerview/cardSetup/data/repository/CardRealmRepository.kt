@@ -1,13 +1,10 @@
 package com.example.daval.cleanrecyclerview.cardSetup.data.repository
 
 import android.content.Context
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.UserDetailRealm
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.UserRealm
+import com.example.daval.cleanrecyclerview.R
 import com.example.daval.cleanrecyclerview.cardSetup.data.interfaces.IRealmDatabase
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.BizumDataBaseRealm
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardCarrouselEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardHomeTaskEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardSetupEntity
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.*
 import com.example.daval.cleanrecyclerview.cardSetup.data.mappers.*
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.*
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.StateEnum
@@ -83,6 +80,26 @@ class CardRealmRepository @Inject constructor(@ApplicationContext val context: C
     fun updateUserDetail(userDetail: UserDetail) {
         TODO("Not yet implemented")
     }
+
+    fun getListConfig(): List<Config> {
+        insertConfig(config())
+        return realm2.getObjectsFromRealm { where<ConfigRealm>().findAll() }.toListConfig()
+    }
+
+    fun insertConfig(config: List<Config>) {
+        realm2.deleteAllObjectFromRealm { ConfigRealm() }
+        return realm2.addObjectFromRealm { config.toListConfigRealm() }
+    }
+
+    fun updateConfig(config: Config) {
+        TODO("Not yet implemented")
+    }
+
+
+    private fun config():List<Config> = listOf(
+        Config("Touch ID","Utiliza tu huella para acceder a la App de una forma rápida y segura.", R.drawable.ic_fingerprint,R.drawable.bg_light_orange,false),
+        Config("Pago móvil","Realiza tus compras con el móvil sin necesidad de usar tu tarjeta.", R.drawable.ic_pay_mobile,R.drawable.bg_light_purple,false)
+    )
 
 
     private fun cardlistSetup (): List<CardSetup> = listOf(

@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.daval.cleanrecyclerview.base.BaseDialog
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.dialogUser.MainFragmentDirections
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.main.MainFragmentDirections
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.OtpDialog
 import com.example.daval.cleanrecyclerview.databinding.DialogOtpBinding
 
@@ -32,15 +32,12 @@ class Otp : BaseDialog() {
             btnCancelOtp.text = modelDialog.btnCancel
 
             btnAcceptOtp.setOnClickListener {
-                if(tieOtp.text?.length!! in 1..4) {
-                    val action =
-                        MainFragmentDirections.actionMainFragmentToCardListAvailableFragment()
-                    findNavController().navigate(action)
-                    dismiss()
-                }
+                modelDialog.btnConfirm?.let { it1 -> onClickButton(it1) }
+                dismiss()
             }
 
             btnCancelOtp.setOnClickListener {
+                modelDialog.btnCancel?.let { it1 -> onClickButton(it1) }
                 dismiss()
             }
         }

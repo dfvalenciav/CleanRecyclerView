@@ -1,19 +1,38 @@
-package co.cristian.bizumdialog.presentation.main
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.main
 
 
 import com.example.daval.cleanrecyclerview.base.BaseViewModel
+import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetConfigUseCase
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetDetailUserUseCase
 import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetUserUseCase
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.mappers.toListConfigPresentation
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.mappers.toListUserDetailPresentation
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.mappers.toListUserPresentation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class UserViewModel @Inject constructor(
+class MainViewModel @Inject constructor(
     private val getUserUseCase: GetUserUseCase,
-    private val getDetailUserUseCase: GetDetailUserUseCase
-) : BaseViewModel<UserEvent>() {
+    private val getDetailUserUseCase: GetDetailUserUseCase,
+    private val getConfigUseCase: GetConfigUseCase
+) : BaseViewModel<MainEvent>() {
+
+
+
+    fun getConfigList() {
+        executeUseCase(
+            {
+                getConfigUseCase.execute()
+            },
+            { getConfigUseCase ->
+                getConfigUseCase.toListConfigPresentation()
+                    .also { presentationConfigList ->
+                        _event.value = MainEvent.ListConfig(presentationConfigList)
+                    }
+            }
+        )
+    }
 
 
     fun getUserList() {
@@ -24,7 +43,7 @@ class UserViewModel @Inject constructor(
             { getUserUseCase ->
                 getUserUseCase.toListUserPresentation()
                     .also { presentationUserList ->
-                        _event.value = UserEvent.ListMain(presentationUserList)
+                        _event.value = MainEvent.ListMain(presentationUserList)
                     }
             },
         )
@@ -38,7 +57,7 @@ class UserViewModel @Inject constructor(
             { getDetailUserUseCase ->
                 getDetailUserUseCase.toListUserDetailPresentation()
                     .also { presentationUserDetailList ->
-                        _event.value = UserEvent.ListMainDetail(presentationUserDetailList)
+                        _event.value = MainEvent.ListMainDetail(presentationUserDetailList)
                     }
 
             },

@@ -42,28 +42,19 @@
         android:label="CardListFinishRegisterFragment"
         tools:layout="@layout/fragment_card_list_finish_register">
         <action
-            android:id="@+id/action_cardListFinishRegisterFragment_to_cardListHomeFragment"
-            app:destination="@id/cardListHomeFragment" />
-        <action
-            android:id="@+id/action_cardListFinishRegisterFragment_to_cardListAvailableFragment"
-            app:destination="@id/cardListAvailableFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/cardListHomeFragment"
-        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.CardListHomeFragment"
-        android:label="fragment_card_list_home"
-        tools:layout="@layout/fragment_card_list_home" >
-        <action
-            android:id="@+id/action_cardListHomeFragment_to_cardListAvailableFragment"
-            app:destination="@id/cardListAvailableFragment" />
+            android:id="@+id/action_cardListFinishRegisterFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.dialogUser.MainFragment"
+        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.main.MainFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_cardListAvailableFragment"
             app:destination="@id/cardListAvailableFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_cardListTrustDeviceFragment"
+            app:destination="@id/cardListTrustDeviceFragment" />
     </fragment>
 </navigation>

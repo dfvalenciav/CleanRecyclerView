@@ -1,10 +1,6 @@
 package com.example.daval.cleanrecyclerview.cardSetup.data.mappers
 
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.UserDetailRealm
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.UserRealm
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardCarrouselEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardHomeTaskEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardSetupEntity
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.*
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.*
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.StateEnum
 
@@ -41,3 +37,8 @@ fun String.toTypeData() = when (this) {
     "GARBAGE" -> StateEnum.GARBAGE
     else -> StateEnum.TIME
 }
+
+/**MOBILE PAYMENT SETUP**/
+fun ConfigRealm.toConfig()=Config(title, message, image, backGround,  indicatorSwitch)
+
+fun List<ConfigRealm>.toListConfig() = map { data -> data.toConfig() }

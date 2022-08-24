@@ -6,9 +6,11 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import com.bumptech.glide.Glide
 import com.example.daval.cleanrecyclerview.R
 import com.example.daval.cleanrecyclerview.base.BaseDialog
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.OtpDialog
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.SimpleDialog
 import com.example.daval.cleanrecyclerview.databinding.DialogSimpleBinding
 
@@ -41,9 +43,9 @@ class Simple : BaseDialog() {
             tvTitle.text = modelDialog.title
             tvSubTitle.text = modelDialog.subTitle
 
-            if(modelDialog.message.isNullOrBlank()){
+            if (modelDialog.message.isNullOrBlank()) {
                 tvMessage.visibility = View.GONE
-            }else{
+            } else {
                 tvMessage.visibility = View.VISIBLE
                 tvMessage.text = modelDialog.message
             }
@@ -51,19 +53,22 @@ class Simple : BaseDialog() {
 
             btnAccept.text = modelDialog.btnConfirm
 
-            if(modelDialog.btnCancel.isNullOrBlank()){
+            if (modelDialog.btnCancel.isNullOrBlank()) {
                 btnCancel.visibility = View.GONE
-            }else {
+            } else {
                 btnCancel.visibility = View.VISIBLE
                 btnCancel.text = modelDialog.btnCancel
             }
 
             btnAccept.setOnClickListener {
+                modelDialog.btnConfirm?.let { it1 -> onClickButton(it1) }
                 dismiss()
             }
 
             btnCancel.setOnClickListener {
+                modelDialog.btnCancel?.let { it1 -> onClickButton(it1) }
                 dismiss()
+
             }
         }
 
@@ -77,5 +82,15 @@ class Simple : BaseDialog() {
     //Funcion para determinar el ancho del dialogo -> Por defecto es el 90% del ancho
     private fun calculateWidth(percent: Double): Double {
         return resources.displayMetrics.widthPixels * percent
+    }
+
+
+    fun FragmentActivity?.showOtpDialog(model: OtpDialog.Builder): Otp {
+        val dialog = Otp()
+        dialog.modelDialog = model
+        this?.let {
+            dialog.show(it.supportFragmentManager, Otp::class.java.name)
+        }
+        return dialog
     }
 }

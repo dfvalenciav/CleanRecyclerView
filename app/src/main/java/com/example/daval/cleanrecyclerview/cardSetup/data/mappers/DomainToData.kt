@@ -1,10 +1,6 @@
 package com.example.daval.cleanrecyclerview.cardSetup.data.mappers
 
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.UserDetailRealm
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.UserRealm
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardCarrouselEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardHomeTaskEntity
-import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.RCardSetupEntity
+import com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm.*
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.*
 import java.util.*
 
@@ -38,4 +34,12 @@ fun UserDetail.toUserDetailRealm() =
 
 fun List<UserDetail>.toListUserDetailRealm() = map { domain ->
     domain.toUserDetailRealm()
+}
+
+/** MAPPERS MOBILE PAYMENT**/
+fun Config.toConfigRealm() =
+    ConfigRealm(title, message, image, backGround,  indicatorSwitch, UUID.randomUUID().mostSignificantBits)
+
+fun List<Config>.toListConfigRealm() = map { domain ->
+    domain.toConfigRealm()
 }

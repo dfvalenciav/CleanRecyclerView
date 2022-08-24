@@ -31,7 +31,7 @@ class CardListFinishRegisterFragment : BaseFragment<FragmentCardListFinishRegist
         binding.materialButtonCardListFinishRegister.setOnClickListener {
             //val action = CardListFinishRegisterFragmentDirections.actionCardListFinishRegisterFragmentToCardListHomeFragment()
            // binding.materialButtonCardListFinishRegister.findNavController().navigate(action)
-            val action = CardListFinishRegisterFragmentDirections.actionCardListFinishRegisterFragmentToCardListAvailableFragment()
+            val action = CardListFinishRegisterFragmentDirections.actionCardListFinishRegisterFragmentToMainFragment()
             binding.materialButtonCardListFinishRegister.findNavController().navigate(action)
         }
     }

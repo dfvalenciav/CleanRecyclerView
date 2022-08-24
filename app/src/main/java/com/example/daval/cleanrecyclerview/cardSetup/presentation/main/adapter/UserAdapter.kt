@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.cardSetup.presentation.dialogUser.adapter
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.main.adapter
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater

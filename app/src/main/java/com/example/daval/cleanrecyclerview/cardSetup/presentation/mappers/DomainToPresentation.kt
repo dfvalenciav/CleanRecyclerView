@@ -33,3 +33,11 @@ fun List<User>.toListUserPresentation() = map { domain ->
 fun List<UserDetail>.toListUserDetailPresentation() = map { domain ->
     domain.toUserDetailPresentation()
 }
+
+/*** MAPERS MOBILE PAYMENT***/
+fun Config.toConfigPresentation() =
+    ConfigPresentation(title, message, image, backGround, indicatorSwitch)
+
+fun List<Config>.toListConfigPresentation()=map { domain ->
+    domain.toConfigPresentation()
+}
