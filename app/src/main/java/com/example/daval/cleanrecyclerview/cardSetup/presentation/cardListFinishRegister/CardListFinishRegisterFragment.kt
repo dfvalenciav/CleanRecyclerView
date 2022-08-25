@@ -28,13 +28,18 @@ class CardListFinishRegisterFragment : BaseFragment<FragmentCardListFinishRegist
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+    }
+
+    override fun setListeners() {
         binding.materialButtonCardListFinishRegister.setOnClickListener {
             //val action = CardListFinishRegisterFragmentDirections.actionCardListFinishRegisterFragmentToCardListHomeFragment()
-           // binding.materialButtonCardListFinishRegister.findNavController().navigate(action)
+            // binding.materialButtonCardListFinishRegister.findNavController().navigate(action)
             val action = CardListFinishRegisterFragmentDirections.actionCardListFinishRegisterFragmentToMainFragment()
             binding.materialButtonCardListFinishRegister.findNavController().navigate(action)
         }
     }
+
     override fun observe() {
 
     }

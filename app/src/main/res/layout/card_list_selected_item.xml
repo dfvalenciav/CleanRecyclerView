@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_card_list_available_item_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_credit_card_24"
@@ -15,7 +15,7 @@
     <TextView
         android:id="@+id/cardSelectType"
         android:text="@string/cardListAvail_ItemName"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/iv_card_list_available_item_icon"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/cardListItemCardName" />
 
@@ -27,7 +27,7 @@
         style="@style/cardListItemCardNumber" />
 
     <com.google.android.material.radiobutton.MaterialRadioButton
-        android:id="@+id/switchMobilePayment"
+        android:id="@+id/swt_card_list_available_item_cardbtnpayment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardSelectType"
         style="@style/cardListItemSwtchButton" />

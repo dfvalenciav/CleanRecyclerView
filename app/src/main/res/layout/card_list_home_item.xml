@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/cardHomeTitle" />
 
     <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/switchMobilePayment"
+        android:id="@+id/swt_card_list_available_item_cardbtnpayment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/cardHomeTitle"
         style="@style/cardListItemHomeButton"

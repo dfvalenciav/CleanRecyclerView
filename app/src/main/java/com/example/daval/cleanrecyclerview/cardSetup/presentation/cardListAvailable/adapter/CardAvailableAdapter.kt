@@ -29,10 +29,10 @@ class CardAvailableAdapter (private val listener: ICardListPreferred)
        override fun bind(data: CardSetupPresentation) {
            var util = Utils()
            binding.apply {
-               cardAvailableType.text = data.cardListType
-               cardAvailableNumber.text= util.hideCardNumber(data.cardListNumber?:"")
-               switchMobilePayment.setOnClickListener {
-                   if (switchMobilePayment.isChecked){
+               tvCardListAvailableItemCardtype.text = data.cardListType
+               tvCardListAvailableItemCardnumber.text= util.hideCardNumber(data.cardListNumber?:"")
+               swtCardListAvailableItemCardbtnpayment.setOnClickListener {
+                   if (swtCardListAvailableItemCardbtnpayment.isChecked){
                        listener.addPreferredCard(data)
                    }
                }

@@ -7,31 +7,31 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/iv_card_list_available_item_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_credit_card_24"
         style="@style/cardListItemImage" />
 
     <TextView
-        android:id="@+id/cardAvailableType"
+        android:id="@+id/tv_card_list_available_item_cardtype"
         android:text="@string/cardListAvail_ItemName"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/iv_card_list_available_item_icon"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/cardListItemCardName" />
 
     <TextView
-        android:id="@+id/cardAvailableNumber"
+        android:id="@+id/tv_card_list_available_item_cardnumber"
         android:text="@string/cardListAvail_itemNumber"
-        app:layout_constraintStart_toStartOf="@+id/cardAvailableType"
-        app:layout_constraintTop_toBottomOf="@+id/cardAvailableType"
+        app:layout_constraintStart_toStartOf="@+id/tv_card_list_available_item_cardtype"
+        app:layout_constraintTop_toBottomOf="@+id/tv_card_list_available_item_cardtype"
         style="@style/cardListItemCardNumber" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/switchMobilePayment"
+        android:id="@+id/swt_card_list_available_item_cardbtnpayment"
         style="@style/cardListItemSwtchButton"
         app:thumbTint="@color/Primario_01_SMM_Purple"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cardAvailableType" />
+        app:layout_constraintTop_toTopOf="@+id/tv_card_list_available_item_cardtype" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

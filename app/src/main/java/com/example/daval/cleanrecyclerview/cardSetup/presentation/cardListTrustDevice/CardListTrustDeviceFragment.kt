@@ -21,17 +21,17 @@ class CardListTrustDeviceFragment() : BaseFragment<FragmentCardListTrustDeviceBi
 
     override val viewModel by viewModels<CardListTrustDeviceViewModel> ()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun inflateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ) = FragmentCardListTrustDeviceBinding.inflate(inflater, container, false)
+
+    override fun setListeners() {
         binding.materialButtonCardListTrustDevice.setOnClickListener {
             val action = CardListTrustDeviceFragmentDirections.actionCardListTrustDeviceFragmentToCardListFinishRegisterFragment()
             binding.materialButtonCardListTrustDevice.findNavController().navigate(action)
         }
     }
-    override fun inflateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?
-    ) = FragmentCardListTrustDeviceBinding.inflate(inflater, container, false)
 
     override fun observe() {
         Log.d("hello", "hello")

@@ -42,16 +42,19 @@ class CardListSelectedFragment : BaseFragment<FragmentCardListSelectedBinding, C
         super.onViewCreated(view, savedInstanceState)
         itemslist = args.cardSetupPresentation.toMutableList()
         viewModel.getCardSetupList()
-        binding.materialButtonCardListSelec.setOnClickListener {
-            val action = CardListSelectedFragmentDirections.actionCardListSelectedFragmentToCardListTrustDeviceFragment()
-            binding.materialButtonCardListSelec.findNavController().navigate(action)
-        }
     }
 
     fun setAdapter (items: List<CardSetupPresentation>){
         with(binding.recyclerViewCardListSelec) {
             adapter = CardSelectAdapter(this@CardListSelectedFragment)
             (adapter as? CardSelectAdapter)?.submitList(itemslist)
+        }
+    }
+
+    override fun setListeners() {
+        binding.materialButtonCardListSelec.setOnClickListener {
+            val action = CardListSelectedFragmentDirections.actionCardListSelectedFragmentToCardListTrustDeviceFragment()
+            binding.materialButtonCardListSelec.findNavController().navigate(action)
         }
     }
 

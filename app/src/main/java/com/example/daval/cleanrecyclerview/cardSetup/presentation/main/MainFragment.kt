@@ -64,7 +64,6 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(), IUserLi
         }
     }
 
-
     private fun setAdapter(configItems: List<ConfigPresentation>) {
         with(binding.rvConfig) {
             if (adapter == null) {
