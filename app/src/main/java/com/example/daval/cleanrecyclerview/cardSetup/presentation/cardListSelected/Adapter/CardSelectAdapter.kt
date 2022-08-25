@@ -1,11 +1,9 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelected.Adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
-import com.bumptech.glide.util.Util
-import com.example.daval.cleanrecyclerview.Utils.Utils
+import com.example.daval.cleanrecyclerview.utils.Utils
 import com.example.daval.cleanrecyclerview.base.BaseAdapter
 import com.example.daval.cleanrecyclerview.base.BaseViewHolder
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation

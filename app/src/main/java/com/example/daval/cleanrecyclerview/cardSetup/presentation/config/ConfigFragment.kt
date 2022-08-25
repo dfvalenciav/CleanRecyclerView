@@ -1,19 +1,17 @@
-package com.example.daval.cleanrecyclerview.cardSetup.presentation.main
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.config
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.daval.cleanrecyclerview.utils.showOtpDialog
+import com.example.daval.cleanrecyclerview.utils.showSimpleDialog
 import com.example.daval.cleanrecyclerview.base.BaseFragment
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.dialogs.DataList
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.dialogs.Otp
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.dialogs.Simple
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.main.adapter.ConfigurationAdapter
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.main.interfaces.IUserListener
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.config.adapter.ConfigurationAdapter
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.config.interfaces.IUserListener
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.*
 import com.example.daval.cleanrecyclerview.databinding.FragmentMainBinding
 import com.example.daval.cleanrecyclerview.databinding.HolderItemConfigurationBinding
@@ -21,14 +19,12 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.holder_item_configuration.view.*
 
 @AndroidEntryPoint
-class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(), IUserListener {
+class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUserListener {
 
-    override val viewModel by viewModels<MainViewModel>()
+    override val viewModel by viewModels<ConfigViewModel>()
 
-    private lateinit var items: List<UserPresentation>
-    private lateinit var itemsDetail: List<UserDetailPresentation>
     private lateinit var itemsConfig: List<ConfigPresentation>
-    private var configMobilePaymente : MutableList<Boolean> = mutableListOf()
+    private var configMobilePayment : MutableList<Boolean> = mutableListOf()
 
 
     override fun inflateView(
@@ -40,7 +36,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(), IUserLi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getConfigList()
-        configMobilePaymente.clear()
+        configMobilePayment.clear()
     }
 
 
@@ -51,12 +47,12 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(), IUserLi
             buttonAccept.text = "Continuar"
             buttonAccept.setOnClickListener { }
             buttonAccept.setOnClickListener {
-                val allEqual : Boolean = configMobilePaymente.stream().distinct().limit(2).count() <= 1
-                if(allEqual && configMobilePaymente.size >1) {
-                    val action =MainFragmentDirections.actionMainFragmentToCardListAvailableFragment()
+                val allEqual : Boolean = configMobilePayment.stream().distinct().limit(2).count() <= 1
+                if(allEqual && configMobilePayment.size >1) {
+                    val action =ConfigFragmentDirections.actionMainFragmentToCardListAvailableFragment()
                     findNavController().navigate(action)
                 } else {
-                    val action =MainFragmentDirections.actionMainFragmentToCardListTrustDeviceFragment()
+                    val action =ConfigFragmentDirections.actionMainFragmentToCardListTrustDeviceFragment()
                     findNavController().navigate(action)
                 }
 
@@ -65,17 +61,17 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(), IUserLi
     }
 
 
-    private fun setAdapter(configItems: List<ConfigPresentation>) {
+    private fun setAdapter(items: List<ConfigPresentation>) {
         with(binding.rvConfig) {
             if (adapter == null) {
                 layoutManager = LinearLayoutManager(
-                    this@MainFragment.requireContext(),
+                    this@ConfigFragment.requireContext(),
                     LinearLayoutManager.VERTICAL,
                     false
                 )
-                adapter = ConfigurationAdapter(this@MainFragment)
+                adapter = ConfigurationAdapter(this@ConfigFragment)
             }
-            (adapter as? ConfigurationAdapter)?.submitList(configItems)
+            (adapter as? ConfigurationAdapter)?.submitList(items)
         }
     }
 
@@ -83,8 +79,9 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(), IUserLi
     override fun observe() {
         viewModel.event.observe(viewLifecycleOwner) { event ->
             when (event) {
-                is MainEvent.ListConfig -> {
-                    setAdapter(event.ls)
+                is ConfigEvent.ListConfig -> {
+                    itemsConfig = event.ls
+                    setAdapter(itemsConfig)
                 }
                 else -> {}
             }
@@ -100,7 +97,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(), IUserLi
         holder.switchValue.isChecked = boolean
     }
 
-    override fun onClickUser(position: Int, holder: HolderItemConfigurationBinding) {
+    override fun onClick(position: Int, holder: HolderItemConfigurationBinding) {
 
         when (position) {
             0 -> { //Position in Card Touch ID
@@ -119,7 +116,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(), IUserLi
                         if (it.contentEquals(simpleDialog.btnConfirm)) {
 
                             switchStatus(true, "Activado", holder)
-                            configMobilePaymente.add(true)
+                            configMobilePayment.add(true)
                         } else {
                             switchStatus(false, "Desactivado", holder)
                         }
@@ -152,7 +149,7 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(), IUserLi
                                 if (otp.contentEquals(otpDialog.btnConfirm)) {
 
                                     switchStatus(true, "Activado", holder)
-                                    configMobilePaymente.add(true)
+                                    configMobilePayment.add(true)
 
                                 } else {
                                     switchStatus(false, "Desactivado", holder)
@@ -167,33 +164,4 @@ class MainFragment : BaseFragment<FragmentMainBinding, MainViewModel>(), IUserLi
             }
         }
     }
-
-}
-
-
-fun FragmentActivity?.showOtpDialog(model: OtpDialog.Builder): Otp {
-    val dialog = Otp()
-    dialog.modelDialog = model
-    this?.let {
-        dialog.show(it.supportFragmentManager, Otp::class.java.name)
-    }
-    return dialog
-}
-
-fun FragmentActivity?.showSimpleDialog(model: SimpleDialog.Builder): Simple {
-    val dialog = Simple()
-    dialog.modelDialog = model
-    this?.let {
-        dialog.show(it.supportFragmentManager, Simple::class.java.name)
-    }
-    return dialog
-}
-
-fun FragmentActivity?.showRvDialog(model: DataListDialog.Builder<UserPresentation>): DataList<UserPresentation> {
-    val dialog = DataList<UserPresentation>()
-    dialog.modelDialog = model
-    this?.let {
-        dialog.show(it.supportFragmentManager, Simple::class.java.name)
-    }
-    return dialog
 }

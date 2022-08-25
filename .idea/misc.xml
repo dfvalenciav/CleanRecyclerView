@@ -52,10 +52,12 @@
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/holder_item_user.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/org_list_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/test.xml" value="0.253125" />
+        <entry key="..\:/Users/x5802cs/AndroidStudioProjects/CleanRecyclerView/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/x5802cs/AndroidStudioProjects/CleanRecyclerView/app/src/main/res/layout/org_list_item.xml" value="0.10104166666666667" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

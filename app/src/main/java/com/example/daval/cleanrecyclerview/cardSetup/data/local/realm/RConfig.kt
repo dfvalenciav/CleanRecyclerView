@@ -1,9 +1,9 @@
-package com.example.daval.cleanrecyclerview.cardSetup.data.local.Realm
+package com.example.daval.cleanrecyclerview.cardSetup.data.local.realm
 
 import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
-open class ConfigRealm(
+open class RConfig(
 
     var title: String = "",
     var message: String = "",

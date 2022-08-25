@@ -1,15 +1,11 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter
 
-import android.util.Log
-import android.util.Log.VERBOSE
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
-import com.example.daval.cleanrecyclerview.Utils.Utils
+import com.example.daval.cleanrecyclerview.utils.Utils
 import com.example.daval.cleanrecyclerview.base.BaseAdapter
 import com.example.daval.cleanrecyclerview.base.BaseViewHolder
-import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.equals
 import com.example.daval.cleanrecyclerview.databinding.CardListAvailableItemBinding

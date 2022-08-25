@@ -5,9 +5,7 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
 import com.example.daval.cleanrecyclerview.base.BaseDialog
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.main.MainFragmentDirections
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.OtpDialog
 import com.example.daval.cleanrecyclerview.databinding.DialogOtpBinding
 
