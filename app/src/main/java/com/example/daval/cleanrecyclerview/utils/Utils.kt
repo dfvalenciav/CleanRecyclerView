@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.Utils
+package com.example.daval.cleanrecyclerview.utils
 
 import android.content.Context
 import android.view.View

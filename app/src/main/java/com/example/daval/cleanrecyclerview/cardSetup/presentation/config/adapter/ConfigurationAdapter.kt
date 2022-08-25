@@ -1,8 +1,7 @@
-package com.example.daval.cleanrecyclerview.cardSetup.presentation.main.adapter
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.config.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -10,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import com.bumptech.glide.Glide
 import com.example.daval.cleanrecyclerview.base.BaseAdapter
 import com.example.daval.cleanrecyclerview.base.BaseViewHolder
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.main.interfaces.IUserListener
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.config.interfaces.IUserListener
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.ConfigPresentation
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.equals
 import com.example.daval.cleanrecyclerview.databinding.HolderItemConfigurationBinding
@@ -54,7 +53,7 @@ class ConfigurationAdapter(private val listener: IUserListener) :
             holder: ConfigurationViewHolder
         ){
             binding.switchValue.setOnClickListener {
-                    listener.onClickUser(position,holder.binding)
+                    listener.onClick(position,holder.binding)
 
             }
         }

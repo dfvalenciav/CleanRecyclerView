@@ -1,19 +1,15 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.daval.cleanrecyclerview.R
-import com.example.daval.cleanrecyclerview.Utils.Utils
+import com.example.daval.cleanrecyclerview.utils.Utils
 import com.example.daval.cleanrecyclerview.base.BaseFragment
-import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter.CardAvailableAdapter
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter.ICardAvailableListener
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.adapter.ICardListPreferred
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
 import com.example.daval.cleanrecyclerview.databinding.FragmentCardListAvailableBinding

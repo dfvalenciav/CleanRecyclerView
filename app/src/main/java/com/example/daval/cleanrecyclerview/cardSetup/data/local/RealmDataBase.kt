@@ -4,13 +4,12 @@ import android.content.Context
 import com.example.daval.cleanrecyclerview.cardSetup.data.interfaces.IRealmDatabase
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.realm.*
-import io.realm.kotlin.deleteFromRealm
 import javax.inject.Inject
 
-class BizumDataBaseRealm @Inject constructor(@ApplicationContext private val context: Context) :
+class RealmDataBase @Inject constructor(@ApplicationContext private val context: Context) :
     IRealmDatabase {
 
-    private val realmConfiguration by lazy { realmConfiguration(context) }
+    private val realmConfiguration by lazy { RealmModule.realmConfiguration(context) }
     private fun getRealm(): Realm {
         return try {
             Realm.getInstance(realmConfiguration)
@@ -19,13 +18,16 @@ class BizumDataBaseRealm @Inject constructor(@ApplicationContext private val con
             Realm.getInstance(realmConfiguration)
         }
     }
-     fun deleteAllData() {
+
+    private  fun deleteAllData() {
         val realm = getRealm()
         realm.beginTransaction()
         realm.deleteAll()
         realm.commitTransaction()
         realm.close()
     }
+
+
     override fun <O : RealmResults<I>, I : RealmModel> getObjectsFromRealm(action: Realm.() -> O): List<I> {
         val realm = getRealm()
         val results = action(realm)
@@ -75,12 +77,4 @@ class BizumDataBaseRealm @Inject constructor(@ApplicationContext private val con
             realm.cancelTransaction()
         }
     }
-}
-
-
-fun realmConfiguration(@ApplicationContext context: Context): RealmConfiguration {
-    Realm.init(context)
-    return RealmConfiguration.Builder()
-        .deleteRealmIfMigrationNeeded()
-        .build()
 }
