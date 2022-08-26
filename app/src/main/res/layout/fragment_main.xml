@@ -5,8 +5,6 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_config"
         android:layout_width="match_parent"
@@ -18,8 +16,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:spanCount="1"
         tools:listitem="@layout/holder_item_configuration" />
-
-    <!--Add Button -->
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/buttonAccept"

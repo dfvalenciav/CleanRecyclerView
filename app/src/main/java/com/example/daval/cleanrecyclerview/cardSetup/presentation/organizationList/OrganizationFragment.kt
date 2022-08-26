@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.organizationList.presentation.organizationList
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.organizationList
 
 
 import android.os.Bundle
@@ -6,19 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.navigation.findNavController
 import com.example.daval.cleanrecyclerview.databinding.FragmentOrganizationBinding
 import com.example.daval.cleanrecyclerview.base.BaseFragment
-import com.example.daval.cleanrecyclerview.organizationList.presentation.models.OrgPresentation
-import com.example.daval.cleanrecyclerview.organizationList.presentation.organizationList.adapter.IOrgListener
-import com.example.daval.cleanrecyclerview.organizationList.presentation.organizationList.adapter.OrgAdapter
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.OrgPresentation
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.organizationList.adapter.IOrgListener
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.organizationList.adapter.OrgAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class OrganizationFragment2 : BaseFragment<FragmentOrganizationBinding, OrganizationViewModel2>() ,
+class OrganizationFragment : BaseFragment<FragmentOrganizationBinding, OrganizationViewModel>() ,
     IOrgListener {
 
-    override val viewModel by viewModels<OrganizationViewModel2> ()
+    override val viewModel by viewModels<OrganizationViewModel> ()
     private lateinit var items: List<OrgPresentation>
 
     override fun inflateView(
@@ -33,7 +32,7 @@ class OrganizationFragment2 : BaseFragment<FragmentOrganizationBinding, Organiza
 
     private fun setAdapter(items: List<OrgPresentation>) {
         with(binding.rvOrganization){
-            adapter = OrgAdapter(this@OrganizationFragment2)
+            adapter = OrgAdapter(this@OrganizationFragment)
             (adapter as? OrgAdapter)?.submitList(items)
         }
     }
@@ -55,9 +54,6 @@ class OrganizationFragment2 : BaseFragment<FragmentOrganizationBinding, Organiza
      * Navigation passing arguments : OrgPresentation
      * */
     override fun onClickOrg(dataPassed: OrgPresentation) {
-        val action = OrganizationFragment2Directions.actionOrganizationFragment2ToDetailOrgFragment(
-        //dataPassed
-            )
-        binding.root.findNavController().navigate(action)
+
     }
 }

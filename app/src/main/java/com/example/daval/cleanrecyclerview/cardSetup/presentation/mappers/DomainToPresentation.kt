@@ -3,6 +3,7 @@ package com.example.daval.cleanrecyclerview.cardSetup.presentation.mappers
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.*
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.*
 
+
 fun CardSetup.toCardSetupPresention() = CardSetupPresentation (type, number,preferred)
 fun List<CardSetup>.toListCardSetupPresentation() = map{
     domain -> domain.toCardSetupPresention()
@@ -21,8 +22,16 @@ fun List<CardCarrousel>.toListCardCarrouselPresentation() = map {
 
 /*** MAPERS MOBILE PAYMENT***/
 fun Config.toConfigPresentation() =
-    ConfigPresentation(title, message, image, backGround, indicatorSwitch)
+    ConfigPresentation(position ,title, message, image, backGround, indicatorSwitch)
 
 fun List<Config>.toListConfigPresentation()=map { domain ->
     domain.toConfigPresentation()
+}
+
+
+/**Organization**/
+fun Org.toOrgPresentation() = OrgPresentation(name, code)
+
+fun List<Org>.toListOrgPresentation() = map {
+        domain -> domain.toOrgPresentation()
 }

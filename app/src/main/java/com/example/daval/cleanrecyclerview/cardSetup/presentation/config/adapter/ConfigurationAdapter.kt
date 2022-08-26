@@ -21,7 +21,7 @@ class ConfigurationAdapter(private val listener: IUserListener) :
 
     override fun onBindViewHolder(holder: ConfigurationViewHolder, position: Int) {
         super.onBindViewHolder(holder, position)
-        holder.onClick(position,holder)
+        holder.onClick(holder)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ConfigurationViewHolder(
@@ -49,11 +49,10 @@ class ConfigurationAdapter(private val listener: IUserListener) :
             }
         }
         fun onClick(
-            position: Int,
             holder: ConfigurationViewHolder
         ){
             binding.swtHolderItemConfigStatus.setOnClickListener {
-                    listener.onClick(position,holder.binding)
+                    listener.onClick(holder.binding)
 
             }
         }

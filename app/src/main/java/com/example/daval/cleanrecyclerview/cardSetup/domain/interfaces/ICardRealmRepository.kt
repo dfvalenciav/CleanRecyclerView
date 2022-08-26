@@ -4,6 +4,7 @@ import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardCarrousel
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardHomeTask
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.Config
+import com.example.daval.cleanrecyclerview.cardSetup.domain.models.Org
 
 interface ICardRealmRepository {
 
@@ -21,5 +22,9 @@ interface ICardRealmRepository {
 
     suspend fun getListConfig(): List<Config>
     suspend fun insertConfig(config: List<Config>)
+
+
+    suspend fun getOrgList (): List<Org>
+    suspend fun insertOrganization (organization : List<Org>)
 
 }

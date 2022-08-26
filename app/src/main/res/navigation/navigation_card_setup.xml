@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_card_setup"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/configFragment">
 
     <fragment
         android:id="@+id/cardListAvailableFragment"
@@ -43,10 +43,10 @@
         tools:layout="@layout/fragment_card_list_finish_register">
         <action
             android:id="@+id/action_cardListFinishRegisterFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            app:destination="@id/configFragment" />
     </fragment>
     <fragment
-        android:id="@+id/mainFragment"
+        android:id="@+id/configFragment"
         android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.config.ConfigFragment"
         android:label="MainFragment"
         tools:layout="@layout/fragment_main">

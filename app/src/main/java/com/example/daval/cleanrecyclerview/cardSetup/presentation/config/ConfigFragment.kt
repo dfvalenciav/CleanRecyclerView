@@ -24,7 +24,7 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
     override val viewModel by viewModels<ConfigViewModel>()
 
     private lateinit var itemsConfig: List<ConfigPresentation>
-    private var configMobilePayment : MutableList<Boolean> = mutableListOf()
+    private var configMobilePayment: MutableList<Boolean> = mutableListOf()
 
 
     override fun inflateView(
@@ -47,12 +47,15 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
             buttonAccept.text = "Continuar"
             buttonAccept.setOnClickListener { }
             buttonAccept.setOnClickListener {
-                val allEqual : Boolean = configMobilePayment.stream().distinct().limit(2).count() <= 1
-                if(allEqual && configMobilePayment.size >1) {
-                    val action =ConfigFragmentDirections.actionMainFragmentToCardListAvailableFragment()
+                val allEqual: Boolean =
+                    configMobilePayment.stream().distinct().limit(2).count() <= 1
+                if (allEqual && configMobilePayment.size > 1) {
+                    val action =
+                        ConfigFragmentDirections.actionMainFragmentToCardListAvailableFragment()
                     findNavController().navigate(action)
                 } else {
-                    val action =ConfigFragmentDirections.actionMainFragmentToCardListTrustDeviceFragment()
+                    val action =
+                        ConfigFragmentDirections.actionMainFragmentToCardListTrustDeviceFragment()
                     findNavController().navigate(action)
                 }
 
@@ -97,69 +100,75 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
         holder.swtHolderItemConfigStatus.isChecked = boolean
     }
 
-    override fun onClick(position: Int, holder: HolderItemConfigurationBinding) {
+    override fun onClick(holder: HolderItemConfigurationBinding) {
 
-        when (position) {
-            0 -> { //Position in Card Touch ID
+        itemsConfig.forEach { elements ->
+            run {
+                when (elements.position) {
+                    StateEnum.TOUCH_ID -> {
 
-                if (!holder.root.swt_holder_item_config_status.isChecked) {
-                    switchStatus(false, "Desactivado", holder)
-                } else {
-                    val simpleDialog = SimpleDialog.Builder()
-                        .title("Activar Touch ID")
-                        .message("Recordaremos tu usuario para que\napartir de ahora puedas usar tu\nhuella para acceder a la aplicación.")
-                        .subTitle("¿Activar Touch ID ahora?")
-                        .btnConfirm("Sí, activar Touch ID")
-                        .btnCancel("Ahora no")
-
-                    activity?.showSimpleDialog(simpleDialog)?.onClickButton = {
-                        if (it.contentEquals(simpleDialog.btnConfirm)) {
-
-                            switchStatus(true, "Activado", holder)
-                            configMobilePayment.add(true)
-                        } else {
+                        if (!holder.root.swt_holder_item_config_status.isChecked) {
                             switchStatus(false, "Desactivado", holder)
-                        }
-                    }
-                }
-            }
-
-            1 -> { //Position in Card Pago Móvil
-
-                if (!holder.root.swt_holder_item_config_status.isChecked) {
-                    switchStatus(false, "Desactivado", holder)
-                } else {
-                    val simpleDialog = SimpleDialog.Builder()
-                        .title("Activar Pago Móvil")
-                        .message("Podrás habilitar tus tarjetas para\npagar con ellas cómoda y\nrápidamente utilizando tu móvil.")
-                        .subTitle("¿Activar Pago móvil ahora?")
-                        .btnConfirm("Sí, activar Pago móvil")
-                        .btnCancel("Ahora no")
-
-                    activity?.showSimpleDialog(simpleDialog)?.onClickButton = { simple ->
-                        if (simple.contentEquals(simpleDialog.btnConfirm)) {
-
-                            val otpDialog = OtpDialog.Builder()
-                                .title("Activar Pago Móvil")
-                                .message("Introduce el código enviado al\n**753 para activar el pago móvil.")
-                                .btnConfirm("Confirmar")
+                        } else {
+                            val simpleDialog = SimpleDialog.Builder()
+                                .title("Activar Touch ID")
+                                .message("Recordaremos tu usuario para que\napartir de ahora puedas usar tu\nhuella para acceder a la aplicación.")
+                                .subTitle("¿Activar Touch ID ahora?")
+                                .btnConfirm("Sí, activar Touch ID")
                                 .btnCancel("Ahora no")
 
-                            activity?.showOtpDialog(otpDialog)?.onClickButton = { otp ->
-                                if (otp.contentEquals(otpDialog.btnConfirm)) {
+                            activity?.showSimpleDialog(simpleDialog)?.onClickButton = {
+                                if (it.contentEquals(simpleDialog.btnConfirm)) {
 
                                     switchStatus(true, "Activado", holder)
                                     configMobilePayment.add(true)
+                                } else {
+                                    switchStatus(false, "Desactivado", holder)
+                                }
+                            }
+                        }
+
+                    }
+                    StateEnum.PAGO_MOVIL -> {
+
+                        if (!holder.root.swt_holder_item_config_status.isChecked) {
+                            switchStatus(false, "Desactivado", holder)
+                        } else {
+                            val simpleDialog = SimpleDialog.Builder()
+                                .title("Activar Pago Móvil")
+                                .message("Podrás habilitar tus tarjetas para\npagar con ellas cómoda y\nrápidamente utilizando tu móvil.")
+                                .subTitle("¿Activar Pago móvil ahora?")
+                                .btnConfirm("Sí, activar Pago móvil")
+                                .btnCancel("Ahora no")
+
+                            activity?.showSimpleDialog(simpleDialog)?.onClickButton = { simple ->
+                                if (simple.contentEquals(simpleDialog.btnConfirm)) {
+
+                                    val otpDialog = OtpDialog.Builder()
+                                        .title("Activar Pago Móvil")
+                                        .message("Introduce el código enviado al\n**753 para activar el pago móvil.")
+                                        .btnConfirm("Confirmar")
+                                        .btnCancel("Ahora no")
+
+                                    activity?.showOtpDialog(otpDialog)?.onClickButton = { otp ->
+                                        if (otp.contentEquals(otpDialog.btnConfirm)) {
+
+                                            switchStatus(true, "Activado", holder)
+                                            configMobilePayment.add(true)
+
+                                        } else {
+                                            switchStatus(false, "Desactivado", holder)
+                                        }
+                                    }
 
                                 } else {
                                     switchStatus(false, "Desactivado", holder)
                                 }
                             }
-
-                        } else {
-                            switchStatus(false, "Desactivado", holder)
                         }
+
                     }
+                    else -> {}
                 }
             }
         }

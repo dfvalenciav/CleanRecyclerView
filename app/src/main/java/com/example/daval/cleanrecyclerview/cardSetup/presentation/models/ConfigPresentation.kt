@@ -1,6 +1,7 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.models
 
 data class ConfigPresentation(
+    var position: StateEnum? = null,
     var title: String,
     var message: String,
     var image: Int,

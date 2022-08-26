@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.organizationList.domain.models
+package com.example.daval.cleanrecyclerview.cardSetup.domain.models
 
 data class Org(
     val name: String,
@@ -6,5 +6,5 @@ data class Org(
     val phone: String,
     val nit:Int,
     val city: String,
-    val empleados: Int
+    val employees: Int
 )

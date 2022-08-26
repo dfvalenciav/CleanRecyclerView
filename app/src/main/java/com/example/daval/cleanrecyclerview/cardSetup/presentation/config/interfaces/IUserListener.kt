@@ -5,5 +5,5 @@ import com.example.daval.cleanrecyclerview.databinding.HolderItemConfigurationBi
 
 interface IUserListener {
 
-    fun onClick(position: Int, holder : HolderItemConfigurationBinding)
+    fun onClick(holder : HolderItemConfigurationBinding)
 }
