@@ -27,17 +27,17 @@
         app:layout_constraintGuide_percent="0.97"
         style="@style/guideLineVerticalEnd" />
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tv_card_list_trust_device_title"
         android:text="@string/cardListTrustDevice_Title1"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/cardListTitle1" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tv_card_list_trust_device_subtitle"
         android:text="@string/cardListTrustDevice_Title2"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/tv_card_list_trust_device_title"
         style="@style/cardListTitle2" />
 
     <ScrollView
@@ -46,11 +46,11 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/materialButtonCardListTrustDevice"
+        app:layout_constraintBottom_toTopOf="@+id/btn_card_list_trust_device_continue_"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/tv_card_list_trust_device_subtitle"
         app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
@@ -61,13 +61,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/tv_card_list_trust_device_description_part_one"
                 style="@style/cardListTitle3"
                 android:layout_width="wrap_content"
                 android:text="@string/cardListTrustDevice_Title3"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_card_list_trust_device_subtitle" />
 
             <LinearLayout
                 android:id="@+id/linearLayout_Trut_device"
@@ -78,18 +78,18 @@
                 android:orientation="vertical"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineEndHalf"
                 app:layout_constraintStart_toStartOf="@+id/guidelineStartHalf"
-                app:layout_constraintTop_toBottomOf="@+id/textView10">
+                app:layout_constraintTop_toBottomOf="@+id/tv_card_list_trust_device_description_part_one">
 
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/tv_card_list_trust_device_description_part_two"
                     style="@style/cardListTitle4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/cardListTrustDevice_Title4" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/tv_card_list_trust_device_description_part_three"
                     style="@style/cardListTitle5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -97,13 +97,13 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/tv_card_list_trust_device_description_part_four"
                 style="@style/cardListTitle3"
                 android:layout_width="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:text="@string/cardListTrustDevice_Title3"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@+id/materialButtonCardListTrustDevice"
+                app:layout_constraintBottom_toTopOf="@+id/btn_card_list_trust_device_continue_"
                 app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@+id/guidelineStart"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout_Trut_device" />
@@ -111,7 +111,7 @@
     </ScrollView>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButtonCardListTrustDeviceNC"
+        android:id="@+id/btn_card_list_trust_device_no_continue"
         style="@style/cardListButtonStyle"
         android:backgroundTint="#ffffff"
         android:text="@string/cardListTrustDevice_button"
@@ -125,13 +125,13 @@
         app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/materialButtonCardListTrustDevice"
+        android:id="@+id/btn_card_list_trust_device_continue_"
         style="@style/cardListButtonStyle"
         android:layout_marginBottom="16dp"
         android:text="@string/cardListAvail_button"
         android:textAlignment="center"
         android:textAppearance="@style/TextStyle"
-        app:layout_constraintBottom_toTopOf="@+id/materialButtonCardListTrustDeviceNC"
+        app:layout_constraintBottom_toTopOf="@+id/btn_card_list_trust_device_no_continue"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart" />

@@ -6,11 +6,9 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentActivity
 import com.bumptech.glide.Glide
 import com.example.daval.cleanrecyclerview.R
 import com.example.daval.cleanrecyclerview.base.BaseDialog
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.OtpDialog
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.SimpleDialog
 import com.example.daval.cleanrecyclerview.databinding.DialogSimpleBinding
 
@@ -31,41 +29,41 @@ class Simple : BaseDialog() {
 
         with(binding) {
             if (modelDialog.image != null) {
-                imgDialog.visibility = View.VISIBLE
+                imgDialogSimpleError.visibility = View.VISIBLE
             } else {
-                imgDialog.visibility = View.GONE
+                imgDialogSimpleError.visibility = View.GONE
                 Glide.with(root.context)
                     .load(modelDialog.image)
                     .placeholder(R.drawable.ic_bizum)
-                    .into(imgDialog)
+                    .into(imgDialogSimpleError)
             }
 
-            tvTitle.text = modelDialog.title
-            tvSubTitle.text = modelDialog.subTitle
+            tvDialogSimpleTitle.text = modelDialog.title
+            tvDialogSimpleMessage.text = modelDialog.subTitle
 
             if (modelDialog.message.isNullOrBlank()) {
-                tvMessage.visibility = View.GONE
+                tvDialogSimpleMessage.visibility = View.GONE
             } else {
-                tvMessage.visibility = View.VISIBLE
-                tvMessage.text = modelDialog.message
+                tvDialogSimpleMessage.visibility = View.VISIBLE
+                tvDialogSimpleMessage.text = modelDialog.message
             }
 
 
-            btnAccept.text = modelDialog.btnConfirm
+            btnDialogSimpleAccept.text = modelDialog.btnConfirm
 
             if (modelDialog.btnCancel.isNullOrBlank()) {
-                btnCancel.visibility = View.GONE
+                btnDialogSimpleCancel.visibility = View.GONE
             } else {
-                btnCancel.visibility = View.VISIBLE
-                btnCancel.text = modelDialog.btnCancel
+                btnDialogSimpleCancel.visibility = View.VISIBLE
+                btnDialogSimpleCancel.text = modelDialog.btnCancel
             }
 
-            btnAccept.setOnClickListener {
+            btnDialogSimpleAccept.setOnClickListener {
                 modelDialog.btnConfirm?.let { it1 -> onClickButton(it1) }
                 dismiss()
             }
 
-            btnCancel.setOnClickListener {
+            btnDialogSimpleCancel.setOnClickListener {
                 modelDialog.btnCancel?.let { it1 -> onClickButton(it1) }
                 dismiss()
 
@@ -79,18 +77,10 @@ class Simple : BaseDialog() {
         return dialog
     }
 
-    //Funcion para determinar el ancho del dialogo -> Por defecto es el 90% del ancho
+    //Funcion para determiner el ancho del dialogo -> Por defecto es el 90% del ancho
     private fun calculateWidth(percent: Double): Double {
         return resources.displayMetrics.widthPixels * percent
     }
 
 
-    fun FragmentActivity?.showOtpDialog(model: OtpDialog.Builder): Otp {
-        val dialog = Otp()
-        dialog.modelDialog = model
-        this?.let {
-            dialog.show(it.supportFragmentManager, Otp::class.java.name)
-        }
-        return dialog
-    }
 }

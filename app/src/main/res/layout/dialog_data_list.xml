@@ -7,7 +7,7 @@
     android:background="@drawable/bg_dialog">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tv_dialog_simple_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -15,12 +15,12 @@
         android:textColor="@color/dark_grey"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/rvDialog"
+        app:layout_constraintBottom_toTopOf="@id/rv_dialog_data_list"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgClose"
+        android:id="@+id/img_dialog_data_list_close"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="8dp"
@@ -31,7 +31,7 @@
         app:srcCompat="@drawable/ic_close" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvDialog"
+        android:id="@+id/rv_dialog_data_list"
         android:layout_width="match_parent"
         android:layout_height="272dp"
         android:layout_marginStart="16dp"
@@ -41,7 +41,7 @@
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@id/tv_dialog_simple_title"
         app:spanCount="1"
         tools:listitem="@layout/holder_item_user" />
 

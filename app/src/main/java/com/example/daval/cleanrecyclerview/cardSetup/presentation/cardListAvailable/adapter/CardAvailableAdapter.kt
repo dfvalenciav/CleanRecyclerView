@@ -27,8 +27,8 @@ class CardAvailableAdapter (private val listener: ICardListPreferred)
            binding.apply {
                tvCardListAvailableItemCardtype.text = data.cardListType
                tvCardListAvailableItemCardnumber.text= util.hideCardNumber(data.cardListNumber?:"")
-               swtCardListAvailableItemCardbtnpayment.setOnClickListener {
-                   if (swtCardListAvailableItemCardbtnpayment.isChecked){
+               swtCardListHomeItemCardSelected.setOnClickListener {
+                   if (swtCardListHomeItemCardSelected.isChecked){
                        listener.addPreferredCard(data)
                    }
                }

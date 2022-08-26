@@ -32,7 +32,7 @@ class OrganizationFragment2 : BaseFragment<FragmentOrganizationBinding, Organiza
     }
 
     private fun setAdapter(items: List<OrgPresentation>) {
-        with(binding.recyclerView){
+        with(binding.rvOrganization){
             adapter = OrgAdapter(this@OrganizationFragment2)
             (adapter as? OrgAdapter)?.submitList(items)
         }
