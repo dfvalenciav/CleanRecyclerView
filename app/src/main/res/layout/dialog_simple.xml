@@ -6,7 +6,7 @@
     android:background="@drawable/bg_dialog">
 
     <ImageView
-        android:id="@+id/imgDialog"
+        android:id="@+id/img_dialog_simple_error"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginTop="32dp"
@@ -17,7 +17,7 @@
         app:srcCompat="@drawable/ic_error" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvTitle"
+        android:id="@+id/tv_dialog_simple_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -28,13 +28,13 @@
         android:textColor="@color/dark_grey"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/tvMessage"
+        app:layout_constraintBottom_toTopOf="@id/tv_dialog_simple_message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgDialog" />
+        app:layout_constraintTop_toBottomOf="@+id/img_dialog_simple_error" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvMessage"
+        android:id="@+id/tv_dialog_simple_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -45,13 +45,13 @@
         android:textColor="@color/dark_grey"
         android:textSize="16sp"
         android:textStyle="normal"
-        app:layout_constraintBottom_toTopOf="@id/tvSubTitle"
+        app:layout_constraintBottom_toTopOf="@id/img_dialog_simple_subtitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+        app:layout_constraintTop_toBottomOf="@id/tv_dialog_simple_title" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/tvSubTitle"
+        android:id="@+id/img_dialog_simple_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -65,7 +65,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/constraintButtons"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_dialog_simple_message" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintButtons"
@@ -76,10 +76,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSubTitle">
+        app:layout_constraintTop_toBottomOf="@+id/img_dialog_simple_subtitle">
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/btnAccept"
+            android:id="@+id/btn_dialog_simple_accept"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -92,14 +92,14 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="normal"
-            app:layout_constraintBottom_toTopOf="@+id/btnCancel"
+            app:layout_constraintBottom_toTopOf="@+id/btn_dialog_simple_cancel"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.6" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/btnCancel"
+            android:id="@+id/btn_dialog_simple_cancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -113,7 +113,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnAccept"
+            app:layout_constraintTop_toBottomOf="@+id/btn_dialog_simple_accept"
             app:layout_constraintWidth_percent="0.6" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

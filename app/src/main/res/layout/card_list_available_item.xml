@@ -7,7 +7,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/iv_card_list_available_item_icon"
+        android:id="@+id/tv_card_list_available_item_icon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_credit_card_24"
@@ -16,7 +16,7 @@
     <TextView
         android:id="@+id/tv_card_list_available_item_cardtype"
         android:text="@string/cardListAvail_ItemName"
-        app:layout_constraintStart_toEndOf="@+id/iv_card_list_available_item_icon"
+        app:layout_constraintStart_toEndOf="@+id/tv_card_list_available_item_icon"
         app:layout_constraintTop_toTopOf="parent"
         style="@style/cardListItemCardName" />
 
@@ -28,7 +28,7 @@
         style="@style/cardListItemCardNumber" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
-        android:id="@+id/swt_card_list_available_item_cardbtnpayment"
+        android:id="@+id/swt_card_list_home_item_card_selected"
         style="@style/cardListItemSwtchButton"
         app:thumbTint="@color/Primario_01_SMM_Purple"
         app:layout_constraintEnd_toEndOf="parent"

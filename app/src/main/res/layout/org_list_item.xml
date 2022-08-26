@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/organizationName"
+            android:id="@+id/tv_org_list_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/archivo_black"
@@ -28,7 +28,7 @@
         </TextView>
 
         <TextView
-            android:id="@+id/organizationCode"
+            android:id="@+id/tv_org_list_item_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/archivo"

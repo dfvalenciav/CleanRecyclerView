@@ -93,8 +93,8 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
         text: String,
         holder: HolderItemConfigurationBinding
     ) {
-        holder.status.text = text
-        holder.switchValue.isChecked = boolean
+        holder.tvHolderItemConfigStatus.text = text
+        holder.swtHolderItemConfigStatus.isChecked = boolean
     }
 
     override fun onClick(position: Int, holder: HolderItemConfigurationBinding) {
@@ -102,7 +102,7 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
         when (position) {
             0 -> { //Position in Card Touch ID
 
-                if (!holder.root.switchValue.isChecked) {
+                if (!holder.root.swt_holder_item_config_status.isChecked) {
                     switchStatus(false, "Desactivado", holder)
                 } else {
                     val simpleDialog = SimpleDialog.Builder()
@@ -126,7 +126,7 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
 
             1 -> { //Position in Card Pago Móvil
 
-                if (!holder.root.switchValue.isChecked) {
+                if (!holder.root.swt_holder_item_config_status.isChecked) {
                     switchStatus(false, "Desactivado", holder)
                 } else {
                     val simpleDialog = SimpleDialog.Builder()

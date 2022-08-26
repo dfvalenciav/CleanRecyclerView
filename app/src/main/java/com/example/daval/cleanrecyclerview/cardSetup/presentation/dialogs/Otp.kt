@@ -24,17 +24,17 @@ class Otp : BaseDialog() {
         modelDialog.build()
 
         with(binding) {
-            tvTitleOtp.text = modelDialog.title
-            tvMessageOtp.text = modelDialog.message
-            btnAcceptOtp.text = modelDialog.btnConfirm
-            btnCancelOtp.text = modelDialog.btnCancel
+            tvDialogOtpTitle.text = modelDialog.title
+            tvDialogOtpMessage.text = modelDialog.message
+            btnDialogOtpAccept.text = modelDialog.btnConfirm
+            btnDialogOtpCancel.text = modelDialog.btnCancel
 
-            btnAcceptOtp.setOnClickListener {
+            btnDialogOtpAccept.setOnClickListener {
                 modelDialog.btnConfirm?.let { it1 -> onClickButton(it1) }
                 dismiss()
             }
 
-            btnCancelOtp.setOnClickListener {
+            btnDialogOtpCancel.setOnClickListener {
                 modelDialog.btnCancel?.let { it1 -> onClickButton(it1) }
                 dismiss()
             }

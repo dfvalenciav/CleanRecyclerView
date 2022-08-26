@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="181dp"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/cardItem"
+        android:id="@+id/card_carrousel_item"
         android:layout_marginStart="46dp"
         android:layout_marginEnd="46dp"
         app:cardCornerRadius="25dp"
@@ -21,7 +21,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/cardHomePrototypeNumber"
+                android:id="@+id/tv_card_list_prototype_item_cardnumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
@@ -35,16 +35,16 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/cardHomePrototypeExpiration"
+                android:id="@+id/tv_card_list_prototype_item_expiration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/cardListHome_itemPrototypeExpiration"
                 android:textColor="@color/white"
-                app:layout_constraintStart_toStartOf="@+id/cardHomePrototypeNumber"
-                app:layout_constraintTop_toBottomOf="@+id/cardHomePrototypeNumber" />
+                app:layout_constraintStart_toStartOf="@+id/tv_card_list_prototype_item_cardnumber"
+                app:layout_constraintTop_toBottomOf="@+id/tv_card_list_prototype_item_cardnumber" />
 
             <ImageView
-                android:id="@+id/imageView5"
+                android:id="@+id/img_card_list_prototype_item_franchise_logo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="30dp"
@@ -57,35 +57,35 @@
                 app:srcCompat="@drawable/ic_mastercard_vector" />
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/img_card_list_prototype_item_contacless"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="50dp"
                 android:scaleX="1.5"
                 android:scaleY="1.5"
-                app:layout_constraintBottom_toTopOf="@+id/imageView5"
-                app:layout_constraintStart_toStartOf="@+id/imageView5"
+                app:layout_constraintBottom_toTopOf="@+id/img_card_list_prototype_item_franchise_logo"
+                app:layout_constraintStart_toStartOf="@+id/img_card_list_prototype_item_franchise_logo"
                 app:srcCompat="@drawable/ic_contactless_white" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/img_card_list_prototype_item_bank_logo"
                 android:layout_width="55dp"
                 android:layout_height="58dp"
                 android:scaleX="0.8"
                 android:scaleY="0.8"
-                app:layout_constraintStart_toStartOf="@+id/cardHomePrototypeNumber"
+                app:layout_constraintStart_toStartOf="@+id/tv_card_list_prototype_item_cardnumber"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_favicon_copy_4_white" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/img_card_list_prototype_item_bank_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="SMM"
                 android:textColor="@color/white"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-                app:layout_constraintStart_toEndOf="@+id/imageView7"
-                app:layout_constraintTop_toTopOf="@+id/imageView7" />
+                app:layout_constraintBottom_toBottomOf="@+id/img_card_list_prototype_item_bank_logo"
+                app:layout_constraintStart_toEndOf="@+id/img_card_list_prototype_item_bank_logo"
+                app:layout_constraintTop_toTopOf="@+id/img_card_list_prototype_item_bank_logo" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

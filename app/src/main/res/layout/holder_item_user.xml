@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/iv_photo"
+                android:id="@+id/img_holder_item_user_profile"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:adjustViewBounds="true"
@@ -48,7 +48,7 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <ImageView
-                android:id="@+id/iv_bizum"
+                android:id="@+id/img_holder_item_user_logo"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:adjustViewBounds="true"
@@ -60,20 +60,20 @@
 
     <TextView
         android:layout_marginStart="16dp"
-        android:id="@+id/tv_name"
+        android:id="@+id/tv_holder_item_user_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
         android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/tv_number"
+        app:layout_constraintBottom_toTopOf="@id/tv_holder_item_user_number"
         app:layout_constraintStart_toEndOf="@id/cl_container"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:layout_marginStart="16dp"
-        android:id="@+id/tv_number"
+        android:id="@+id/tv_holder_item_user_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
@@ -82,7 +82,7 @@
         android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@id/cl_container"
-        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+        app:layout_constraintTop_toBottomOf="@id/tv_holder_item_user_name" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

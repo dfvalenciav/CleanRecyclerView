@@ -35,14 +35,14 @@ class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding,
     }
 
     fun setAdapter (items: List<CardSetupPresentation>){
-        with(binding.recyclerViewCardListAvial) {
+        with(binding.rvCardListAvailable) {
             adapter = CardAvailableAdapter(this@CardListAvailableFragment)
             (adapter as? CardAvailableAdapter)?.submitList(items)
         }
     }
 
     override fun setListeners() {
-        binding.materialButtonCardListAvail.setOnClickListener {
+        binding.btnCardListAvailableContinue.setOnClickListener {
             if (listCardsSelected.isEmpty()){
                 view?.let { it -> util.showSnack(it, requireContext(), getString(R.string.noCardListSetupSelected), getString(R.string.utilsHideSnackbar)) }
             } else {
@@ -50,7 +50,7 @@ class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding,
                     CardListAvailableFragmentDirections.actionCardListAvailableFragmentToCardListSelectedFragment(
                         listCardsSelected.toTypedArray()
                     )
-                binding.materialButtonCardListAvail.findNavController().navigate(action)
+                binding.btnCardListAvailableContinue.findNavController().navigate(action)
             }
         }
     }

@@ -31,8 +31,8 @@ class OrgAdapter (private val listener : IOrgListener)
             ): BaseViewHolder<OrgPresentation>(binding) {
         override fun bind(data: OrgPresentation) {
             binding.apply {
-                organizationName.text = data.organizationName
-                organizationCode.text = data.organizationCode
+                tvOrgListItemName.text = data.organizationName
+                tvOrgListItemCode.text = data.organizationCode
                 root.setOnClickListener {
                     listener.onClickOrg(data)
                 }

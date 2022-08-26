@@ -40,19 +40,19 @@ class ConfigurationAdapter(private val listener: IUserListener) :
         override fun bind(data: ConfigPresentation) {
             binding.apply {
 
-                title.text = data.title
-                message.text = data.message
-                switchValue.isChecked = data.indicatorSwitch
-                if(data.indicatorSwitch) status.text = "Activado" else status.text = "Desactivado"
-                loadDrawable(imageBackground, data.backGround, root.context)
-                loadDrawable(imageResource, data.image, root.context)
+                tvHolderItemConfigTitle.text = data.title
+                tvHolderItemConfigMessage.text = data.message
+                swtHolderItemConfigStatus.isChecked = data.indicatorSwitch
+                if(data.indicatorSwitch) tvHolderItemConfigStatus.text = "Activado" else tvHolderItemConfigStatus.text = "Desactivado"
+                loadDrawable(imgHolderItemConfigBackground, data.backGround, root.context)
+                loadDrawable(imgHolderItemConfigResource, data.image, root.context)
             }
         }
         fun onClick(
             position: Int,
             holder: ConfigurationViewHolder
         ){
-            binding.switchValue.setOnClickListener {
+            binding.swtHolderItemConfigStatus.setOnClickListener {
                     listener.onClick(position,holder.binding)
 
             }

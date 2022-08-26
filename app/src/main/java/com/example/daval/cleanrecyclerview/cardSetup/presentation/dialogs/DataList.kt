@@ -24,8 +24,8 @@ class DataList<T> : BaseDialog(){
         modelDialog.build()
 
         with(binding){
-            tvTitle.text = modelDialog.title
-            imgClose.setOnClickListener { dismiss() }
+            tvDialogSimpleTitle.text = modelDialog.title
+            imgDialogDataListClose.setOnClickListener { dismiss() }
             modelDialog.listData?.let { setAdapter(binding, it) }
         }
 
@@ -42,7 +42,7 @@ class DataList<T> : BaseDialog(){
     }
 
     private fun setAdapter(binding: DialogDataListBinding, ls: List<T>) {
-        with(binding.rvDialog) {
+        with(binding.rvDialogDataList) {
             if (adapter == null) {
                 layoutManager = LinearLayoutManager(
                     this@DataList.requireContext(),

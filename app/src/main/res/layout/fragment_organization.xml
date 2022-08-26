@@ -21,7 +21,7 @@
             style="@style/guideLineVerticalEnd" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/et_organization_name"
             android:layout_width="0dp"
             android:layout_height="@dimen/edit_height_2"
             android:layout_marginTop="@dimen/base_margin15x"
@@ -33,22 +33,22 @@
             android:padding="@dimen/base_padding"
             android:textColorHint="@color/black"
             android:textColorLink="@color/purple_500"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_organization_title"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
+            android:id="@+id/rv_organization"
             android:layout_width="0dp"
             android:layout_height="641dp"
             android:background="@color/secundario_06_bg_gray"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+            app:layout_constraintTop_toBottomOf="@+id/et_organization_name"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"/>
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/tv_organization_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -61,7 +61,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btn_organization_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@+id/guidelineStart"
@@ -73,14 +73,14 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/btn_organization_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
             android:backgroundTint="@color/secundario_06_bg_gray"
             android:minHeight="@dimen/img_heigt"
             android:src="@drawable/ic_baseline_search_24"
-            app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName"
+            app:layout_constraintTop_toTopOf="@+id/et_organization_name"
             tools:ignore="SpeakableTextPresentCheck" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
