@@ -8,14 +8,13 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.daval.cleanrecyclerview.base.BaseFragment
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelected.Adapter.CardSelectAdapter
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelected.Adapter.ICardSelectListener
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelected.adapter.CardSelectAdapter
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
 import com.example.daval.cleanrecyclerview.databinding.FragmentCardListSelectedBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CardListSelectedFragment : BaseFragment<FragmentCardListSelectedBinding, CardListSelectedViewModel>(), ICardSelectListener {
+class CardListSelectedFragment : BaseFragment<FragmentCardListSelectedBinding, CardListSelectedViewModel>() {
 
 
     override val viewModel by viewModels<CardListSelectedViewModel> ()
@@ -37,7 +36,7 @@ class CardListSelectedFragment : BaseFragment<FragmentCardListSelectedBinding, C
 
     fun setAdapter() {
         with(binding.rvCardListSelected) {
-            adapter = CardSelectAdapter(this@CardListSelectedFragment)
+            adapter = CardSelectAdapter()
             (adapter as? CardSelectAdapter)?.submitList(itemslist)
         }
     }
@@ -61,7 +60,4 @@ class CardListSelectedFragment : BaseFragment<FragmentCardListSelectedBinding, C
         }
     }
 
-    override fun onClickCardSelect(datapassed: CardSetupPresentation) {
-        TODO("Not yet implemented")
-    }
 }

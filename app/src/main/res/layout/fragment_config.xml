@@ -6,11 +6,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_config"
+        android:id="@+id/rv_config_fragment_config"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/buttonAccept"
+        app:layout_constraintBottom_toTopOf="@id/btn_config_accept"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,7 +18,7 @@
         tools:listitem="@layout/holder_item_configuration" />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/buttonAccept"
+        android:id="@+id/btn_config_accept"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
@@ -31,7 +31,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rv_config" />
+        app:layout_constraintTop_toBottomOf="@id/rv_config_fragment_config" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

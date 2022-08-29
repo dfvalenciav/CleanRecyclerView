@@ -23,7 +23,7 @@ class CardAvailableAdapter (private val listener: ICardListPreferred)
    inner class CardAvailableHolder(private val binding: CardListAvailableItemBinding) : BaseViewHolder<CardSetupPresentation> (binding) {
 
        override fun bind(data: CardSetupPresentation) {
-           var util = Utils()
+           val util = Utils()
            binding.apply {
                tvCardListAvailableItemCardtype.text = data.cardListType
                tvCardListAvailableItemCardnumber.text= util.hideCardNumber(data.cardListNumber?:"")

@@ -6,13 +6,13 @@ import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardHomeTask
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.CardSetup
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.Config
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.Org
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.StateEnum
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.TypeConfigEnum
 
 class MockDataBase {
 
     fun config():List<Config> = listOf(
-        Config(StateEnum.TOUCH_ID,"Touch ID","Utiliza tu huella para acceder a la App de una forma rápida y segura.", R.drawable.ic_fingerprint,R.drawable.bg_light_orange,false),
-        Config(StateEnum.PAGO_MOVIL,"Pago móvil","Realiza tus compras con el móvil sin necesidad de usar tu tarjeta.", R.drawable.ic_pay_mobile,R.drawable.bg_light_purple,false)
+        Config(TypeConfigEnum.TOUCH_ID,"Touch ID","Utiliza tu huella para acceder a la App de una forma rápida y segura.", R.drawable.ic_fingerprint,R.drawable.bg_light_orange,false),
+        Config(TypeConfigEnum.PAGO_MOVIL,"Pago móvil","Realiza tus compras con el móvil sin necesidad de usar tu tarjeta.", R.drawable.ic_pay_mobile,R.drawable.bg_light_purple,false)
     )
 
     fun cardListSetup(): List<CardSetup> = listOf(

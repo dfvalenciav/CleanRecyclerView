@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding, CardListAvailableViewModel> (), ICardListPreferred {
 
     override val viewModel by viewModels<CardListAvailableViewModel> ()
-    private var listCardsSelected: MutableList<CardSetupPresentation> = mutableListOf<CardSetupPresentation>()
+    private var listCardsSelected: MutableList<CardSetupPresentation> = mutableListOf()
     private lateinit var items : List<CardSetupPresentation>
     private val util: Utils = Utils()
 
@@ -34,7 +34,7 @@ class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding,
         listCardsSelected.clear()
     }
 
-    fun setAdapter (items: List<CardSetupPresentation>){
+    private fun setAdapter (items: List<CardSetupPresentation>){
         with(binding.rvCardListAvailable) {
             adapter = CardAvailableAdapter(this@CardListAvailableFragment)
             (adapter as? CardAvailableAdapter)?.submitList(items)
@@ -44,7 +44,7 @@ class CardListAvailableFragment : BaseFragment<FragmentCardListAvailableBinding,
     override fun setListeners() {
         binding.btnCardListAvailableContinue.setOnClickListener {
             if (listCardsSelected.isEmpty()){
-                view?.let { it -> util.showSnack(it, requireContext(), getString(R.string.noCardListSetupSelected), getString(R.string.utilsHideSnackbar)) }
+                view?.let { value -> util.showSnack(value, requireContext(), getString(R.string.noCardListSetupSelected), getString(R.string.utilsHideSnackbar)) }
             } else {
                 val action =
                     CardListAvailableFragmentDirections.actionCardListAvailableFragmentToCardListSelectedFragment(

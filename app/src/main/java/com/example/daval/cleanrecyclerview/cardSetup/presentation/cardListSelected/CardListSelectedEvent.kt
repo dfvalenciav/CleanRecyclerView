@@ -1,6 +1,5 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelected
 
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.CardListAvailableEvent
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
 
 sealed class CardListSelectedEvent {

@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelected.Adapter
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListSelected.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import com.example.daval.cleanrecyclerview.base.BaseViewHolder
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardSetupPresentation
 import com.example.daval.cleanrecyclerview.databinding.CardListSelectedItemBinding
 
-class CardSelectAdapter (private val listener : ICardSelectListener)
+class CardSelectAdapter
     : BaseAdapter<CardSetupPresentation, CardSelectAdapter.CardSelectHolder> (diffCallback) {
 
     override fun onCreateViewHolder( parent: ViewGroup, viewType: Int ) = CardSelectHolder(

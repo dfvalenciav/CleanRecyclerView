@@ -1,15 +1,15 @@
-package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.Adapter
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import com.example.daval.cleanrecyclerview.base.BaseAdapter
 import com.example.daval.cleanrecyclerview.base.BaseViewHolder
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.CardListHomeFragment
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardHomeOptionsPresentation
 import com.example.daval.cleanrecyclerview.databinding.CardListHomeItemBinding
 
-class CardHomeAdapter(cardListHomeFragment: CardListHomeFragment) : BaseAdapter<CardHomeOptionsPresentation, CardHomeAdapter.CardHomeHolder>(diffCallback){
+class CardHomeAdapter : BaseAdapter<CardHomeOptionsPresentation, CardHomeAdapter.CardHomeHolder>(diffCallback){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int ) = CardHomeHolder(
@@ -20,6 +20,7 @@ class CardHomeAdapter(cardListHomeFragment: CardListHomeFragment) : BaseAdapter<
     inner class CardHomeHolder (private val binding: CardListHomeItemBinding) :
         BaseViewHolder<CardHomeOptionsPresentation>(binding) {
 
+        @SuppressLint("DiscouragedApi")
         override fun bind(data:CardHomeOptionsPresentation ) {
             with(binding){
                 tvCardListHomeItemTitle.text = data.cardHomeTitle

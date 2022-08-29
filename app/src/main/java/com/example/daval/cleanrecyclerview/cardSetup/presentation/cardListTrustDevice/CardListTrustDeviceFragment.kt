@@ -1,9 +1,7 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListTrustDevice
 
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
@@ -24,13 +22,13 @@ class CardListTrustDeviceFragment: BaseFragment<FragmentCardListTrustDeviceBindi
     ) = FragmentCardListTrustDeviceBinding.inflate(inflater, container, false)
 
     override fun setListeners() {
-        binding.btnCardListTrustDeviceNoContinue.setOnClickListener {
+        binding.btnCardListTrustDeviceContinue.setOnClickListener {
             val action = CardListTrustDeviceFragmentDirections.actionCardListTrustDeviceFragmentToCardListFinishRegisterFragment()
             binding.btnCardListTrustDeviceContinue.findNavController().navigate(action)
         }
     }
 
     override fun observe() {
-        Log.d("hello", "hello")
+        Log.d("tag", "data fixed")
     }
 }

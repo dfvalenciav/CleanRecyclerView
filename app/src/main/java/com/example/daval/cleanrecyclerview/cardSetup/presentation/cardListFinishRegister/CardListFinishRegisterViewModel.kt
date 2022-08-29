@@ -5,5 +5,4 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class CardListFinishRegisterViewModel @Inject constructor() : BaseViewModel<Any>() {
-}
+class CardListFinishRegisterViewModel @Inject constructor() : BaseViewModel<Any>()

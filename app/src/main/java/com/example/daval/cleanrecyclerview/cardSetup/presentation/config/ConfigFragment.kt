@@ -14,11 +14,11 @@ import com.example.daval.cleanrecyclerview.base.BaseFragment
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.config.adapter.ConfigurationAdapter
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.config.interfaces.IUserListener
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.*
-import com.example.daval.cleanrecyclerview.databinding.FragmentMainBinding
+import com.example.daval.cleanrecyclerview.databinding.FragmentConfigBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUserListener {
+class ConfigFragment : BaseFragment<FragmentConfigBinding, ConfigViewModel>(), IUserListener {
 
     override val viewModel by viewModels<ConfigViewModel>()
 
@@ -30,7 +30,7 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
         inflater: LayoutInflater,
         container: ViewGroup?
     ) =
-        FragmentMainBinding.inflate(inflater, container, false)
+        FragmentConfigBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,9 +43,9 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
         super.setUI()
         with(binding) {
 
-            buttonAccept.text = "Continuar"
-            buttonAccept.setOnClickListener { }
-            buttonAccept.setOnClickListener {
+            btnConfigAccept.text = "Continuar"
+            btnConfigAccept.setOnClickListener { }
+            btnConfigAccept.setOnClickListener {
                 val allEqual: Boolean =
                     configMobilePayment.stream().distinct().limit(2).count() <= 1
                 if (allEqual && configMobilePayment.size > 1) {
@@ -64,7 +64,7 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
 
 
     private fun setAdapter(items: List<ConfigPresentation>) {
-        with(binding.rvConfig) {
+        with(binding.rvConfigFragmentConfig) {
             if (adapter == null) {
                 layoutManager = LinearLayoutManager(
                     this@ConfigFragment.requireContext(),
@@ -92,7 +92,7 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
 
     @SuppressLint("NotifyDataSetChanged")
     private fun updateAdapter(items: List<ConfigPresentation>) {
-        binding.rvConfig.apply {
+        binding.rvConfigFragmentConfig.apply {
             (adapter as? ConfigurationAdapter)?.submitList(items)
             adapter?.notifyDataSetChanged()
         }
@@ -108,21 +108,21 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
     override fun onClick(data: ConfigPresentation, enable: Boolean) {
 
         when (data.type) {
-            StateEnum.TOUCH_ID -> {
+            TypeConfigEnum.TOUCH_ID -> {
 
                 if (!enable) {
 
                     changeStatusSw(data, false)
                 } else {
-                    val simpleDialog = SimpleDialog.Builder()
+                    val simpleDialogPresentation = SimpleDialogPresentation.Builder()
                         .title("Activar Touch ID")
                         .message("Recordaremos tu usuario para que\napartir de ahora puedas usar tu\nhuella para acceder a la aplicación.")
                         .subTitle("¿Activar Touch ID ahora?")
                         .btnConfirm("Sí, activar Touch ID")
                         .btnCancel("Ahora no")
 
-                    activity?.showSimpleDialog(simpleDialog)?.onClickButton = {
-                        if (it.contentEquals(simpleDialog.btnConfirm)) {
+                    activity?.showSimpleDialog(simpleDialogPresentation)?.onClickButton = {
+                        if (it.contentEquals(simpleDialogPresentation.btnConfirm)) {
 
                             changeStatusSw(data, true)
                             configMobilePayment.add(true)
@@ -133,29 +133,29 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
                 }
 
             }
-            StateEnum.PAGO_MOVIL -> {
+            TypeConfigEnum.PAGO_MOVIL -> {
 
                 if (!enable) {
                     changeStatusSw(data, false)
                 } else {
-                    val simpleDialog = SimpleDialog.Builder()
+                    val simpleDialogPresentation = SimpleDialogPresentation.Builder()
                         .title("Activar Pago Móvil")
                         .message("Podrás habilitar tus tarjetas para\npagar con ellas cómoda y\nrápidamente utilizando tu móvil.")
                         .subTitle("¿Activar Pago móvil ahora?")
                         .btnConfirm("Sí, activar Pago móvil")
                         .btnCancel("Ahora no")
 
-                    activity?.showSimpleDialog(simpleDialog)?.onClickButton = { simple ->
-                        if (simple.contentEquals(simpleDialog.btnConfirm)) {
+                    activity?.showSimpleDialog(simpleDialogPresentation)?.onClickButton = { simple ->
+                        if (simple.contentEquals(simpleDialogPresentation.btnConfirm)) {
 
-                            val otpDialog = OtpDialog.Builder()
+                            val otpDialogPresentation = OtpDialogPresentation.Builder()
                                 .title("Activar Pago Móvil")
                                 .message("Introduce el código enviado al\n**753 para activar el pago móvil.")
                                 .btnConfirm("Confirmar")
                                 .btnCancel("Ahora no")
 
-                            activity?.showOtpDialog(otpDialog)?.onClickButton = { otp ->
-                                if (otp.contentEquals(otpDialog.btnConfirm)) {
+                            activity?.showOtpDialog(otpDialogPresentation)?.onClickButton = { otp ->
+                                if (otp.contentEquals(otpDialogPresentation.btnConfirm)) {
 
                                     changeStatusSw(data, true)
                                     configMobilePayment.add(true)

@@ -9,8 +9,8 @@ import androidx.constraintlayout.helper.widget.Carousel
 import androidx.fragment.app.viewModels
 import com.example.daval.cleanrecyclerview.utils.Utils
 import com.example.daval.cleanrecyclerview.base.BaseFragment
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.Adapter.CardHomeAdapter
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.Adapter.ICardHomeListener
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.adapter.CardHomeAdapter
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.adapter.ICardHomeListener
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardCarrouselPresentation
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardHomeOptionsPresentation
 import com.example.daval.cleanrecyclerview.databinding.FragmentCardListHomeBinding
@@ -52,18 +52,14 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
 
     fun setAdapter (items: List<CardHomeOptionsPresentation>){
         with(binding.recyclerViewHomeOptions) {
-            adapter = CardHomeAdapter(this@CardListHomeFragment)
+            adapter = CardHomeAdapter()
             (adapter as? CardHomeAdapter)?.submitList(items)
         }
     }
 
     override fun setListeners() {
         binding.switchMobile.setOnClickListener {
-            if (switchMobile.isChecked) {
-                /*val action =
-                    CardListHomeFragmentDirections.actionCardListHomeFragmentToCardListAvailableFragment()
-                binding.switchMobile.findNavController().navigate(action)*/
-            }
+
         }
     }
 
@@ -84,7 +80,7 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
     }
 
     override fun onClickCardHome(datapassed: CardHomeOptionsPresentation) {
-        TODO("Not yet implemented")
+
     }
 
     private fun setupCarousel() {

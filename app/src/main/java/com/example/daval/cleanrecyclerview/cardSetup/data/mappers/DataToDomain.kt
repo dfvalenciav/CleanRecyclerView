@@ -2,7 +2,7 @@ package com.example.daval.cleanrecyclerview.cardSetup.data.mappers
 
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.realm.*
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.*
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.StateEnum
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.TypeConfigEnum
 
 /**REALM*/
 fun RCardSetup.toCardSetup() = CardSetup(type, number, preferred, amount, clientName, clientId)
@@ -24,9 +24,9 @@ fun RConfig.toConfig()=Config(position.toTypeConfigData() ,title, message, image
 fun List<RConfig>.toListConfig() = map { data -> data.toConfig() }
 
 fun String.toTypeConfigData() = when(this){
-    "TOUCH_ID" -> StateEnum.TOUCH_ID
-    "PAGO_MOVIL" -> StateEnum.PAGO_MOVIL
-    else -> StateEnum.NONE
+    "TOUCH_ID" -> TypeConfigEnum.TOUCH_ID
+    "PAGO_MOVIL" -> TypeConfigEnum.PAGO_MOVIL
+    else -> TypeConfigEnum.NONE
 }
 
 

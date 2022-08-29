@@ -6,12 +6,12 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.ViewGroup
 import com.example.daval.cleanrecyclerview.base.BaseDialog
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.OtpDialog
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.OtpDialogPresentation
 import com.example.daval.cleanrecyclerview.databinding.DialogOtpBinding
 
 class Otp : BaseDialog() {
 
-    var modelDialog = OtpDialog.Builder()
+    var modelDialog = OtpDialogPresentation.Builder()
 
     var onClickButton: (click: String) -> Unit = {}
 

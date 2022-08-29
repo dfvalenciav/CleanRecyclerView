@@ -21,8 +21,6 @@ class CardListFinishRegisterFragment : BaseFragment<FragmentCardListFinishRegist
 
     override fun setListeners() {
         binding.btnCardListFinishRegisterContinue.setOnClickListener {
-            //val action = CardListFinishRegisterFragmentDirections.actionCardListFinishRegisterFragmentToCardListHomeFragment()
-            // binding.materialButtonCardListFinishRegister.findNavController().navigate(action)
             val action = CardListFinishRegisterFragmentDirections.actionCardListFinishRegisterFragmentToMainFragment()
             binding.btnCardListFinishRegisterContinue.findNavController().navigate(action)
         }

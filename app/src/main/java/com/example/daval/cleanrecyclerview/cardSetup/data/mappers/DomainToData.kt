@@ -31,7 +31,7 @@ fun List<Config>.toListConfigRealm() = map { domain ->
 
 
 /**Organization**/
-fun Org.toOrgRealm() = ROrg ( name, code, phone, nit, city, employees)
+fun Org.toOrgRealm() = ROrg ( name, code, phone, nit, city, employees, UUID.randomUUID().mostSignificantBits)
 
 fun List<Org>.toListOrgRealm() = map { domain ->
     domain.toOrgRealm()

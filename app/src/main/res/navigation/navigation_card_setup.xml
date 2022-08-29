@@ -45,12 +45,15 @@
         <action
             android:id="@+id/action_cardListFinishRegisterFragment_to_mainFragment"
             app:destination="@id/configFragment" />
+        <action
+            android:id="@+id/action_cardListFinishRegisterFragment_to_organizationFragment"
+            app:destination="@id/organizationFragment" />
     </fragment>
     <fragment
         android:id="@+id/configFragment"
         android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.config.ConfigFragment"
         android:label="MainFragment"
-        tools:layout="@layout/fragment_main">
+        tools:layout="@layout/fragment_config">
         <action
             android:id="@+id/action_mainFragment_to_cardListAvailableFragment"
             app:destination="@id/cardListAvailableFragment" />
@@ -58,4 +61,9 @@
             android:id="@+id/action_mainFragment_to_cardListTrustDeviceFragment"
             app:destination="@id/cardListTrustDeviceFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/organizationFragment"
+        android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.organizationList.OrganizationFragment"
+        android:label="OrganizationFragment"
+        tools:layout="@layout/fragment_organization"/>
 </navigation>

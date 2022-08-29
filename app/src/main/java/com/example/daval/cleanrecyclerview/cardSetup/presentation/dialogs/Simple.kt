@@ -9,12 +9,12 @@ import android.view.ViewGroup
 import com.bumptech.glide.Glide
 import com.example.daval.cleanrecyclerview.R
 import com.example.daval.cleanrecyclerview.base.BaseDialog
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.SimpleDialog
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.SimpleDialogPresentation
 import com.example.daval.cleanrecyclerview.databinding.DialogSimpleBinding
 
 class Simple : BaseDialog() {
 
-    var modelDialog = SimpleDialog.Builder()
+    var modelDialog = SimpleDialogPresentation.Builder()
 
     var onClickButton: (click: String) -> Unit = {}
 

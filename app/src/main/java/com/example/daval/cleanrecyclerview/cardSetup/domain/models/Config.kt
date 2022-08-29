@@ -1,10 +1,9 @@
 package com.example.daval.cleanrecyclerview.cardSetup.domain.models
 
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.StateEnum
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.TypeConfigEnum
 
-//todo cambiar position -> type
 data class Config(
-    val type : StateEnum? = null,
+    val type : TypeConfigEnum? = null,
     val title: String,
     val message: String,
     val image: Int,
