@@ -1,7 +1,7 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.models
 
 data class ConfigPresentation(
-    var position: StateEnum? = null,
+    var type: StateEnum? = null,
     var title: String,
     var message: String,
     var image: Int,
@@ -10,6 +10,6 @@ data class ConfigPresentation(
 
 )
 fun equals(oldItem: ConfigPresentation, newItem: ConfigPresentation): Boolean =
-    oldItem.title == newItem.title && oldItem.message == newItem.message
+    oldItem.type == newItem.type && oldItem.title == newItem.title && oldItem.message == newItem.message
             && oldItem.image == newItem.image && oldItem.backGround == newItem.backGround
             && oldItem.indicatorSwitch == newItem.indicatorSwitch

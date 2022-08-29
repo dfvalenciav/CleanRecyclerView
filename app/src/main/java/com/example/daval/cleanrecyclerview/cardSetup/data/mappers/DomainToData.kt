@@ -23,7 +23,7 @@ fun List<CardCarrousel>.toRListCardCarrouselEntity()= map {domain ->
 
 /** MAPPERS MOBILE PAYMENT**/
 fun Config.toConfigRealm() =
-    RConfig(position.toString(), title, message, image, backGround,  indicatorSwitch, UUID.randomUUID().mostSignificantBits)
+    RConfig(type.toString(), title, message, image, backGround,  indicatorSwitch, UUID.randomUUID().mostSignificantBits)
 
 fun List<Config>.toListConfigRealm() = map { domain ->
     domain.toConfigRealm()

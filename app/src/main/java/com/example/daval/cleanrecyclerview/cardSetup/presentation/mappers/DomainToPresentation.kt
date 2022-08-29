@@ -22,7 +22,7 @@ fun List<CardCarrousel>.toListCardCarrouselPresentation() = map {
 
 /*** MAPERS MOBILE PAYMENT***/
 fun Config.toConfigPresentation() =
-    ConfigPresentation(position ,title, message, image, backGround, indicatorSwitch)
+    ConfigPresentation(type, title, message, image, backGround, indicatorSwitch)
 
 fun List<Config>.toListConfigPresentation()=map { domain ->
     domain.toConfigPresentation()
