@@ -1,5 +1,5 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.models
 
 enum class StateEnum {
-    CHECK, FAILURE, TIME, GARBAGE
+    TOUCH_ID, PAGO_MOVIL,NONE
 }

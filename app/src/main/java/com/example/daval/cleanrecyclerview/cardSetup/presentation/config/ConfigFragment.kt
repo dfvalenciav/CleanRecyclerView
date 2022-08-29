@@ -1,5 +1,6 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.config
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,9 +15,7 @@ import com.example.daval.cleanrecyclerview.cardSetup.presentation.config.adapter
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.config.interfaces.IUserListener
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.*
 import com.example.daval.cleanrecyclerview.databinding.FragmentMainBinding
-import com.example.daval.cleanrecyclerview.databinding.HolderItemConfigurationBinding
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.holder_item_configuration.view.*
 
 @AndroidEntryPoint
 class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUserListener {
@@ -24,7 +23,7 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
     override val viewModel by viewModels<ConfigViewModel>()
 
     private lateinit var itemsConfig: List<ConfigPresentation>
-    private var configMobilePayment : MutableList<Boolean> = mutableListOf()
+    private var configMobilePayment: MutableList<Boolean> = mutableListOf()
 
 
     override fun inflateView(
@@ -47,12 +46,15 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
             buttonAccept.text = "Continuar"
             buttonAccept.setOnClickListener { }
             buttonAccept.setOnClickListener {
-                val allEqual : Boolean = configMobilePayment.stream().distinct().limit(2).count() <= 1
-                if(allEqual && configMobilePayment.size >1) {
-                    val action =ConfigFragmentDirections.actionMainFragmentToCardListAvailableFragment()
+                val allEqual: Boolean =
+                    configMobilePayment.stream().distinct().limit(2).count() <= 1
+                if (allEqual && configMobilePayment.size > 1) {
+                    val action =
+                        ConfigFragmentDirections.actionMainFragmentToCardListAvailableFragment()
                     findNavController().navigate(action)
                 } else {
-                    val action =ConfigFragmentDirections.actionMainFragmentToCardListTrustDeviceFragment()
+                    val action =
+                        ConfigFragmentDirections.actionMainFragmentToCardListTrustDeviceFragment()
                     findNavController().navigate(action)
                 }
 
@@ -88,22 +90,29 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
         }
     }
 
-    private fun switchStatus(
-        boolean: Boolean,
-        text: String,
-        holder: HolderItemConfigurationBinding
-    ) {
-        holder.tvHolderItemConfigStatus.text = text
-        holder.swtHolderItemConfigStatus.isChecked = boolean
+    @SuppressLint("NotifyDataSetChanged")
+    private fun updateAdapter(items: List<ConfigPresentation>) {
+        binding.rvConfig.apply {
+            (adapter as? ConfigurationAdapter)?.submitList(items)
+            adapter?.notifyDataSetChanged()
+        }
     }
 
-    override fun onClick(position: Int, holder: HolderItemConfigurationBinding) {
+    private fun changeStatusSw(data: ConfigPresentation, enable: Boolean) {
+        itemsConfig.find {
+            data == it
+        }?.indicatorSwitch = enable
+        updateAdapter(itemsConfig)
+    }
 
-        when (position) {
-            0 -> { //Position in Card Touch ID
+    override fun onClick(data: ConfigPresentation, enable: Boolean) {
 
-                if (!holder.root.swt_holder_item_config_status.isChecked) {
-                    switchStatus(false, "Desactivado", holder)
+        when (data.type) {
+            StateEnum.TOUCH_ID -> {
+
+                if (!enable) {
+
+                    changeStatusSw(data, false)
                 } else {
                     val simpleDialog = SimpleDialog.Builder()
                         .title("Activar Touch ID")
@@ -115,19 +124,19 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
                     activity?.showSimpleDialog(simpleDialog)?.onClickButton = {
                         if (it.contentEquals(simpleDialog.btnConfirm)) {
 
-                            switchStatus(true, "Activado", holder)
+                            changeStatusSw(data, true)
                             configMobilePayment.add(true)
                         } else {
-                            switchStatus(false, "Desactivado", holder)
+                            changeStatusSw(data, false)
                         }
                     }
                 }
+
             }
+            StateEnum.PAGO_MOVIL -> {
 
-            1 -> { //Position in Card Pago Móvil
-
-                if (!holder.root.swt_holder_item_config_status.isChecked) {
-                    switchStatus(false, "Desactivado", holder)
+                if (!enable) {
+                    changeStatusSw(data, false)
                 } else {
                     val simpleDialog = SimpleDialog.Builder()
                         .title("Activar Pago Móvil")
@@ -148,20 +157,22 @@ class ConfigFragment : BaseFragment<FragmentMainBinding, ConfigViewModel>(), IUs
                             activity?.showOtpDialog(otpDialog)?.onClickButton = { otp ->
                                 if (otp.contentEquals(otpDialog.btnConfirm)) {
 
-                                    switchStatus(true, "Activado", holder)
+                                    changeStatusSw(data, true)
                                     configMobilePayment.add(true)
 
                                 } else {
-                                    switchStatus(false, "Desactivado", holder)
+                                    changeStatusSw(data, false)
                                 }
                             }
 
                         } else {
-                            switchStatus(false, "Desactivado", holder)
+                            changeStatusSw(data, false)
                         }
                     }
                 }
+
             }
+            else -> {}
         }
     }
 }

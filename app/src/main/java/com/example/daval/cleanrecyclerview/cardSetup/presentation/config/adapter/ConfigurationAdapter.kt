@@ -19,11 +19,6 @@ class ConfigurationAdapter(private val listener: IUserListener) :
         diffCallBack
     ) {
 
-    override fun onBindViewHolder(holder: ConfigurationViewHolder, position: Int) {
-        super.onBindViewHolder(holder, position)
-        holder.onClick(position,holder)
-    }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ConfigurationViewHolder(
         HolderItemConfigurationBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -46,19 +41,16 @@ class ConfigurationAdapter(private val listener: IUserListener) :
                 if(data.indicatorSwitch) tvHolderItemConfigStatus.text = "Activado" else tvHolderItemConfigStatus.text = "Desactivado"
                 loadDrawable(imgHolderItemConfigBackground, data.backGround, root.context)
                 loadDrawable(imgHolderItemConfigResource, data.image, root.context)
-            }
-        }
-        fun onClick(
-            position: Int,
-            holder: ConfigurationViewHolder
-        ){
-            binding.swtHolderItemConfigStatus.setOnClickListener {
-                    listener.onClick(position,holder.binding)
 
+
+                swtHolderItemConfigStatus.setOnClickListener {
+                    data.indicatorSwitch = swtHolderItemConfigStatus.isChecked
+                    listener.onClick(data,swtHolderItemConfigStatus.isChecked)
+                    if(swtHolderItemConfigStatus.isChecked) tvHolderItemConfigStatus.text = "Activado" else tvHolderItemConfigStatus.text = "Desactivado"
+                }
             }
         }
     }
-
 
 
     private fun loadDrawable(img: ImageView, id: Int, context: Context) {
@@ -80,7 +72,7 @@ class ConfigurationAdapter(private val listener: IUserListener) :
                 oldItem: ConfigPresentation,
                 newItem: ConfigPresentation
             ): Boolean =
-                oldItem.title == newItem.title && oldItem.message == newItem.message
+                oldItem.type == newItem.type && oldItem.title == newItem.title && oldItem.message == newItem.message
                         && oldItem.image == newItem.image && oldItem.backGround == newItem.backGround
                         && oldItem.indicatorSwitch == newItem.indicatorSwitch
 

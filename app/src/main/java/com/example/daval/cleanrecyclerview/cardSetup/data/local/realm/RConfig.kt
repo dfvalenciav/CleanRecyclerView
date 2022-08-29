@@ -4,7 +4,7 @@ import io.realm.RealmObject
 import io.realm.annotations.PrimaryKey
 
 open class RConfig(
-
+    var position : String = "",
     var title: String = "",
     var message: String = "",
     var image: Int = 0,
