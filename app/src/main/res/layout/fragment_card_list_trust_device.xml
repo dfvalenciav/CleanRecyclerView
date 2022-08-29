@@ -7,133 +7,252 @@
     android:layout_height="match_parent"
     tools:context=".cardSetup.presentation.cardListTrustDevice.CardListTrustDeviceFragment">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStart"
-        app:layout_constraintGuide_percent="0.05"
-        style="@style/guideLineVerticalStart" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineEnd"
-        app:layout_constraintGuide_percent="0.95"
-        style="@style/guideLineVerticalEnd" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStartHalf"
-        style="@style/guideLineVerticalStart"
-        app:layout_constraintGuide_percent="0.03" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineEndHalf"
-        app:layout_constraintGuide_percent="0.97"
-        style="@style/guideLineVerticalEnd" />
     <TextView
         android:id="@+id/tv_card_list_trust_device_title"
+        style="@style/cardListTitle1"
+        android:layout_marginTop="8dp"
         android:text="@string/cardListTrustDevice_Title1"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-        app:layout_constraintTop_toTopOf="parent"
-        style="@style/cardListTitle1" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_card_list_trust_device_subtitle"
         android:text="@string/cardListTrustDevice_Title2"
+        android:layout_width="299dp"
+        android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottom_title2"
         app:layout_constraintTop_toBottomOf="@+id/tv_card_list_trust_device_title"
-        style="@style/cardListTitle2" />
+        app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="@dimen/min_text_size"
+        app:autoSizeMaxTextSize="@dimen/max_text_size"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:textStyle="bold"/>
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/btn_card_list_trust_device_continue_"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
         app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-        app:layout_constraintTop_toBottomOf="@+id/tv_card_list_trust_device_subtitle"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop"
+        app:layout_constraintBottom_toBottomOf="@id/guidelineBottom">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-            android:orientation="vertical">
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineToptv0"
+            style="@style/guideLineVerticalTop"
+            app:layout_constraintGuide_percent="0.03" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineToptv1"
+            style="@style/guideLineVerticalTop"
+            app:layout_constraintGuide_percent="0.28" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineToptv3"
+            style="@style/guideLineVerticalTop"
+            app:layout_constraintGuide_percent="0.71" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottomtv4"
+            style="@style/guideLineVerticalBottom"
+            app:layout_constraintGuide_percent="0.69" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineBottomtv5"
+            style="@style/guideLineVerticalBottom"
+            app:layout_constraintGuide_percent="0.98" />
+
+        <TextView
+            android:id="@+id/tv_card_list_trust_device_description_part_one"
+            style="@style/cardListTitle3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@string/cardListTrustDevice_Title3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guidelineToptv0"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineToptv1"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="@dimen/min_text_size"
+            app:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:layout_marginTop="10dp"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout_Trut_device"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/Primari_06_light_purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineToptv1"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineBottomtv4">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTopcl1"
+                style="@style/guideLineVerticalTop"
+                app:layout_constraintGuide_percent="0.02" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTopcl2"
+                style="@style/guideLineVerticalTop"
+                app:layout_constraintGuide_percent="0.49" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTopcl3"
+                style="@style/guideLineVerticalTop"
+                app:layout_constraintGuide_percent="0.51" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTopcl4"
+                style="@style/guideLineVerticalTop"
+                app:layout_constraintGuide_percent="0.98" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineStartHalf"
+                style="@style/guideLineVerticalStart"
+                app:layout_constraintGuide_percent="0.03" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineEndHalf"
+                app:layout_constraintGuide_percent="0.97"
+                style="@style/guideLineVerticalEnd" />
 
             <TextView
-                android:id="@+id/tv_card_list_trust_device_description_part_one"
-                style="@style/cardListTitle3"
-                android:layout_width="wrap_content"
-                android:text="@string/cardListTrustDevice_Title3"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@+id/tv_card_list_trust_device_subtitle" />
-
-            <LinearLayout
-                android:id="@+id/linearLayout_Trut_device"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/Primari_06_light_purple"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineEndHalf"
-                app:layout_constraintStart_toStartOf="@+id/guidelineStartHalf"
-                app:layout_constraintTop_toBottomOf="@+id/tv_card_list_trust_device_description_part_one">
-
-
-                <TextView
-                    android:id="@+id/tv_card_list_trust_device_description_part_two"
-                    style="@style/cardListTitle4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cardListTrustDevice_Title4" />
-
-                <TextView
-                    android:id="@+id/tv_card_list_trust_device_description_part_three"
-                    style="@style/cardListTitle5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cardListTrustDevice_Title5" />
-            </LinearLayout>
+                android:id="@+id/tv_card_list_trust_device_description_part_two"
+                style="@style/cardListTitle4"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="@dimen/min_text_size"
+                app:autoSizeMaxTextSize="@dimen/max_text_size"
+                android:text="@string/cardListTrustDevice_Title4"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEndHalf"
+                app:layout_constraintStart_toStartOf="@id/guidelineStartHalf"
+                app:layout_constraintTop_toTopOf="@id/guidelineTopcl1"
+                app:layout_constraintBottom_toBottomOf="@id/guidelineTopcl2" />
 
             <TextView
-                android:id="@+id/tv_card_list_trust_device_description_part_four"
-                style="@style/cardListTitle3"
-                android:layout_width="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="@string/cardListTrustDevice_Title3"
-                android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@+id/btn_card_list_trust_device_continue_"
-                app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-                app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout_Trut_device" />
-        </LinearLayout>
-    </ScrollView>
+                android:id="@+id/tv_card_list_trust_device_description_part_three"
+                style="@style/cardListTitle5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="@dimen/min_text_size"
+                app:autoSizeMaxTextSize="@dimen/max_text_size"
+                android:text="@string/cardListTrustDevice_Title5"
+                app:layout_constraintEnd_toEndOf="@id/guidelineEndHalf"
+                app:layout_constraintStart_toStartOf="@id/guidelineStartHalf"
+                app:layout_constraintTop_toTopOf="@id/guidelineTopcl3"
+                app:layout_constraintBottom_toBottomOf="@id/guidelineTopcl4"  />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_card_list_trust_device_no_continue"
-        style="@style/cardListButtonStyle"
-        android:backgroundTint="#ffffff"
-        android:text="@string/cardListTrustDevice_button"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextStyle"
-        android:textColor="@color/Primario_01_SMM_Purple"
-        app:strokeColor="@color/Primario_01_SMM_Purple"
-        app:strokeWidth="1dp"
+        <TextView
+            android:id="@+id/tv_card_list_trust_device_description_part_four"
+            style="@style/cardListTitle3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="@dimen/min_text_size"
+            app:autoSizeMaxTextSize="@dimen/max_text_size"
+            android:text="@string/cardListTrustDevice_Title3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineToptv3"
+            app:layout_constraintBottom_toBottomOf="@+id/guidelineBottomtv5"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_card_list_trust_device_btns"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
+        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintTop_toTopOf="@id/guidelineTopButton">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_card_list_trust_device_continue_"
-        style="@style/cardListButtonStyle"
-        android:layout_marginBottom="16dp"
-        android:text="@string/cardListAvail_button"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextStyle"
-        app:layout_constraintBottom_toTopOf="@+id/btn_card_list_trust_device_no_continue"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineButtonTop"
+            app:layout_constraintGuide_percent="0.09"
+            style="@style/guideLineVerticalTop" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineButtonMedium"
+            app:layout_constraintGuide_percent="0.49"
+            style="@style/guideLineVerticalTop" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineButtonMedium2"
+            app:layout_constraintGuide_percent="0.51"
+            style="@style/guideLineVerticalTop" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineButtonBottom"
+            app:layout_constraintGuide_percent="0.91"
+            style="@style/guideLineVerticalTop" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_card_list_trust_device_no_continue"
+            style="@style/cardListButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#ffffff"
+            android:text="@string/cardListTrustDevice_button"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextStyle"
+            android:textColor="@color/Primario_01_SMM_Purple"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_card_list_trust_device_continue_"
+            app:strokeColor="@color/Primario_01_SMM_Purple"
+            app:strokeWidth="1dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_card_list_trust_device_continue_"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/cardListButtonStyle"
+            android:text="@string/cardListAvail_button"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineButtonTop" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Guidelines verticals-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        app:layout_constraintGuide_percent="0.20"
+        style="@style/guideLineVerticalTop" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom_title2"
+        app:layout_constraintGuide_percent="0.18"
+        style="@style/guideLineVerticalBottom" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        app:layout_constraintGuide_percent="0.75"
+        style="@style/guideLineVerticalBottom" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTopButton"
+        app:layout_constraintGuide_percent="0.80"
+        style="@style/guideLineVerticalTop" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottomButton"
+        app:layout_constraintGuide_percent="0.75"
+        style="@style/guideLineVerticalBottom" />
+
+    <!-- Guidelines horizontals-->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        app:layout_constraintGuide_percent="0.05"
+        style="@style/guideLineVerticalStart" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        app:layout_constraintGuide_percent="0.95"
+        style="@style/guideLineVerticalEnd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -24,6 +24,18 @@
         <item name="android:orientation">vertical</item>
     </style>
 
+    <style name="guideLineVerticalTop">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="guideLineVerticalBottom">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
     <!-- ****************CARD LIST SETUP STYLES *******************-->
     <style name="TextStyle" parent="@android:style/TextAppearance">
         <item name="android:textSize">16sp</item>
@@ -33,7 +45,6 @@
     <style name="cardListButtonStyle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginBottom">32dp</item>
         <item name="android:backgroundTint">@color/Primario_01_SMM_Purple</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:padding">8dp</item>
@@ -73,7 +84,6 @@
     <style name="cardListTitle4">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">16dp</item>
         <item name="android:letterSpacing">0.1</item>
         <item name="android:lineSpacingExtra">8sp</item>
         <item name="android:lineSpacingMultiplier">1</item>
@@ -86,7 +96,7 @@
     <style name="cardListTitle5">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:layout_marginTop">6dp</item>
         <item name="android:letterSpacing">0.1</item>
         <item name="android:lineSpacingExtra">8sp</item>
         <item name="android:lineSpacingMultiplier">1</item>

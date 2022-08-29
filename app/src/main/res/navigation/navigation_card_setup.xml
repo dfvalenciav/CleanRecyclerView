@@ -5,6 +5,7 @@
     android:id="@+id/navigation_card_setup"
     app:startDestination="@id/configFragment">
 
+
     <fragment
         android:id="@+id/cardListAvailableFragment"
         android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListAvailable.CardListAvailableFragment"

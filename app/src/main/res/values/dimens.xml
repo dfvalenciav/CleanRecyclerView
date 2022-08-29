@@ -12,4 +12,6 @@
     <dimen name="cardCarrouselWidth">200dp</dimen>
     <dimen name="cardCarrouselHeight">200dp</dimen>
     <dimen name="cardCornerRadius">44dp</dimen>
+    <dimen name="min_text_size">10sp</dimen>
+    <dimen name="max_text_size">100sp</dimen>
 </resources>

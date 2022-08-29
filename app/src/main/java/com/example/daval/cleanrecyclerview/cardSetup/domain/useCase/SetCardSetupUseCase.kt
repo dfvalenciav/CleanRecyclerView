@@ -10,10 +10,7 @@ import javax.inject.Inject
 class SetCardSetupUseCase @Inject constructor(
     private val repository: ICardRealmRepository
 ): BaseUseCase<CardSetup>() {
-
     override suspend fun execute(): List<CardSetup> {
         return repository.getCardListSetupObjects()
     }
-
-
 }
