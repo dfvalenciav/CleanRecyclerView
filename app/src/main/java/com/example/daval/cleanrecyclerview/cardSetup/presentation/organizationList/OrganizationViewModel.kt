@@ -1,13 +1,13 @@
-package com.example.daval.cleanrecyclerview.organizationList.presentation.organizationList
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.organizationList
 
 import com.example.daval.cleanrecyclerview.base.BaseViewModel
-import com.example.daval.cleanrecyclerview.organizationList.domain.useCase.GetOrgUseCase
-import com.example.daval.cleanrecyclerview.organizationList.presentation.mappers.toListOrgPresentation
+import com.example.daval.cleanrecyclerview.cardSetup.domain.useCase.GetOrgUseCase
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.mappers.toListOrgPresentation
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class OrganizationViewModel2 @Inject constructor(
+class OrganizationViewModel @Inject constructor(
     private val getOrgUseCase: GetOrgUseCase
 ) : BaseViewModel<OrgEvent>() {
 

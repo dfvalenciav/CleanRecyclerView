@@ -1,13 +1,13 @@
-package com.example.daval.cleanrecyclerview.organizationList.presentation.organizationList.adapter
+package com.example.daval.cleanrecyclerview.cardSetup.presentation.organizationList.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import com.example.daval.cleanrecyclerview.base.BaseAdapter
 import com.example.daval.cleanrecyclerview.base.BaseViewHolder
+import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.*
 import com.example.daval.cleanrecyclerview.databinding.OrgListItemBinding
-import com.example.daval.cleanrecyclerview.organizationList.presentation.models.OrgPresentation
-import com.example.daval.cleanrecyclerview.organizationList.presentation.models.equals
+
 
 
 class OrgAdapter (private val listener : IOrgListener)
