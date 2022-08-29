@@ -31,6 +31,7 @@
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/layout_rounded_shape.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/drawable/layout_rounded_top_shape.xml" value="0.251" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/font/.xml" value="0.21875" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout-v26/fragment_card_list_trust_device.xml" value="0.253125" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/activity_card_setup.xml" value="0.1" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/activity_main.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/card_list_available_item.xml" value="0.365625" />
@@ -44,7 +45,7 @@
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_finish_register.xml" value="0.2" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_home.xml" value="0.2" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_selected.xml" value="0.16" />
-        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_trust_device.xml" value="0.16" />
+        <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_card_list_trust_device.xml" value="0.2" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_detail_org.xml" value="0.17255434782608695" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/x5776dv/Documents/Proyectos/Android/CleanRecyclerView/app/src/main/res/layout/fragment_organization.xml" value="0.264" />
