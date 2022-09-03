@@ -1,5 +1,7 @@
 package com.example.daval.cleanrecyclerview.cardSetup.presentation.mappers
 
+import com.example.daval.cleanrecyclerview.cardCarrousel.domain.models.CardCarrousel
+import com.example.daval.cleanrecyclerview.cardCarrousel.presentation.models.CardCarrouselPresentation
 import com.example.daval.cleanrecyclerview.cardSetup.domain.models.*
 import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.*
 
@@ -14,10 +16,6 @@ fun List<CardHomeTask>.toListCardHomeOptionsPresentation() = map {
     domain -> domain.toCardHomeOptionsPresentation()
 }
 
-fun CardCarrousel.toCardCarrouselPresentation() = CardCarrouselPresentation(BankLogo, BankName, CardNumber, CardExpiration, CardFranchise, CardBackground)
-fun List<CardCarrousel>.toListCardCarrouselPresentation() = map {
-    domain -> domain.toCardCarrouselPresentation()
-}
 
 
 /*** MAPERS MOBILE PAYMENT***/

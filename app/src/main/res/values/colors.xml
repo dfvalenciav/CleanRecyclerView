@@ -23,4 +23,16 @@
     <color name="green">#00A749</color>
     <color name="light_purple">#f0eff7</color>
     <color name="purple">#9488b5</color>
+
+
+    <!-- Colors Cards-->
+    <color name="card_color_type1">#FFBB86FC</color>
+    <color name="card_color_type2">#FF3700B3</color>
+    <color name="card_color_type3">#000000</color>
+    <color name="card_color_type4">#FF018786</color>
+    <color name="card_color_type5">#e8c227</color>
+    <color name="card_color_type6">#000C66</color>
+    <color name="card_color_type7">#EADDCA</color>
+    <color name="card_color_type8">#01579b</color>
+
 </resources>

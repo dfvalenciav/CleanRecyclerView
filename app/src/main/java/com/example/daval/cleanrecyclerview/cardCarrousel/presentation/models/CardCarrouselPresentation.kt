@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.cardSetup.presentation.models
+package com.example.daval.cleanrecyclerview.cardCarrousel.presentation.models
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -6,12 +6,12 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class CardCarrouselPresentation(
-    var BankLogo : String,
+    var BankLogo : Int,
     var BankName: String,
     var CardNumber: String,
     var CardExpiration: String,
-    var CardFranchise: String,
-    var CardBackground: String,
+    var CardFranchise: Int,
+    var CardBackground: Int,
 ): Parcelable
 
 fun equals (oldItem : CardCarrouselPresentation, newItem: CardCarrouselPresentation) : Boolean =

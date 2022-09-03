@@ -9,12 +9,12 @@
 <!---guidelins-->
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineStart"
+            android:id="@+id/guideline_start"
             app:layout_constraintGuide_percent="0.05"
             style="@style/guideLineVerticalStart" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineEnd"
+            android:id="@+id/guideline_end"
             app:layout_constraintGuide_percent="0.95"
             style="@style/guideLineVerticalEnd" />
 
@@ -32,8 +32,8 @@
             android:textColorHint="@color/black"
             android:textColorLink="@color/purple_500"
             app:layout_constraintTop_toBottomOf="@+id/tv_organization_title"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"/>
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_organization"
@@ -42,8 +42,8 @@
             android:background="@color/secundario_06_bg_gray"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/et_organization_name"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"/>
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"/>
 
         <TextView
             android:id="@+id/tv_organization_title"
@@ -62,7 +62,7 @@
             android:id="@+id/btn_organization_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
             android:layout_marginTop="11dp"
             android:backgroundTint="@color/secundario_06_bg_gray"
             android:minHeight="@dimen/img_heigt"
@@ -74,7 +74,7 @@
             android:id="@+id/btn_organization_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
             android:backgroundTint="@color/secundario_06_bg_gray"
             android:minHeight="@dimen/img_heigt"
             android:src="@drawable/ic_baseline_search_24"

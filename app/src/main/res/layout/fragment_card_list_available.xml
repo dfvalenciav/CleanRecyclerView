@@ -8,34 +8,34 @@
         tools:context=".cardSetup.presentation.cardListAvailable.CardListAvailableFragment">
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineStart"
+            android:id="@+id/guideline_start"
             app:layout_constraintGuide_percent="0.05"
             style="@style/guideLineVerticalStart" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guidelineEnd"
+            android:id="@+id/guideline_end"
             app:layout_constraintGuide_percent="0.95"
             style="@style/guideLineVerticalEnd" />
 
         <TextView
             android:id="@+id/tv_card_list_available_title"
             android:text="@string/cardListAvail_Title1"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toTopOf="parent"
             style="@style/cardListTitle1" />
 
         <TextView
             android:id="@+id/tv_card_list_available_subtitle"
             android:text="@string/cardListAvail_Title2"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/tv_card_list_available_title"
             style="@style/cardListTitle2" />
 
         <TextView
             android:id="@+id/tv_card_list_available_description"
             android:text="@string/cardListAvail_Title3"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/tv_card_list_available_subtitle"
             style="@style/cardListTitle3" />
 
@@ -47,8 +47,8 @@
             android:layout_marginBottom="8dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toTopOf="@+id/btn_card_list_available_continue"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start"
             app:layout_constraintTop_toBottomOf="@+id/tv_card_list_available_description" />
 
         <com.google.android.material.button.MaterialButton
@@ -58,7 +58,7 @@
             android:textAlignment="center"
             android:textAppearance="@style/TextStyle"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
+            app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+            app:layout_constraintStart_toStartOf="@+id/guideline_start" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome
+package com.example.daval.cleanrecyclerview.cardCarrousel.presentation.cardCarrousel
 
 import android.graphics.Color
 import android.os.Bundle
@@ -7,20 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.constraintlayout.helper.widget.Carousel
 import androidx.fragment.app.viewModels
-import com.example.daval.cleanrecyclerview.utils.Utils
 import com.example.daval.cleanrecyclerview.base.BaseFragment
 import com.example.daval.cleanrecyclerview.cardCarrousel.presentation.models.CardCarrouselPresentation
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.adapter.CardHomeAdapter
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.adapter.ICardHomeListener
-import com.example.daval.cleanrecyclerview.cardSetup.presentation.models.CardHomeOptionsPresentation
-import com.example.daval.cleanrecyclerview.databinding.FragmentCardListHomeBinding
+import com.example.daval.cleanrecyclerview.databinding.FragmentCardCarrouselBinding
+import com.example.daval.cleanrecyclerview.utils.Utils
 import com.google.android.material.card.MaterialCardView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_card_list_home.*
 
+
 @AndroidEntryPoint
-class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListHomeViewModel>(),
-    ICardHomeListener {
+class CardCarrouselFragment : BaseFragment<FragmentCardCarrouselBinding, CardCarrouselViewModel>() {
+
+    override val viewModel by viewModels<CardCarrouselViewModel> ()
+    private lateinit var itemsCarrousel : List<CardCarrouselPresentation>
 
     var colors = intArrayOf(
         Color.parseColor("#FFBB86FC"),
@@ -33,54 +33,25 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
         Color.parseColor("#01579b")
     )
 
-    override val viewModel by viewModels<CardListHomeViewModel> ()
-    private lateinit var items : List<CardHomeOptionsPresentation>
-    private lateinit var itemsCarrousel : List<CardCarrouselPresentation>
-
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.getCardCarrouselList()
+    }
 
     override fun inflateView(
         inflater: LayoutInflater,
         container: ViewGroup?
-    )= FragmentCardListHomeBinding.inflate(inflater, container, false)
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        viewModel.getCardHomeList()
-        //setupCarousel()
-
-    }
-
-    fun setAdapter (items: List<CardHomeOptionsPresentation>){
-        with(binding.recyclerViewHomeOptions) {
-            adapter = CardHomeAdapter()
-            (adapter as? CardHomeAdapter)?.submitList(items)
-        }
-    }
-
-    override fun setListeners() {
-        binding.switchMobile.setOnClickListener {
-
-        }
-    }
+    )= FragmentCardCarrouselBinding.inflate(inflater, container, false)
 
     override fun observe() {
         viewModel.event.observe(viewLifecycleOwner){ event ->
             when (event) {
-                is CardListHomeEvent.ListCardHomeTask -> {
-                    items = event.ls
-                    setAdapter(items)
-
-                }
-                is CardListHomeEvent.ListCardCarrousel -> {
+                is CardCarrouselEvent.ListCardCarrousel -> {
                     itemsCarrousel = event.ls_carrousel
-                   setupCarousel()
+                    setupCarousel()
                 }
             }
         }
-    }
-
-    override fun onClickCardHome(datapassed: CardHomeOptionsPresentation) {
-
     }
 
     private fun setupCarousel() {
@@ -99,18 +70,18 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
                 val util = Utils()
                 if (view is MaterialCardView) {
                     view.setBackgroundColor(colors[index])
-                        textViewCardNumberOne.text = util.hideCardNumber(indexCard.CardNumber)
-                        textViewCardNumberTwo.text = util.hideCardNumber(indexCard.CardNumber)
-                        textViewCardNumberThree.text = util.hideCardNumber(indexCard.CardNumber)
-                        textViewBankNameTwo.text = indexCard.BankName
-                        textViewBankNameOne.text = indexCard.BankName
-                        textViewBankNameThree.text = indexCard.BankName
-                        textViewCardExpirationOne.text = indexCard.CardExpiration
-                        textViewCardExpirationTwo.text = indexCard.CardExpiration
-                        textViewCardExpirationThree.text = indexCard.CardExpiration
-                        imageViewFranchise1.setImageResource(indexCard.CardFranchise)
-                        imageViewFranchise2.setImageResource(indexCard.CardFranchise)
-                        imageViewFranchise3.setImageResource(indexCard.CardFranchise)
+                    textViewCardNumberOne.text = util.hideCardNumber(indexCard.CardNumber)
+                    textViewCardNumberTwo.text = util.hideCardNumber(indexCard.CardNumber)
+                    textViewCardNumberThree.text = util.hideCardNumber(indexCard.CardNumber)
+                    textViewBankNameTwo.text = indexCard.BankName
+                    textViewBankNameOne.text = indexCard.BankName
+                    textViewBankNameThree.text = indexCard.BankName
+                    textViewCardExpirationOne.text = indexCard.CardExpiration
+                    textViewCardExpirationTwo.text = indexCard.CardExpiration
+                    textViewCardExpirationThree.text = indexCard.CardExpiration
+                    imageViewFranchise1.setImageResource(indexCard.CardFranchise)
+                    imageViewFranchise2.setImageResource(indexCard.CardFranchise)
+                    imageViewFranchise3.setImageResource(indexCard.CardFranchise)
                 }
             }
 

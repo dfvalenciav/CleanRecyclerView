@@ -8,12 +8,12 @@
     tools:context=".cardSetup.presentation.cardListFinishRegister.CardListFinishRegisterFragment">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineStart"
+        android:id="@+id/guideline_start"
         app:layout_constraintGuide_percent="0.05"
         style="@style/guideLineVerticalStart" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineEnd"
+        android:id="@+id/guideline_end"
         app:layout_constraintGuide_percent="0.95"
         style="@style/guideLineVerticalEnd" />
 
@@ -21,7 +21,7 @@
         android:id="@+id/img_card_list_finish_register_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/ic_favicon_copy_4" />
 z
@@ -39,7 +39,7 @@ z
         android:layout_marginTop="30dp"
         android:text="@string/cardListFinishReg_Title2"
         android:textSize="40sp"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/img_card_list_finish_register_icon" />
 
     <ScrollView
@@ -49,17 +49,17 @@ z
         android:layout_marginBottom="8dp"
         android:fillViewport="true"
         app:layout_constraintBottom_toTopOf="@+id/btn_card_list_finish_register_continue"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_card_list_finish_register_title"
         app:layout_constraintVertical_bias="0.0">
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
         android:orientation="vertical">
 
     <TextView
@@ -67,7 +67,7 @@ z
         style="@style/cardListTitle2"
         android:layout_width="match_parent"
         android:text="@string/cardListFinishReg_Title3"
-        app:layout_constraintEnd_toEndOf="@+id/guidelineEnd"
+        app:layout_constraintEnd_toEndOf="@+id/guideline_end"
         app:layout_constraintStart_toStartOf="@+id/tv_card_list_finish_register_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_card_list_finish_register_title" />
 
@@ -75,8 +75,8 @@ z
         android:id="@+id/tv_card_list_finish_register_comment"
         android:layout_width="match_parent"
         android:text="@string/cardListFinishReg_Title4"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/tv_card_list_finish_register_description"
         style="@style/cardListTitle3" />
         </LinearLayout>
@@ -89,7 +89,7 @@ z
         android:textAlignment="center"
         android:textAppearance="@style/TextStyle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineEnd"
-        app:layout_constraintStart_toStartOf="@+id/guidelineStart" />
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

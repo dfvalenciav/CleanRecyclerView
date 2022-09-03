@@ -1,5 +1,7 @@
 package com.example.daval.cleanrecyclerview.cardSetup.data.repository
 
+import com.example.daval.cleanrecyclerview.cardCarrousel.data.models.RCardCarrousel
+import com.example.daval.cleanrecyclerview.cardCarrousel.domain.models.CardCarrousel
 import com.example.daval.cleanrecyclerview.cardSetup.data.interfaces.IRealmDatabase
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.MockDataBase
 import com.example.daval.cleanrecyclerview.cardSetup.data.local.realm.*
@@ -38,12 +40,12 @@ class CardRealmRepository @Inject constructor(private val realmDataBase: IRealmD
     }
 
     override suspend fun getCardListCarrouselObjects() : List<CardCarrousel> {
-        insertCardListCarrousel(mockDataBase.cardListCarrousel())
+        //insertCardListCarrousel(mockDataBase.cardListCarrousel())
         return realmDataBase.getObjectsFromRealm { where<RCardCarrousel>().findAll() }.toRListCardCarrouselTask()
     }
 
     override suspend fun insertCardListCarrousel(cardCarrousel: List<CardCarrousel>){
-        realmDataBase.deleteAllObjectFromRealm { RCardCarrousel() }
+        //realmDataBase.deleteAllObjectFromRealm { RCardCarrousel() }
         return realmDataBase.addObjectFromRealm{ cardCarrousel.sortedBy { it.BankName }.toRListCardCarrouselEntity()}
     }
 
