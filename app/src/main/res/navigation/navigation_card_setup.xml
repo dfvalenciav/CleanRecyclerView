@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_card_setup"
-    app:startDestination="@id/configFragment">
+    app:startDestination="@id/cardListHomeFragment">
 
 
     <fragment
@@ -71,9 +71,4 @@
         android:name="com.example.daval.cleanrecyclerview.cardSetup.presentation.cardListHome.CardListHomeFragment"
         android:label="fragment_card_list_home"
         tools:layout="@layout/fragment_card_list_home" />
-    <fragment
-        android:id="@+id/cardCarrouselFragment"
-        android:name="com.example.daval.cleanrecyclerview.cardCarrousel.presentation.cardCarrousel.CardCarrouselFragment"
-        android:label="fragment_card_carrousel"
-        tools:layout="@layout/fragment_card_carrousel" />
 </navigation>

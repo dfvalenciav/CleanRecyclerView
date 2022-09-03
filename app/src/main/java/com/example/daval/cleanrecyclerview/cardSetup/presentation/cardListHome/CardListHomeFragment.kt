@@ -108,9 +108,9 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
                         textViewCardExpirationOne.text = indexCard.CardExpiration
                         textViewCardExpirationTwo.text = indexCard.CardExpiration
                         textViewCardExpirationThree.text = indexCard.CardExpiration
-                        imageViewFranchise1.setImageResource(indexCard.CardFranchise)
-                        imageViewFranchise2.setImageResource(indexCard.CardFranchise)
-                        imageViewFranchise3.setImageResource(indexCard.CardFranchise)
+                        //imageViewFranchise1.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                        //imageViewFranchise2.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                        //imageViewFranchise3.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
                 }
             }
 
@@ -126,12 +126,12 @@ class CardListHomeFragment : BaseFragment<FragmentCardListHomeBinding, CardListH
                     textViewCardExpirationOne.text = indexCard.CardExpiration
                     textViewCardExpirationTwo.text = indexCard.CardExpiration
                     textViewCardExpirationThree.text = indexCard.CardExpiration
-                    imageViewFranchise1.setImageResource(indexCard.CardFranchise)
-                    imageViewFranchise2.setImageResource(indexCard.CardFranchise)
-                    imageViewFranchise3.setImageResource(indexCard.CardFranchise)
+                    //imageViewFranchise1.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                    //imageViewFranchise2.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
+                    //imageViewFranchise3.setImageResource(resources.getIdentifier(indexCard.CardFranchise, "drawable","com.example.daval.cleanrecyclerview"))
                 }
             }
         })
-        //carousel.refresh()
+        carousel.refresh()
     }
 }
